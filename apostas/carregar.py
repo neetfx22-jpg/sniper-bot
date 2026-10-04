@@ -33,6 +33,9 @@ MAPA = {  # destino: lista de nomes possíveis (o primeiro que existir)
     "pah_H": ["PAHH"], "pah_A": ["PAHA"], "pcah_H": ["PCAHH"], "pcah_A": ["PCAHA"],
     "mah_H": ["MaxAHH", "BbMxAHH"], "mah_A": ["MaxAHA", "BbMxAHA"],
     "mcah_H": ["MaxCAHH"], "mcah_A": ["MaxCAHA"], "ecah_H": ["BFECAHH"], "ecah_A": ["BFECAHA"],
+    "aah_H": ["AvgAHH", "BbAvAHH"], "aah_A": ["AvgAHA", "BbAvAHA"],
+    "acah_H": ["AvgCAHH"], "acah_A": ["AvgCAHA"], "bah_H": ["B365AHH"], "bah_A": ["B365AHA"],
+    "bcah_H": ["B365CAHH"], "bcah_A": ["B365CAHA"],
     "eo": ["BFE>2.5"], "eu": ["BFE<2.5"], "eco": ["BFEC>2.5"], "ecu": ["BFEC<2.5"],
 }
 
