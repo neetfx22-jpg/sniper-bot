@@ -22,6 +22,8 @@ MAPA = {  # destino: lista de nomes possíveis (o primeiro que existir)
     "ac_H": ["AvgCH"], "ac_D": ["AvgCD"], "ac_A": ["AvgCA"],
     "b_H": ["B365H"], "b_D": ["B365D"], "b_A": ["B365A"],
     "bc_H": ["B365CH"], "bc_D": ["B365CD"], "bc_A": ["B365CA"],
+    "w_H": ["BWH"], "w_D": ["BWD"], "w_A": ["BWA"], "wc_H": ["BWCH"], "wc_D": ["BWCD"], "wc_A": ["BWCA"],
+    "h_H": ["WHH"], "h_D": ["WHD"], "h_A": ["WHA"], "hc_H": ["WHCH"], "hc_D": ["WHCD"], "hc_A": ["WHCA"],
     "e_H": ["BFEH"], "e_D": ["BFED"], "e_A": ["BFEA"],
     "ec_H": ["BFECH"], "ec_D": ["BFECD"], "ec_A": ["BFECA"],
     "po": ["P>2.5"], "pu": ["P<2.5"], "pco": ["PC>2.5"], "pcu": ["PC<2.5"],
