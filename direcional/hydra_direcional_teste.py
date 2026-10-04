@@ -8,9 +8,6 @@ rodando em CARTEIRA FICTÍCIA. Só muda o FILTRO DA BALANÇA conforme o perfil:
     Perfil C = B + TRAVA ATR: fecha a perna quando o preço anda 3x ATR(5m) contra (0,4%–3%), sem hedge
     Perfil D = C + quando a balança vira com a perna negativa, FECHA a perna em vez de abrir hedge
     Perfil E = D, mas a trava é fixa em -50% de ROI (preço = 0,50 / alavancagem) em vez de 3x ATR
-    Perfil CH   = balança de CHOQUE de 1h (segue moedas que se moveram >= 4 desvios numa hora, com volume
-                  forte), uma entrada por choque, sai depois de 12h; trava só de catástrofe; 5x; taxa MEXC
-    Perfil CH10 = CH com 10x
 
 Cada perfil tem carteira, estado, log, ciclos e medição próprios (sufixo _A / _B),
 então os dois podem rodar AO MESMO TEMPO em dois terminais.
@@ -38,6 +35,21 @@ from decimal import Decimal, ROUND_DOWN, ROUND_HALF_UP
 
 # ─── PERFIL DO TESTE ───────────────────────────────────────
 PERFIS = {
+    # ── CH / CH10: balança de choque 1h + saída por tempo (validada no simulador fev/2025–set/2026) ──
+    "CH": {"SCORE_ENTRADA": 75, "DIF_ENTRADA": 10.0, "DIF_VIRAR": 10.0, "CONFIRMA_CICLOS": 3, "MEMORIA_NO_SCORE": False,
+           "TRAVA_ATR": True, "CORTE_SEM_HEDGE": True, "TRAVA_ROI": None, "TRAVA_ATR_K": 10.0, "TRAVA_MAX_PCT": 0.08,
+           "BALANCA_CHOQUE": True, "CHOQUE_Z": 4.0, "CHOQUE_HORAS": 12, "CHOQUE_VOLUME": True,
+           "SAIDA_TEMPO_H": 12, "SEM_TP": True, "REENTRA_CHOQUE": False, "LEV_TETO": 5, "TOP_PARES": 30,
+           "FEES_PCT": 0.0001, "TAXA_TAKER": 0.0001, "SLIPPAGE_PCT": 0.0002, "COOLDOWN_TP_MIN": 5,
+           "MOM_HORAS": None, "LIVRO_FILTRO": False,
+           "NOME": "CH — CHOQUE 1h + SAÍDA 12h (5x, taxa MEXC)"},
+    "CH10": {"SCORE_ENTRADA": 75, "DIF_ENTRADA": 10.0, "DIF_VIRAR": 10.0, "CONFIRMA_CICLOS": 3, "MEMORIA_NO_SCORE": False,
+             "TRAVA_ATR": True, "CORTE_SEM_HEDGE": True, "TRAVA_ROI": None, "TRAVA_ATR_K": 10.0, "TRAVA_MAX_PCT": 0.08,
+             "BALANCA_CHOQUE": True, "CHOQUE_Z": 4.0, "CHOQUE_HORAS": 12, "CHOQUE_VOLUME": True,
+             "SAIDA_TEMPO_H": 12, "SEM_TP": True, "REENTRA_CHOQUE": False, "LEV_TETO": 10, "TOP_PARES": 30,
+             "FEES_PCT": 0.0001, "TAXA_TAKER": 0.0001, "SLIPPAGE_PCT": 0.0002, "COOLDOWN_TP_MIN": 5,
+             "MOM_HORAS": None, "LIVRO_FILTRO": False,
+             "NOME": "CH10 — CHOQUE 1h + SAÍDA 12h (10x, taxa MEXC)"},
     #      score entrada | dif entrada | dif virar | confirmação | memória no score
     "A": {"SCORE_ENTRADA": 50, "DIF_ENTRADA": 3.0,  "DIF_VIRAR": 3.0,  "CONFIRMA_CICLOS": 2, "MEMORIA_NO_SCORE": False,
           "NOME": "A — filtros do DIRECIONAL"},
@@ -53,19 +65,6 @@ PERFIS = {
     "E": {"SCORE_ENTRADA": 75, "DIF_ENTRADA": 10.0, "DIF_VIRAR": 10.0, "CONFIRMA_CICLOS": 3, "MEMORIA_NO_SCORE": True,
           "TRAVA_ATR": True, "CORTE_SEM_HEDGE": True, "TRAVA_ROI": 0.50,
           "NOME": "E — B + TRAVA -50% ROI + SEM HEDGE"},
-    # ── balança de choque 1h + saída por tempo (validada no simulador fev/2025–set/2026) ──
-    "CH": {"SCORE_ENTRADA": 75, "DIF_ENTRADA": 10.0, "DIF_VIRAR": 10.0, "CONFIRMA_CICLOS": 3, "MEMORIA_NO_SCORE": False,
-           "TRAVA_ATR": True, "CORTE_SEM_HEDGE": True, "TRAVA_ATR_K": 10.0, "TRAVA_MAX_PCT": 0.08,
-           "BALANCA_CHOQUE": True, "CHOQUE_Z": 4.0, "CHOQUE_HORAS": 12, "CHOQUE_VOLUME": True,
-           "SAIDA_TEMPO_H": 12, "SEM_TP": True, "REENTRA_CHOQUE": False, "LEV_TETO": 5, "TOP_PARES": 30,
-           "FEES_PCT": 0.0001, "TAXA_TAKER": 0.0001,
-           "NOME": "CH — CHOQUE 1h + SAÍDA 12h (5x, taxa MEXC)"},
-    "CH10": {"SCORE_ENTRADA": 75, "DIF_ENTRADA": 10.0, "DIF_VIRAR": 10.0, "CONFIRMA_CICLOS": 3, "MEMORIA_NO_SCORE": False,
-             "TRAVA_ATR": True, "CORTE_SEM_HEDGE": True, "TRAVA_ATR_K": 10.0, "TRAVA_MAX_PCT": 0.08,
-             "BALANCA_CHOQUE": True, "CHOQUE_Z": 4.0, "CHOQUE_HORAS": 12, "CHOQUE_VOLUME": True,
-             "SAIDA_TEMPO_H": 12, "SEM_TP": True, "REENTRA_CHOQUE": False, "LEV_TETO": 10, "TOP_PARES": 30,
-             "FEES_PCT": 0.0001, "TAXA_TAKER": 0.0001,
-             "NOME": "CH10 — CHOQUE 1h + SAÍDA 12h (10x, taxa MEXC)"},
 }
 
 # ── FASE 3: trava da perna solta (valores padrão; perfis A/B mantêm desligado) ──
@@ -1154,7 +1153,34 @@ def score_memoria(sym, regime):
     # efeito proporcional ao tamanho da amostra (evita overfitting com poucos trades)
     return int(round(s_par * min(1.0, n_par / MEM_AMOSTRA_MIN) + s_reg * min(1.0, total / MEM_AMOSTRA_MIN)))
 
+def score_choque(client, symbol):
+    """Balança de CHOQUE: (100, 0) se houve choque de alta nas últimas CHOQUE_HORAS horas fechadas,
+    (0, 100) se de baixa, (0, 0) se nenhum ou os dois. Choque = retorno da hora > CHOQUE_Z desvios
+    (desvio das últimas 168 horas) e, com CHOQUE_VOLUME, volume da hora >= 2x a média das 24 anteriores."""
+    kl = _buscar_klines(client, symbol, "1h", 260)
+    if not kl or len(kl) < 120:
+        return 0, 0
+    if USAR_VELA_FECHADA:
+        kl = kl[:-1]
+    df = pd.DataFrame([k[:12] for k in kl], columns=["time", "open", "high", "low", "close", "vol", "ct", "qvol", "n", "tb", "tq", "ig"])
+    c = df["close"].astype(float); qv = df["qvol"].astype(float)
+    r = c.pct_change()
+    zz = r / r.rolling(168, min_periods=84).std()
+    up, dn = zz > CHOQUE_Z, zz < -CHOQUE_Z
+    if CHOQUE_VOLUME:
+        forte = qv > 2 * qv.rolling(24, min_periods=12).mean().shift(1)
+        up, dn = up & forte, dn & forte
+    up, dn = bool(up.iloc[-CHOQUE_HORAS:].any()), bool(dn.iloc[-CHOQUE_HORAS:].any())
+    if up and not dn:
+        return 100, 0
+    if dn and not up:
+        return 0, 100
+    return 0, 0
+
 def calcular_score(symbol, dfs, regime, lado, sessao, losses_seguidos):
+    if BALANCA_CHOQUE:
+        _l, _s = score_choque(HYDRA_REF.client, symbol)
+        return (_l if lado == "LONG" else _s), {"choque": (_l, _s)}
     score = 0
     detalhes = {}
 
@@ -1284,30 +1310,6 @@ def calcular_score(symbol, dfs, regime, lado, sessao, losses_seguidos):
         logging.error(f"calcular_score {symbol}: {e}")
         return 0, {}
 
-def score_choque(client, symbol):
-    """Balança de CHOQUE: (100, 0) se houve choque de alta nas últimas CHOQUE_HORAS horas fechadas,
-    (0, 100) se de baixa, (0, 0) se nenhum ou os dois. Choque = retorno da hora > CHOQUE_Z desvios
-    (desvio das últimas 168 horas) e, com CHOQUE_VOLUME, volume da hora >= 2x a média das 24 anteriores."""
-    kl = _buscar_klines(client, symbol, "1h", 260)
-    if not kl or len(kl) < 120:
-        return 0, 0
-    if USAR_VELA_FECHADA:
-        kl = kl[:-1]
-    df = pd.DataFrame(kl, columns=["time", "open", "high", "low", "close", "vol", "ct", "qvol", "n", "tb", "tq", "ig"])
-    c = df["close"].astype(float); qv = df["qvol"].astype(float)
-    r = c.pct_change()
-    zz = r / r.rolling(168, min_periods=84).std()
-    up, dn = zz > CHOQUE_Z, zz < -CHOQUE_Z
-    if CHOQUE_VOLUME:
-        forte = qv > 2 * qv.rolling(24, min_periods=12).mean().shift(1)
-        up, dn = up & forte, dn & forte
-    up, dn = bool(up.iloc[-CHOQUE_HORAS:].any()), bool(dn.iloc[-CHOQUE_HORAS:].any())
-    if up and not dn:
-        return 100, 0
-    if dn and not up:
-        return 0, 100
-    return 0, 0
-
 def get_score_par(client, symbol, sessao, losses_seguidos):
     dfs = percepcao_multi(client, symbol)
     if not dfs.get("_ok"):
@@ -1318,9 +1320,6 @@ def get_score_par(client, symbol, sessao, losses_seguidos):
         ATR_PCT[symbol] = float(_r5["atr"] / _r5["close"])
     except Exception:
         pass
-    if BALANCA_CHOQUE:
-        sl, ss = score_choque(client, symbol)
-        return sl, ss, regime
     sl, _ = calcular_score(symbol, dfs, regime, "LONG",  sessao, losses_seguidos)
     ss, _ = calcular_score(symbol, dfs, regime, "SHORT", sessao, losses_seguidos)
     return sl, ss, regime
@@ -3523,6 +3522,8 @@ def ciclo_direcional(hydra, symbol, preco, sl, ss, regime, sessao):
     h.ultimo_score, h.ultimo_regime, h.ultimo_preco = (sl, ss), regime, preco
     if max(sl, ss) < SCORE_ENTRADA:
         h.bloq_choque = False          # sinal apagou: pode entrar no próximo choque
+    if not REENTRA_CHOQUE and getattr(h, "bloq_choque", False) and h.estado in (AGUARDA, CONGELADO):
+        return                         # já operou este choque: espera o sinal apagar
     if getattr(h, "conf_estado", None) != h.estado:
         h.conf = {}
         h.conf_estado = h.estado
@@ -3543,8 +3544,6 @@ def ciclo_direcional(hydra, symbol, preco, sl, ss, regime, sessao):
         _h = hydra.hedges.get(symbol)
         if _h and time.time() < getattr(_h, "cooldown_ate", 0):
             return   # cooldown pos-TP: nao reentra ainda
-        if not REENTRA_CHOQUE and getattr(h, "bloq_choque", False):
-            return   # já operou este choque: espera o sinal apagar
         lado = "LONG" if sl > ss else "SHORT"
         leg = _abrir_perna_dir(hydra, h, symbol, lado, preco)
         if not leg:

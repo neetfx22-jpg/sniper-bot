@@ -20,7 +20,7 @@
 python3 hydra_direcional_teste.py --perfil CH --reset
 python3 hydra_direcional_teste.py --perfil CH10 --reset
 ```
-Ou aplicar só a alteração num arquivo seu: `python3 patch_ch.py ~/cerebro_teste/hydra_direcional_teste.py`.
+Ou aplicar numa cópia do seu arquivo: `cp hydra_direcional_teste.py hydra_ch.py && python3 patch_ch.py hydra_ch.py`.
 
 ## Resultado no simulador (fev/2025–set/2026, 100 USDT, top 30)
 | | 5x | 10x |
