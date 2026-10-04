@@ -1,0 +1,3 @@
+dados/*.csv
+dados/*.pkl
+__pycache__/
