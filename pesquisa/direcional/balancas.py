@@ -91,3 +91,29 @@ def mom_gatilho(I, univ=None):
     up = (r5["ema9"] > r5["ema21"]) & (r15["ema9"] > r15["ema21"])
     dn = (r5["ema9"] < r5["ema21"]) & (r15["ema9"] < r15["ema21"])
     return L.where(up, 0), S.where(dn, 0)
+
+def choque_v(C, z=3.5, h=12, modo="base", QV=None):
+    """Variantes do choque (C: closes de 5m; QV: volume em USDT de 5m).
+    base   : choque de 1h acima de z desvios, segue por h horas
+    residuo: idem, mas no movimento próprio da moeda (descontado o BTC x beta de 7 dias)
+    volume : só choques cuja hora teve volume >= 2x a média das últimas 24 horas
+    btc    : só choques no sentido da tendência do BTC (preço vs média de 50 horas)"""
+    ch = C[C.index.minute == 0]
+    r = ch.pct_change(fill_method=None)
+    if modo == "residuo":
+        b = r["BTCUSDT"]
+        beta = r.rolling(168, min_periods=84).cov(b).div(b.rolling(168, min_periods=84).var(), axis=0)
+        r = r.sub(beta.mul(b, axis=0)); r["BTCUSDT"] = np.nan
+    zz = r / r.rolling(168, min_periods=84).std()
+    up, dn = zz > z, zz < -z
+    if modo == "volume":
+        qh = QV.rolling(12, min_periods=12).sum()
+        qh = qh[qh.index.minute == 0]
+        forte = qh > 2 * qh.rolling(24, min_periods=12).mean().shift(1)
+        up &= forte; dn &= forte
+    if modo == "btc":
+        btc = ch["BTCUSDT"]; alta = btc > btc.rolling(50).mean()
+        up = up.mul(alta, axis=0).astype(bool); dn = dn.mul(~alta, axis=0).astype(bool)
+    up = up.astype(float).rolling(h, min_periods=1).max(); dn = dn.astype(float).rolling(h, min_periods=1).max()
+    L = (up * (1 - dn)) * 100; S = (dn * (1 - up)) * 100
+    return L.reindex(C.index, method="ffill").fillna(0), S.reindex(C.index, method="ffill").fillna(0)

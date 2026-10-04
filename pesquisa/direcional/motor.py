@@ -20,7 +20,8 @@ PADRAO = dict(SALDO=100.0, RISCO_PCT=0.02, LEV_PAPER=20, LEV_TETO=None, TAXA=0.0
               SCORE_ENTRADA=75, DIF_ENTRADA=10.0, DIF_VIRAR=10.0, ROI_MIN_DIR=0.10,
               TP_ATR_K=2.0, TP_MIN=0.15, TP_MAX=0.60, TRAVA_K=3.0, TRAVA_MIN=0.004, TRAVA_MAX=0.03,
               COOLDOWN_BARRAS=1, MAX_POS=20, MAX_USO_MARGEM=0.80, MMR_FATOR=0.5, COLHEITA_PCT=0.035,
-              LOSSES_STOP=4, PAUSA_BARRAS=6, SEM_TP=False)
+              LOSSES_STOP=4, PAUSA_BARRAS=6, SEM_TP=False,
+              TEMPO_MAX=None, REENTRA=True)
 
 def simular(D, SL, SS, univ, p=None, ini=None, fim=None):
     """D: dict com DataFrames 5m open/high/low/close e atrp (ATR%/preço 5m). SL, SS: pontuações.
@@ -42,6 +43,7 @@ def simular(D, SL, SS, univ, p=None, ini=None, fim=None):
     caixa = P["SALDO"]                      # saldo realizado
     pos = {}                                # j -> dict(lado, entrada, qty, margem, atr, barra)
     cooldown = np.zeros(len(pares), int)    # barra até a qual não reentra
+    bloqueado = np.zeros(len(pares), bool)  # REENTRA=False: espera o sinal apagar antes de reentrar
     perdas_seg, pausa_ate = 0, -1
     ops, curva = [], []
     liquidou = None
@@ -62,6 +64,8 @@ def simular(D, SL, SS, univ, p=None, ini=None, fim=None):
         else:
             perdas_seg = 0
         cooldown[j] = t + P["COOLDOWN_BARRAS"]
+        if not P["REENTRA"]:
+            bloqueado[j] = True
 
     def pnl_aberto(precos):
         return sum((1 if q["lado"] == "L" else -1) * (precos[j] - q["entrada"]) * q["qty"] for j, q in pos.items())
@@ -110,6 +114,12 @@ def simular(D, SL, SS, univ, p=None, ini=None, fim=None):
                 q = pos[j]; sgn = 1 if q["lado"] == "L" else -1
                 if sgn * (precos[j] - q["entrada"]) * q["qty"] > q["qty"] * precos[j] * (2 * taxa + slip):
                     fechar(j, precos[j] * (1 - sgn * slip), t, "colheita")
+        # 3a') saída por tempo
+        if P["TEMPO_MAX"]:
+            for j in list(pos):
+                q = pos[j]
+                if t - q["barra"] >= P["TEMPO_MAX"] and not np.isnan(precos[j]):
+                    fechar(j, precos[j] * (1 - (1 if q["lado"] == "L" else -1) * slip), t, "tempo")
         # 3b) balança virou
         for j in list(pos):
             q = pos[j]
@@ -135,10 +145,12 @@ def simular(D, SL, SS, univ, p=None, ini=None, fim=None):
         eq = caixa + pnl_aberto(precos)
         if eq <= 1.0:
             liquidou = liquidou or idx[t]; curva.append((idx[t], eq)); break
+        if not P["REENTRA"]:
+            bloqueado &= ~(np.maximum(sl[t], ss[t]) < P["SCORE_ENTRADA"])
         if t >= pausa_ate and len(pos) < P["MAX_POS"]:
             cand = np.where(U[t] & ((np.maximum(sl[t], ss[t]) >= P["SCORE_ENTRADA"]) & (np.abs(sl[t] - ss[t]) >= P["DIF_ENTRADA"])))[0]
             for j in cand:
-                if j in pos or cooldown[j] > t or np.isnan(precos[j]) or np.isnan(ATR[t, j]):
+                if j in pos or cooldown[j] > t or bloqueado[j] or np.isnan(precos[j]) or np.isnan(ATR[t, j]):
                     continue
                 if len(pos) >= P["MAX_POS"]:
                     break
