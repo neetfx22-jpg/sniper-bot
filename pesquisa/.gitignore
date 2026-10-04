@@ -3,3 +3,4 @@ dados/*.pkl
 dados5m/*.zip
 dados5m/*.pkl
 saida/*.pkl
+__pycache__/
