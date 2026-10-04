@@ -53,7 +53,7 @@ REENTRA_CHOQUE  = True    # False = uma entrada por choque: só reentra depois q
 LEV_TETO        = None    # teto de alavancagem (None = máxima do par)
 '''
 insere_apos(r"^TRAVA_ROI\s*=.*\n", GLOBAIS)
-troca("Use --perfil A, B, C, D ou E", "Use --perfil A, B, C, D, E, CH ou CH10", opcional=True)
+s = re.sub(r'(Use --perfil [^"\n]*?) ou ([A-Z0-9]+)"', r'\1, \2, CH ou CH10"', s, count=1)
 
 # teto de alavancagem
 troca('''def get_alavancagem_max(client, symbol):
@@ -111,30 +111,35 @@ troca('''    if not fechar_ordem(client, symbol, lado, leg.qty):
     if not REENTRA_CHOQUE:
         h.bloq_choque = True
 ''')
-troca('''    h = hydra.hedges[symbol]
-    h.ciclos_reentrada += 1
-    h.ultimo_score, h.ultimo_regime, h.ultimo_preco = (sl, ss), regime, preco
-    if getattr(h, "conf_estado", None) != h.estado:''', '''    h = hydra.hedges[symbol]
-    h.ciclos_reentrada += 1
-    h.ultimo_score, h.ultimo_regime, h.ultimo_preco = (sl, ss), regime, preco
-    if max(sl, ss) < SCORE_ENTRADA:
+def insere_antes_em_ciclo(alvo, texto):
+    """Insere 'texto' antes da 1ª ocorrência de 'alvo' DENTRO de def ciclo_direcional."""
+    global s
+    ini = s.find("\ndef ciclo_direcional(")
+    if ini < 0:
+        sys.exit("ERRO: ciclo_direcional não encontrado. Nada foi alterado.")
+    fim = s.find("\ndef ", ini + 10)
+    pos = s.find(alvo, ini, fim if fim > 0 else len(s))
+    if pos < 0:
+        sys.exit(f"ERRO: trecho não encontrado no ciclo_direcional:\n{alvo}\nNada foi alterado.")
+    s = s[:pos] + texto + s[pos:]
+
+insere_antes_em_ciclo('''    if getattr(h, "conf_estado", None) != h.estado:''', '''    if max(sl, ss) < SCORE_ENTRADA:
         h.bloq_choque = False          # sinal apagou: pode entrar no próximo choque
     if not REENTRA_CHOQUE and getattr(h, "bloq_choque", False) and h.estado in (AGUARDA, CONGELADO):
         return                         # já operou este choque: espera o sinal apagar
-    if getattr(h, "conf_estado", None) != h.estado:''')
+''')
 
 # sem TP + saída por tempo
-troca('''        if roi >= alvo_atr:
-            log.info(f"🏆 {symbol} TP ATR''', '''        if not SEM_TP and roi >= alvo_atr:
-            log.info(f"🏆 {symbol} TP ATR''')
-troca('''        if TRAVA_ATR:
-            mov = _mov_contra(lado, leg.preco_entrada, preco)''', '''        if SAIDA_TEMPO_H and time.time() * 1000 - leg.timestamp_ms >= SAIDA_TEMPO_H * 3600 * 1000:
+troca('''        alvo_atr = alvo_tp_atr(symbol, h.alavancagem)
+''', '''        alvo_atr = float("inf") if SEM_TP else alvo_tp_atr(symbol, h.alavancagem)   # SEM_TP: nunca atinge o alvo
+''')
+insere_antes_em_ciclo('''        if TRAVA_ATR:
+''', '''        if SAIDA_TEMPO_H and time.time() * 1000 - leg.timestamp_ms >= SAIDA_TEMPO_H * 3600 * 1000:
             log.info(f"⏱️ {symbol} SAÍDA POR TEMPO {lado} | {SAIDA_TEMPO_H}h | ROI={roi*100:+.1f}% → fecha a perna")
             _cortar_perna(hydra, h, symbol, lado, f"Tempo {SAIDA_TEMPO_H}h roi={roi*100:.0f}%",
                           regime, (sl if lado == "LONG" else ss), sessao, preco)
             return
-        if TRAVA_ATR:
-            mov = _mov_contra(lado, leg.preco_entrada, preco)''')
+''')
 
 troca('''    print(f"║  Balança virou c/ perna negativa: {'FECHA' if CORTE_SEM_HEDGE else 'HEDGE'}".ljust(53)+"║")''', '''    print(f"║  Balança virou c/ perna negativa: {'FECHA' if CORTE_SEM_HEDGE else 'HEDGE'}".ljust(53)+"║")
     if BALANCA_CHOQUE:

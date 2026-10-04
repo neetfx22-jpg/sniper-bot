@@ -3587,8 +3587,8 @@ def ciclo_direcional(hydra, symbol, preco, sl, ss, regime, sessao):
             return
 
         roi = _roi_dir(pos[lado], leg, h.alavancagem)
-        alvo_atr = alvo_tp_atr(symbol, h.alavancagem)
-        if not SEM_TP and roi >= alvo_atr:
+        alvo_atr = float("inf") if SEM_TP else alvo_tp_atr(symbol, h.alavancagem)   # SEM_TP: nunca atinge o alvo
+        if roi >= alvo_atr:
             log.info(f"🏆 {symbol} TP ATR {lado} | ROI={roi*100:+.1f}% >= alvo {alvo_atr*100:.0f}% → fecha e cooldown {COOLDOWN_TP_MIN}min")
             pnl = _fechar_perna_dir(hydra, h, symbol, lado, f"TP ATR roi={roi*100:.0f}%",
                                     regime, (sl if lado == "LONG" else ss), sessao, preco)
