@@ -167,4 +167,7 @@ def simular(D, SL, SS, univ, p=None, ini=None, fim=None):
     ops = pd.DataFrame(ops, columns=["entrada_t", "saida_t", "par", "lado", "preco_ent", "preco_sai", "qty", "margem",
                                      "alav", "pnl", "taxas", "motivo"])
     curva = pd.Series(dict(curva), dtype=float)
-    return ops, curva, {"liquidou": liquidou}
+    abertas = [dict(par=pares[j], lado=q["lado"], entrada_t=idx[q["barra"]], preco_ent=q["entrada"], margem=q["margem"],
+                    alav=q["lev"], pnl_aberto=(1 if q["lado"] == "L" else -1) * (C[rows[-1], j] - q["entrada"]) * q["qty"])
+               for j, q in pos.items()] if len(rows) else []
+    return ops, curva, {"liquidou": liquidou, "abertas": abertas, "caixa": caixa}
