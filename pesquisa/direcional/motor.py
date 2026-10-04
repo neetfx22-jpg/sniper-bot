@@ -21,7 +21,7 @@ PADRAO = dict(SALDO=100.0, RISCO_PCT=0.02, LEV_PAPER=20, LEV_TETO=None, TAXA=0.0
               TP_ATR_K=2.0, TP_MIN=0.15, TP_MAX=0.60, TRAVA_K=3.0, TRAVA_MIN=0.004, TRAVA_MAX=0.03,
               COOLDOWN_BARRAS=1, MAX_POS=20, MAX_USO_MARGEM=0.80, MMR_FATOR=0.5, COLHEITA_PCT=0.035,
               LOSSES_STOP=4, PAUSA_BARRAS=6, SEM_TP=False,
-              TEMPO_MAX=None, REENTRA=True)
+              TEMPO_MAX=None, REENTRA=True, IGNORA_SINAIS_INICIAIS=False)
 
 def simular(D, SL, SS, univ, p=None, ini=None, fim=None):
     """D: dict com DataFrames 5m open/high/low/close e atrp (ATR%/preço 5m). SL, SS: pontuações.
@@ -70,6 +70,8 @@ def simular(D, SL, SS, univ, p=None, ini=None, fim=None):
     def pnl_aberto(precos):
         return sum((1 if q["lado"] == "L" else -1) * (precos[j] - q["entrada"]) * q["qty"] for j, q in pos.items())
 
+    if P["IGNORA_SINAIS_INICIAIS"] and len(rows):
+        bloqueado |= np.maximum(sl[rows[0]], ss[rows[0]]) >= P["SCORE_ENTRADA"]   # choques anteriores ao arranque
     for t in rows:
         # 1) caminho do preço dentro da vela t para as posições abertas (abertas no fecho de t-1 ou antes)
         if pos:
