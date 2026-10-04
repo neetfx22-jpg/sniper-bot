@@ -1,0 +1,20 @@
+0 94 2s
+20 94 19s
+40 94 46s
+60 94 80s
+80 94 104s
+
+== 5m fora da amostra (2025T3–2026T3), custo 0,04%/lado, 1x ==
+breakout5  sharpe -0.66  mês médio -4.3%  meses+ 40%  pior queda -69%
+choque5    sharpe -0.73  mês médio -4.8%  meses+ 47%  pior queda -95%
+sazonal    sharpe -5.81  mês médio -19.6%  meses+ 0%  pior queda -97%
+volume5    sharpe -1.25  mês médio -8.2%  meses+ 27%  pior queda -88%
+xs5        sharpe -4.24  mês médio -12.4%  meses+ 13%  pior queda -90%
+
+== todas as combinações, período todo ==
+           sharpe_mediano  sharpe_max  frac_pos
+breakout5           -0.81        0.17       0.2
+choque5             -2.77        0.40       0.1
+sazonal             -5.83       -4.02       0.0
+volume5             -6.20       -0.69       0.0
+xs5                 -5.49       -1.03       0.0

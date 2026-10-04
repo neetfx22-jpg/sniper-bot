@@ -1,0 +1,9 @@
+330 combinações
+0 0s xs_mom {"L": 24, "k": 3, "reb": 8, "skip": 0}
+50 15s xs_mom {"L": 336, "k": 8, "reb": 8, "skip": 24}
+100 29s xs_rev {"L": 1, "inverso": true, "k": 5, "reb": 1}
+150 43s res_mom {"L": 168, "k": 3, "reb": 24}
+200 61s ts_trend {"L": 24, "reb": 72}
+250 73s choque {"h": 1, "seguir": true, "z": 5.0}
+300 87s mom_long_btc {"L": 168, "M": 168, "k": 3, "reb": 72}
+ok 97s

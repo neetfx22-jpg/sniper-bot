@@ -1,0 +1,66 @@
+name: Scanner de apostas de valor
+
+on:
+  schedule:
+    - cron: "5 9 * * *"    # 10:05 em Portugal (verão)
+    - cron: "5 16 * * *"   # 17:05 em Portugal (verão)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: scanner
+  cancel-in-progress: false
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Busca o ramo de dados (cria se não existir)
+        run: |
+          git fetch origin scanner-dados || true
+          if git rev-parse --verify origin/scanner-dados >/dev/null 2>&1; then
+            git worktree add dados-ramo origin/scanner-dados
+          else
+            git worktree add --detach dados-ramo
+            git -C dados-ramo checkout --orphan scanner-dados
+            git -C dados-ramo rm -rf . >/dev/null 2>&1 || true
+          fi
+          mkdir -p dados-ramo/scanner/dados
+          rm -rf scanner/dados && ln -s ../dados-ramo/scanner/dados scanner/dados
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - run: pip install requests pandas numpy
+
+      - name: Lê odds e marca sinais
+        env:
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+        working-directory: scanner
+        run: python scan.py
+
+      - name: Resultados (só na leitura da manhã)
+        if: github.event.schedule == '5 9 * * *' || github.event_name == 'workflow_dispatch'
+        env:
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+        working-directory: scanner
+        run: python resultados.py
+
+      - name: Relatório
+        working-directory: scanner
+        run: python relatorio.py | tee -a "$GITHUB_STEP_SUMMARY"
+
+      - name: Guarda os dados no ramo scanner-dados
+        working-directory: dados-ramo
+        run: |
+          git config user.name "scanner-bot"
+          git config user.email "scanner-bot@users.noreply.github.com"
+          git add -A
+          git diff --cached --quiet && exit 0
+          git commit -m "Leitura $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push origin HEAD:scanner-dados
