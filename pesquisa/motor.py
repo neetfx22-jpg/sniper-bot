@@ -12,10 +12,12 @@ TAXA_MEXC    = 0.0001
 
 def montar(base):
     V, F = base["velas"], base["funding"]
+    idx = pd.date_range(min(v.index.min() for v in V.values()), max(v.index.max() for v in V.values()), freq="h")
+    V = {p: v.reindex(idx) for p, v in V.items()}
     C  = pd.DataFrame({p: v["close"] for p, v in V.items()})
     H  = pd.DataFrame({p: v["high"] for p, v in V.items()})
     Lo = pd.DataFrame({p: v["low"] for p, v in V.items()})
-    R  = C.pct_change().fillna(0.0)
+    R  = C.pct_change(fill_method=None).fillna(0.0)
     FR = pd.DataFrame({p: f.groupby(f.index.floor("h")).last() for p, f in F.items()}).reindex(C.index).fillna(0.0)
     return C, H, Lo, R, FR
 

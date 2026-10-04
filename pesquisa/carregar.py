@@ -31,8 +31,12 @@ def funding(par):
 
 if __name__ == "__main__":
     pares = sorted({os.path.basename(f).split("-")[0] for f in glob.glob(f"{D}/*-1h-*.zip")})
-    V = {p: velas(p) for p in pares}
-    F = {p: funding(p) for p in pares}
-    pd.to_pickle({"velas": V, "funding": F}, os.path.join(D, "base.pkl"))
+    V, F = {}, {}
     for p in pares:
-        print(p, V[p].index.min(), V[p].index.max(), len(V[p]), len(F[p]))
+        try:
+            V[p], F[p] = velas(p), funding(p)
+        except Exception as e:
+            print("sem dados:", p, e)
+    pd.to_pickle({"velas": V, "funding": F}, os.path.join(D, "base.pkl"))
+    for p in V:
+        print(p, V[p].index.min().date(), V[p].index.max().date(), len(V[p]))
