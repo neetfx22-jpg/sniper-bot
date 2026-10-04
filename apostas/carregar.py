@@ -27,12 +27,16 @@ MAPA = {  # destino: lista de nomes possíveis (o primeiro que existir)
     "po": ["P>2.5"], "pu": ["P<2.5"], "pco": ["PC>2.5"], "pcu": ["PC<2.5"],
     "mo": ["Max>2.5", "BbMx>2.5"], "mu": ["Max<2.5", "BbMx<2.5"],
     "mco": ["MaxC>2.5"], "mcu": ["MaxC<2.5"],
+    "ahl": ["AHh", "BbAHh"], "ahcl": ["AHCh"],
+    "pah_H": ["PAHH"], "pah_A": ["PAHA"], "pcah_H": ["PCAHH"], "pcah_A": ["PCAHA"],
+    "mah_H": ["MaxAHH", "BbMxAHH"], "mah_A": ["MaxAHA", "BbMxAHA"],
+    "mcah_H": ["MaxCAHH"], "mcah_A": ["MaxCAHA"], "ecah_H": ["BFECAHH"], "ecah_A": ["BFECAHA"],
     "eo": ["BFE>2.5"], "eu": ["BFE<2.5"], "eco": ["BFEC>2.5"], "ecu": ["BFEC<2.5"],
 }
 
 def padroniza(df, liga, temporada):
     out = pd.DataFrame({"liga": liga, "temporada": temporada}, index=df.index)
-    out["data"] = pd.to_datetime(df["Date"], dayfirst=True, errors="coerce")
+    out["data"] = pd.to_datetime(df["Date"], dayfirst=True, errors="coerce", format="mixed")
     out["casa"] = df.get("HomeTeam", df.get("Home"))
     out["fora"] = df.get("AwayTeam", df.get("Away"))
     out["gc"] = pd.to_numeric(df.get("FTHG", df.get("HG")), errors="coerce")
