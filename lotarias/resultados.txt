@@ -1,0 +1,56 @@
+
+== EUROMILHÕES (5 de 50 + 2 de 12): 139.838.160 combinações ==
+   5 números + 2 estrelas   1 em    139.838.160
+   5 números + 1 estrelas   1 em      6.991.908
+   5 números + 0 estrelas   1 em      3.107.515
+   4 números + 2 estrelas   1 em        621.503
+   4 números + 1 estrelas   1 em         31.075
+   4 números + 0 estrelas   1 em         13.811
+   3 números + 2 estrelas   1 em         14.125
+   3 números + 1 estrelas   1 em            706
+   3 números + 0 estrelas   1 em            314
+   2 números + 2 estrelas   1 em            985
+   2 números + 1 estrelas   1 em             49
+   2 números + 0 estrelas   1 em             22
+   1 números + 2 estrelas   1 em            188
+   qualquer prémio:          1 em 13.0
+
+== EURODREAMS (6 de 40 + 1 de 5): 19.191.900 combinações ==
+   6 números + sonho        1 em     19.191.900
+   6 números                1 em      4.797.975
+   5 números                1 em         18.816
+   4 números                1 em            456
+   3 números                1 em             32
+   2 números                1 em              6
+   qualquer prémio:          1 em 4.7
+
+== TOTOLOTO (5 de 49 + 1 de 13): 24.789.492 combinações ==
+   5 números + nº da sorte  1 em     24.789.492
+   5 números                1 em      2.065.791
+   4 números + nº da sorte  1 em        112.680
+   4 números                1 em          9.390
+   3 números + nº da sorte  1 em          2.620
+   3 números                1 em            218
+   2 números + nº da sorte  1 em            187
+   2 números                1 em             16
+   só o nº da sorte (reembolso) 1 em             14
+   qualquer prémio:          1 em 6.9
+
+== Euromilhões: quanto vale o JACKPOT por aposta de 2,50 € (líquido de imposto, com divisão) ==
+   jackpot   17 M€, ~30 M de apostas no sorteio: vale 0.09 € por aposta (divisão esperada x0.90)
+   jackpot   50 M€, ~40 M de apostas no sorteio: vale 0.25 € por aposta (divisão esperada x0.87)
+   jackpot  100 M€, ~60 M de apostas no sorteio: vale 0.47 € por aposta (divisão esperada x0.81)
+   jackpot  130 M€, ~80 M de apostas no sorteio: vale 0.57 € por aposta (divisão esperada x0.76)
+   jackpot  200 M€, ~120 M de apostas no sorteio: vale 0.77 € por aposta (divisão esperada x0.67)
+   jackpot  250 M€, ~160 M de apostas no sorteio: vale 0.85 € por aposta (divisão esperada x0.60)
+
+== EuroDreams: prémio principal 20.000 €/mês x 30 anos ==
+   valor presente a 0%/ano: 7.20 M€ -> 0.375 € por aposta de 2,50 € (antes de imposto)
+   valor presente a 2%/ano: 5.42 M€ -> 0.283 € por aposta de 2,50 € (antes de imposto)
+   valor presente a 3%/ano: 4.77 M€ -> 0.248 € por aposta de 2,50 € (antes de imposto)
+   valor presente a 5%/ano: 3.77 M€ -> 0.197 € por aposta de 2,50 € (antes de imposto)
+
+== Tempo médio até ao 1º prémio, jogando 2 apostas por semana ==
+   Euromilhões : 1.344.598 anos | gasto até lá: 349.6 M€
+   EuroDreams  : 184.538 anos | gasto até lá: 48.0 M€
+   Totoloto    : 238.360 anos | gasto até lá: 24.8 M€
