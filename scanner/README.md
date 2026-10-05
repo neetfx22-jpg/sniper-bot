@@ -21,8 +21,19 @@ pip install requests pandas numpy
 export ODDS_API_KEY=...        # nunca pôr a chave no código
 python scan.py                 # 1 crédito por liga
 python resultados.py           # 2 créditos por liga com sinais por fechar
-python relatorio.py
+python relatorio.py            # apostas simples: valor contra o fecho e ROI
+python sistemas.py             # múltiplas-sistema em papel (0 créditos)
 ```
+
+## Múltiplas-sistema em papel (`sistemas.py`)
+Pega nos **favoritos com valor** (âncoras: sinal que não é empate, com odd entre
+`ANCORA_ODD_MIN` e `ANCORA_ODD_MAX`), junta as de cada dia e monta um sistema
+(Trixie/Yankee/Heinz...) **em papel**. O sistema cobre todas as combinações de 2+,
+por isso pode dar lucro mesmo com 1–2 erros. Compara sempre com a aposta simples
+nos mesmos jogos. Não gasta créditos — só lê `dados/sinais.csv` + `dados/resultados.csv`.
+Se, ao longo de semanas, um sistema tiver ROI acima da simples de forma consistente,
+a múltipla está a amplificar o edge; se ficar abaixo, está a amplificar o prejuízo
+(amplifica nos dois sentidos — daí testar em papel antes de arriscar dinheiro).
 
 ## Limites conhecidos
 - A Betclic na API é a versão francesa; as odds da Betclic PT podem ser diferentes.

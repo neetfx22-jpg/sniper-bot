@@ -18,6 +18,16 @@ COMISSAO_BETFAIR = 0.0   # só para referência; não se aposta na Betfair
 LIMIAR_VALOR = 0.02      # sinal quando odd x prob. justa - 1 > 2%
 ODD_MAX = 4.0            # no backtest a vantagem estava nas odds até 4
 
+# --- Múltiplas-sistema em papel (sistemas.py) ---
+# "Âncora" = favorito com valor: um sinal cuja odd está dentro deste intervalo.
+# Só favoritos (não empates/zebras) entram na múltipla, que é onde o edge compõe.
+ANCORA_ODD_MIN = 1.30    # abaixo disto o favorito paga pouco e não compensa combinar
+ANCORA_ODD_MAX = 2.20    # acima disto já não é favorito claro
+# Tipos de sistema: nome -> nº de âncoras do bilhete (cada bilhete junta este nº
+# de jogos distintos daquele dia; o sistema cobre todas as combinações de 2+).
+SISTEMAS = {"Trixie": 3, "Yankee": 4, "Canadian": 5, "Heinz": 6}
+APOSTA_LINHA = 1.0       # unidade apostada por linha do sistema (em papel)
+
 PASTA = os.path.join(os.path.dirname(os.path.abspath(__file__)), "dados")
 API = "https://api.the-odds-api.com/v4"
 
