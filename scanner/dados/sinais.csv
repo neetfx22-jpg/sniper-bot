@@ -22,3 +22,9 @@ leitura,liga,jogo_id,inicio,casa_time,fora_time,resultado,casa,odd,prob_justa,va
 2026-10-10T19:58:47+00:00,soccer_france_ligue_one,27f7222d2abde93fc6e8d17b5b05b272,2026-10-18T15:15:00Z,Paris FC,Rennes,Draw,Betclic,3.47,0.29525,0.0245,pinnacle,3.23
 2026-10-11T15:33:35+00:00,soccer_epl,290ba8cd3f3a2e9252effca673bf5549,2026-10-25T14:00:00Z,Liverpool,Brighton and Hove Albion,Draw,Betclic,3.7,0.32652,0.2081,betfair_ex_eu,1.98
 2026-10-11T15:33:35+00:00,soccer_epl,290ba8cd3f3a2e9252effca673bf5549,2026-10-25T14:00:00Z,Liverpool,Brighton and Hove Albion,Draw,888,3.7,0.32652,0.2081,betfair_ex_eu,1.98
+2026-10-11T20:09:35+00:00,soccer_spain_la_liga,a362cccad837f1ffae61ff43a3536688,2026-10-21T18:00:00Z,Levante,Athletic Bilbao,Draw,Betclic,3.3,0.3489,0.1514,betfair_ex_eu,1.1
+2026-10-11T20:09:35+00:00,soccer_france_ligue_one,1a83b5ebabe7cb572ae6e029b3149c42,2026-10-25T16:15:00Z,Angers,Lorient,Draw,Betclic,3.15,0.33333,0.05,betfair_ex_eu,1.1
+2026-10-11T20:09:35+00:00,soccer_france_ligue_one,1a83b5ebabe7cb572ae6e029b3149c42,2026-10-25T16:15:00Z,Angers,Lorient,Draw,888,3.1,0.33333,0.0333,betfair_ex_eu,1.1
+2026-10-11T20:09:35+00:00,soccer_france_ligue_one,8eab078a37a63df32ffa443302a2a7ba,2026-10-25T16:15:00Z,Auxerre,Le Mans FC,Draw,Betclic,3.4,0.33333,0.1333,betfair_ex_eu,1.1
+2026-10-11T20:09:35+00:00,soccer_france_ligue_one,8eab078a37a63df32ffa443302a2a7ba,2026-10-25T16:15:00Z,Auxerre,Le Mans FC,Draw,888,3.3,0.33333,0.1,betfair_ex_eu,1.1
+2026-10-11T20:09:35+00:00,soccer_france_ligue_one,8664b2167f22c59026d86615421463b1,2026-10-25T19:45:00Z,Paris Saint Germain,Lyon,H,888,1.5,0.69847,0.0477,betfair_ex_eu,1.39
