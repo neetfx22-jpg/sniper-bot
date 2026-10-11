@@ -20,3 +20,5 @@ leitura,liga,jogo_id,inicio,casa_time,fora_time,resultado,casa,odd,prob_justa,va
 2026-10-10T19:58:47+00:00,soccer_epl,e82f6b60fa41b82c8510f5b67ce61849,2026-10-25T16:30:00Z,Sunderland,Leeds United,Draw,Betclic,3.3,0.33333,0.1,betfair_ex_eu,1.1
 2026-10-10T19:58:47+00:00,soccer_epl,e82f6b60fa41b82c8510f5b67ce61849,2026-10-25T16:30:00Z,Sunderland,Leeds United,Draw,888,3.3,0.33333,0.1,betfair_ex_eu,1.1
 2026-10-10T19:58:47+00:00,soccer_france_ligue_one,27f7222d2abde93fc6e8d17b5b05b272,2026-10-18T15:15:00Z,Paris FC,Rennes,Draw,Betclic,3.47,0.29525,0.0245,pinnacle,3.23
+2026-10-11T15:33:35+00:00,soccer_epl,290ba8cd3f3a2e9252effca673bf5549,2026-10-25T14:00:00Z,Liverpool,Brighton and Hove Albion,Draw,Betclic,3.7,0.32652,0.2081,betfair_ex_eu,1.98
+2026-10-11T15:33:35+00:00,soccer_epl,290ba8cd3f3a2e9252effca673bf5549,2026-10-25T14:00:00Z,Liverpool,Brighton and Hove Albion,Draw,888,3.7,0.32652,0.2081,betfair_ex_eu,1.98
