@@ -45,3 +45,4 @@ leitura,liga,jogo_id,inicio,casa_time,fora_time,resultado,casa,odd,prob_justa,va
 2026-10-18T13:09:48+00:00,soccer_epl,640c52a86289f35698261b41987dd71e,2026-10-31T20:00:00Z,Aston Villa,Fulham,H,888,2.0,0.5784,0.1568,betfair_ex_eu,1.18
 2026-10-18T13:09:48+00:00,soccer_epl,0f552d9c6990c69474f50ff2fb54e9a3,2026-11-02T20:00:00Z,Newcastle United,Everton,Draw,Betclic,3.3,0.33333,0.1,betfair_ex_eu,1.12
 2026-10-18T13:09:48+00:00,soccer_epl,0f552d9c6990c69474f50ff2fb54e9a3,2026-11-02T20:00:00Z,Newcastle United,Everton,Draw,888,3.5,0.33333,0.1667,betfair_ex_eu,1.12
+2026-10-18T18:34:32+00:00,soccer_epl,6601f69175a02f03fb7065aacb538e01,2026-10-31T12:30:00Z,Chelsea,Manchester United,H,888,2.1,0.49541,0.0404,betfair_ex_eu,1.73
