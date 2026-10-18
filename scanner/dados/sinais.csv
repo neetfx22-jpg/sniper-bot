@@ -30,3 +30,18 @@ leitura,liga,jogo_id,inicio,casa_time,fora_time,resultado,casa,odd,prob_justa,va
 2026-10-11T20:09:35+00:00,soccer_france_ligue_one,8664b2167f22c59026d86615421463b1,2026-10-25T19:45:00Z,Paris Saint Germain,Lyon,H,888,1.5,0.69847,0.0477,betfair_ex_eu,1.39
 2026-10-17T18:22:34+00:00,soccer_epl,6a3819cdbe2ba2fe5a3d8f9b4b459965,2026-11-01T16:30:00Z,Liverpool,Arsenal,Draw,Betclic,3.35,0.52174,0.7478,betfair_ex_eu,1.1
 2026-10-17T18:22:34+00:00,soccer_epl,6a3819cdbe2ba2fe5a3d8f9b4b459965,2026-11-01T16:30:00Z,Liverpool,Arsenal,Draw,888,3.25,0.52174,0.6957,betfair_ex_eu,1.1
+2026-10-18T13:09:48+00:00,soccer_epl,6601f69175a02f03fb7065aacb538e01,2026-10-31T12:30:00Z,Chelsea,Manchester United,Draw,888,3.6,0.28587,0.0291,betfair_ex_eu,1.8
+2026-10-18T13:09:48+00:00,soccer_epl,a6c06eabdf4e6710354b6098d39449e7,2026-10-31T15:00:00Z,Bournemouth,Leeds United,Draw,Betclic,3.23,0.33333,0.0767,betfair_ex_eu,1.12
+2026-10-18T13:09:48+00:00,soccer_epl,a6c06eabdf4e6710354b6098d39449e7,2026-10-31T15:00:00Z,Bournemouth,Leeds United,Draw,888,3.4,0.33333,0.1333,betfair_ex_eu,1.12
+2026-10-18T13:09:48+00:00,soccer_epl,d20fbb0cd5ad9369b8ed6f2c4a198619,2026-10-31T15:00:00Z,Coventry City,Sunderland,A,Betclic,2.42,0.423,0.0237,betfair_ex_eu,1.1
+2026-10-18T13:09:48+00:00,soccer_epl,d20fbb0cd5ad9369b8ed6f2c4a198619,2026-10-31T15:00:00Z,Coventry City,Sunderland,A,888,2.5,0.423,0.0575,betfair_ex_eu,1.1
+2026-10-18T13:09:48+00:00,soccer_epl,d20fbb0cd5ad9369b8ed6f2c4a198619,2026-10-31T15:00:00Z,Coventry City,Sunderland,Draw,Betclic,3.2,0.41544,0.3294,betfair_ex_eu,1.12
+2026-10-18T13:09:48+00:00,soccer_epl,d20fbb0cd5ad9369b8ed6f2c4a198619,2026-10-31T15:00:00Z,Coventry City,Sunderland,Draw,888,3.25,0.41544,0.3502,betfair_ex_eu,1.12
+2026-10-18T13:09:48+00:00,soccer_epl,1ec76c009147b63859f68c6b5a1dd77b,2026-10-31T15:00:00Z,Hull City,Ipswich Town,Draw,Betclic,3.25,0.33333,0.0833,betfair_ex_eu,1.12
+2026-10-18T13:09:48+00:00,soccer_epl,1ec76c009147b63859f68c6b5a1dd77b,2026-10-31T15:00:00Z,Hull City,Ipswich Town,Draw,888,3.25,0.33333,0.0833,betfair_ex_eu,1.12
+2026-10-18T13:09:48+00:00,soccer_epl,01b17432a283eb27af86ae45602eb6dd,2026-10-31T17:30:00Z,Tottenham Hotspur,Crystal Palace,Draw,Betclic,3.68,0.39586,0.4568,betfair_ex_eu,1.42
+2026-10-18T13:09:48+00:00,soccer_epl,01b17432a283eb27af86ae45602eb6dd,2026-10-31T17:30:00Z,Tottenham Hotspur,Crystal Palace,Draw,888,3.7,0.39586,0.4647,betfair_ex_eu,1.42
+2026-10-18T13:09:48+00:00,soccer_epl,640c52a86289f35698261b41987dd71e,2026-10-31T20:00:00Z,Aston Villa,Fulham,H,Betclic,1.86,0.5784,0.0758,betfair_ex_eu,1.18
+2026-10-18T13:09:48+00:00,soccer_epl,640c52a86289f35698261b41987dd71e,2026-10-31T20:00:00Z,Aston Villa,Fulham,H,888,2.0,0.5784,0.1568,betfair_ex_eu,1.18
+2026-10-18T13:09:48+00:00,soccer_epl,0f552d9c6990c69474f50ff2fb54e9a3,2026-11-02T20:00:00Z,Newcastle United,Everton,Draw,Betclic,3.3,0.33333,0.1,betfair_ex_eu,1.12
+2026-10-18T13:09:48+00:00,soccer_epl,0f552d9c6990c69474f50ff2fb54e9a3,2026-11-02T20:00:00Z,Newcastle United,Everton,Draw,888,3.5,0.33333,0.1667,betfair_ex_eu,1.12
