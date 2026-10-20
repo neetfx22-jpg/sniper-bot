@@ -1,0 +1,29 @@
+== 1) chaves resolvidas (puzzles 2..135), fracao da faixa ate achar ==
+sequencial   media=0.5223  (+-0.0590)  mediana=0.5084
+salto        media=0.5145  (+-0.0624)  mediana=0.5614
+onda F=5     media=0.4616  (+-0.0624)  mediana=0.4497
+onda F=10    media=0.4839  (+-0.0596)  mediana=0.5132
+onda F=20    media=0.4880  (+-0.0668)  mediana=0.4790
+onda F=50    media=0.4759  (+-0.0676)  mediana=0.4489
+
+== 2) 200000 chaves aleatorias na faixa REAL do puzzle 71 (2^70 chaves) ==
+   passo do salto = 2780662151054439 (engine no celular: 2780662151054439)
+sequencial   media=0.5001  (+-0.0013)  mediana=0.4998
+salto        media=0.5011  (+-0.0013)  mediana=0.5022
+onda F=5     media=0.5003  (+-0.0013)  mediana=0.5006
+onda F=10    media=0.4996  (+-0.0013)  mediana=0.4994
+onda F=20    media=0.4997  (+-0.0013)  mediana=0.4993
+onda F=50    media=0.5006  (+-0.0013)  mediana=0.5004
+
+== 3) as chaves resolvidas se concentram em alguma regiao? ==
+   74 chaves (puzzles >=10), KS contra uniforme: D=0.0787, p-valor=0.732
+     0-10 % da faixa: ##### 5
+    10-20 % da faixa: ###### 6
+    20-30 % da faixa: ####### 7
+    30-40 % da faixa: ######### 9
+    40-50 % da faixa: ########## 10
+    50-60 % da faixa: #### 4
+    60-70 % da faixa: ############## 14
+    70-80 % da faixa: ####### 7
+    80-90 % da faixa: ##### 5
+    90-100% da faixa: ####### 7
