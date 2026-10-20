@@ -5,6 +5,10 @@ onda F=5     media=0.4616  (+-0.0624)  mediana=0.4497
 onda F=10    media=0.4839  (+-0.0596)  mediana=0.5132
 onda F=20    media=0.4880  (+-0.0668)  mediana=0.4790
 onda F=50    media=0.4759  (+-0.0676)  mediana=0.4489
+pura F=10    media=0.4839  (+-0.0596)  mediana=0.5131
+pura F=20    media=0.4880  (+-0.0668)  mediana=0.4791
+escura F=10  media=0.5088  (+-0.0612)  mediana=0.4771
+escura F=20  media=0.5047  (+-0.0651)  mediana=0.5165
 
 == 2) 200000 chaves aleatorias na faixa REAL do puzzle 71 (2^70 chaves) ==
    passo do salto = 2780662151054439 (engine no celular: 2780662151054439)
@@ -14,6 +18,10 @@ onda F=5     media=0.5003  (+-0.0013)  mediana=0.5006
 onda F=10    media=0.4996  (+-0.0013)  mediana=0.4994
 onda F=20    media=0.4997  (+-0.0013)  mediana=0.4993
 onda F=50    media=0.5006  (+-0.0013)  mediana=0.5004
+pura F=10    media=0.4996  (+-0.0013)  mediana=0.4994
+pura F=20    media=0.4997  (+-0.0013)  mediana=0.4993
+escura F=10  media=0.5004  (+-0.0013)  mediana=0.5006
+escura F=20  media=0.5003  (+-0.0013)  mediana=0.5006
 
 == 3) as chaves resolvidas se concentram em alguma regiao? ==
    74 chaves (puzzles >=10), KS contra uniforme: D=0.0787, p-valor=0.732

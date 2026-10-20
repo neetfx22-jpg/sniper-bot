@@ -30,9 +30,10 @@ def golden_stride(n):
 
 
 class Ordem:
-    def __init__(self, faixa, modo, franjas=10.0, envelope=1.5):
+    def __init__(self, faixa, modo, franjas=10.0, envelope=1.5, dentro_seq=False, escuras=False):
         self.n = -(-faixa // CHUNK)
         self.modo = modo
+        self.dentro_seq = dentro_seq
         if modo == "salto":
             self.st = golden_stride(self.n)
             self.inv = pow(self.st, -1, self.n) if self.n > 1 else 0
@@ -45,7 +46,8 @@ class Ordem:
                 a, c = math.pi * franjas * u, math.pi * envelope * u
                 sn = 1.0 if c == 0 else math.sin(c) / c
                 inten.append(math.cos(a) ** 2 * sn * sn)
-            ordem = sorted(range(nb), key=lambda b: (-inten[b], b))
+            sgn = 1 if escuras else -1
+            ordem = sorted(range(nb), key=lambda b: (sgn * inten[b], b))
             self.rank = [0] * nb
             self.cum = [0] * (nb + 1)
             for r, b in enumerate(ordem):
@@ -55,7 +57,7 @@ class Ordem:
             for b in range(nb):
                 sz = self.lo[b + 1] - self.lo[b]
                 st = golden_stride(sz) if sz > 1 else 1
-                self.binv.append((pow(st, -1, sz) if sz > 1 else 0, sz))
+                self.binv.append((1 if dentro_seq else (pow(st, -1, sz) if sz > 1 else 0), sz))
 
     def indice(self, chunk):
         """chunk fisico -> posicao na ordem de visita"""
@@ -75,11 +77,16 @@ class Ordem:
 
 ESTRATEGIAS = [("sequencial", {}), ("salto", {}),
                ("onda F=5", {"franjas": 5}), ("onda F=10", {"franjas": 10}),
-               ("onda F=20", {"franjas": 20}), ("onda F=50", {"franjas": 50})]
+               ("onda F=20", {"franjas": 20}), ("onda F=50", {"franjas": 50}),
+               ("pura F=10", {"franjas": 10, "dentro_seq": True}),
+               ("pura F=20", {"franjas": 20, "dentro_seq": True}),
+               ("escura F=10", {"franjas": 10, "dentro_seq": True, "escuras": True}),
+               ("escura F=20", {"franjas": 20, "dentro_seq": True, "escuras": True})]
 
 
 def ordens_para(faixa):
-    return {nome: Ordem(faixa, nome.split()[0], **kw) for nome, kw in ESTRATEGIAS}
+    modo = {"pura": "onda", "escura": "onda"}
+    return {nome: Ordem(faixa, modo.get(nome.split()[0], nome.split()[0]), **kw) for nome, kw in ESTRATEGIAS}
 
 
 def resumo(nome, xs):

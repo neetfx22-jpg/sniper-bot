@@ -294,10 +294,13 @@ static int force_stride = 0;
 /* modo onda: a faixa e dividida em NBINS faixas; cada faixa recebe a intensidade
  * do padrao de dupla fenda I(u) = cos^2(pi*F*u) * sinc^2(pi*L*u), u = posicao - 0.5.
  * As faixas sao visitadas da mais clara (encontro construtivo das ondas) para a
- * mais escura; dentro de cada faixa, salto aureo. Continua cobrindo 100% dos chunks. */
+ * mais escura; dentro de cada faixa, salto aureo. Continua cobrindo 100% dos chunks.
+ * --dentro sequencial: dentro da faixa vai em ordem (sem nenhum salto aureo, "onda pura").
+ * --ordem escuras: comeca pelas faixas escuras (onde as ondas se anulam). */
 #define NBINS_MAX 4096
 static int modo_onda = 0;
 static double ONDA_F = 10.0, ONDA_L = 1.5;
+static int onda_dentro_seq = 0, onda_escuras = 0;
 static int NBINS = 0;
 static int bin_order[NBINS_MAX];            /* rank -> bin */
 static int bin_rank[NBINS_MAX];             /* bin -> rank */
@@ -347,8 +350,9 @@ static double onda_intensidade(double u) {
 }
 static int cmp_bins(const void *pa, const void *pb) {
     int a = *(const int *)pa, b = *(const int *)pb;
-    if (bin_int[a] > bin_int[b]) return -1;
-    if (bin_int[a] < bin_int[b]) return 1;
+    int sgn = onda_escuras ? -1 : 1;
+    if (bin_int[a] > bin_int[b]) return -sgn;
+    if (bin_int[a] < bin_int[b]) return sgn;
     return a - b;
 }
 static void init_onda(void) {
@@ -376,7 +380,7 @@ static u128 map_chunk(u128 idx) {
     while (lo < hi) { int mid = (lo + hi + 1) / 2; if (rank_cum[mid] <= idx) lo = mid; else hi = mid - 1; }
     int b = bin_order[lo];
     u128 sz = bin_lo[b+1] - bin_lo[b], o = idx - rank_cum[lo];
-    return bin_lo[b] + (o * bin_stride[b]) % sz;
+    return bin_lo[b] + (onda_dentro_seq ? o : (o * bin_stride[b]) % sz);
 }
 
 static void init_tables(void) {
@@ -538,6 +542,8 @@ int main(int argc, char **argv) {
         else if (!strcmp(argv[i], "--modo") && i+1 < argc) { i++; modo_onda = !strcmp(argv[i], "onda"); }
         else if (!strcmp(argv[i], "--franjas") && i+1 < argc) ONDA_F = atof(argv[++i]);
         else if (!strcmp(argv[i], "--envelope") && i+1 < argc) ONDA_L = atof(argv[++i]);
+        else if (!strcmp(argv[i], "--dentro") && i+1 < argc) onda_dentro_seq = !strcmp(argv[++i], "sequencial");
+        else if (!strcmp(argv[i], "--ordem") && i+1 < argc) onda_escuras = !strcmp(argv[++i], "escuras");
         else if (!strcmp(argv[i], "--stride") && i+1 < argc) { STRIDE = (u128)strtoull(argv[++i], NULL, 10); force_stride = 1; }
     }
     if (threads < 1) threads = 1; if (threads > 64) threads = 64;
@@ -548,7 +554,8 @@ int main(int argc, char **argv) {
     init_salto();
     for (int i = 0; i < 256; i++) active[i] = ~0ULL;
     uint64_t resume = 0; int resumed = load_ckpt(ckpt, &resume); next_chunk = resumed ? resume : 0;
-    if (modo_onda) printf("modo ONDA | franjas=%.2f envelope=%.2f faixas=%d\n", ONDA_F, ONDA_L, NBINS);
+    if (modo_onda) printf("modo ONDA | franjas=%.2f envelope=%.2f faixas=%d | dentro=%s | ordem=%s\n", ONDA_F, ONDA_L, NBINS,
+                          onda_dentro_seq ? "sequencial" : "aureo", onda_escuras ? "escuras" : "claras");
     printf("p71b engine SALTO | threads=%d | resume_chunk=%llu/%llu | chunk=%llu chaves | passo=%llu\n", threads,
            (unsigned long long)next_chunk, (unsigned long long)TOTAL_CHUNKS,
            (unsigned long long)CHUNK_KEYS, (unsigned long long)STRIDE);

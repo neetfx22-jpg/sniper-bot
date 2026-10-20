@@ -8,12 +8,20 @@
      As faixas são visitadas da mais clara (onde as ondas se encontram em fase) para a mais escura e, dentro de cada faixa,
      com o mesmo salto áureo do engine. Continua cobrindo 100% dos chunks, sem repetir nenhum.
      Parâmetros: `--franjas F` (padrão 10) e `--envelope L` (padrão 1,5).
+     - `--dentro sequencial`: **onda pura**, sem salto áureo nenhum. A ordem vem só da intensidade das franjas e,
+       dentro de cada faixa, vai em sequência.
+     - `--ordem escuras`: começa pelas faixas escuras, onde as ondas se encontram e **se anulam**.
   2. **SHA-256 portátil** quando o processador não é ARM com extensão crypto (para rodar o teste em x86).
      No celular continua sendo usado o caminho NEON original.
 - Sem `--modo onda`, o comportamento é idêntico ao `engine_salto_final` (mesmo passo: 2780662151054439).
 - O selftest passa (55/55).
 
-Compilar no Termux: `./build_onda.sh`. Rodar: `./engine_salto_onda --threads 8 --modo onda --franjas 10 --ckpt ckpt_onda.txt`.
+Compilar no Termux: `./build_onda.sh`. Rodar, por exemplo:
+
+```
+./engine_salto_onda --threads 8 --modo onda --dentro sequencial --franjas 10 --ckpt ckpt_onda.txt
+./engine_salto_onda --threads 8 --modo onda --dentro sequencial --ordem escuras --franjas 10 --ckpt ckpt_escura.txt
+```
 
 > Use um arquivo de checkpoint **separado** para o modo onda. O checkpoint guarda só o índice lógico, e esse índice
 > aponta para chunks diferentes em cada modo.
@@ -28,7 +36,7 @@ Compilar no Termux: `./build_onda.sh`. Rodar: `./engine_salto_onda --threads 8 -
    - todas as 82 chaves resolvidas (puzzles 2 a 135), na faixa real de cada uma;
    - 200 mil chaves aleatórias na faixa real do Puzzle 71 (2^70 chaves, 4,5 quatrilhões de chunks).
 
-   O simulador bate com o engine real: por exemplo, puzzle 25 onda F=10 dá 0,7747 nos dois.
+   O simulador bate com o engine real: puzzle 25 onda F=10 dá 0,7747 nos dois; puzzle 27 onda pura F=10 dá 0,5235 nos dois e escuras F=10 dá 0,4844 nos dois.
 3. **As chaves resolvidas se concentram em alguma região?** Histograma das posições relativas mais o teste de Kolmogorov-Smirnov
    contra a distribuição uniforme.
 
@@ -48,6 +56,10 @@ Métrica: **fração da faixa percorrida até achar a chave**. Menor é melhor. 
 | onda F=10 | 0,4996 | ±0,0013 |
 | onda F=20 | 0,4997 | ±0,0013 |
 | onda F=50 | 0,5006 | ±0,0013 |
+| onda pura F=10 (sem áureo) | 0,4996 | ±0,0013 |
+| onda pura F=20 (sem áureo) | 0,4997 | ±0,0013 |
+| escuras primeiro F=10 (sem áureo) | 0,5004 | ±0,0013 |
+| escuras primeiro F=20 (sem áureo) | 0,5003 | ±0,0013 |
 
 ### 82 chaves reais resolvidas (puzzles 2 a 135)
 
@@ -59,8 +71,12 @@ Métrica: **fração da faixa percorrida até achar a chave**. Menor é melhor. 
 | onda F=10 | 0,484 | ±0,060 |
 | onda F=20 | 0,488 | ±0,067 |
 | onda F=50 | 0,476 | ±0,068 |
+| onda pura F=10 (sem áureo) | 0,484 | ±0,060 |
+| onda pura F=20 (sem áureo) | 0,488 | ±0,067 |
+| escuras primeiro F=10 (sem áureo) | 0,509 | ±0,061 |
+| escuras primeiro F=20 (sem áureo) | 0,505 | ±0,065 |
 
-Todas as diferenças ficam dentro da margem de erro. O F=5 parecer um pouco melhor é ruído: com 6 variantes testadas
+Todas as diferenças ficam dentro da margem de erro. O F=5 parecer um pouco melhor é ruído: com 10 variantes testadas
 em 82 chaves, é esperado que uma delas fique uns 0,04 abaixo de 0,5 por sorte.
 
 ### Posição das chaves resolvidas dentro da faixa
