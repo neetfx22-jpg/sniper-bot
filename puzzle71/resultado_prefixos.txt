@@ -1,0 +1,40 @@
+== puzzle 40 (endereco do alvo 1EeAxcprB2PpCnr34VfZdFrkUWuxyiNEFv) ==
+1) acertos de prefixo (>= 8 bits iguais) por bloco: media 15.3, min 8, max 25; no bloco do alvo: 15
+   posicao do bloco do alvo no ranking de acertos: 55 de 100
+2) prefixo medio (bits iguais) por distancia ate o alvo:
+   distancia                      0 a 4.000                   : 0.993 bits (3.999 chaves)
+   distancia                  4.000 a 5.497.558.138           : 1.011 bits (8.000 chaves)
+   distancia          5.497.558.138 a 54.975.581.388          : 1.000 bits (84.000 chaves)
+   distancia         54.975.581.388 a 549.755.813.888         : 0.999 bits (304.000 chaves)
+4) 304 chaves com 2+ caracteres iguais no endereco Base58; no bloco do alvo: 3 (acaso: ~3.0)
+== puzzle 50 (endereco do alvo 1MEzite4ReNuWaL5Ds17ePKt2dCxWEofwk) ==
+1) acertos de prefixo (>= 8 bits iguais) por bloco: media 15.1, min 4, max 26; no bloco do alvo: 14
+   posicao do bloco do alvo no ranking de acertos: 54 de 100
+2) prefixo medio (bits iguais) por distancia ate o alvo:
+   distancia                      0 a 4.000                   : 1.002 bits (3.999 chaves)
+   distancia                  4.000 a 5.629.499.534.213       : 0.990 bits (4.000 chaves)
+   distancia      5.629.499.534.213 a 56.294.995.342.131      : 0.994 bits (68.000 chaves)
+   distancia     56.294.995.342.131 a 562.949.953.421.312     : 1.000 bits (324.000 chaves)
+4) 312 chaves com 2+ caracteres iguais no endereco Base58; no bloco do alvo: 3 (acaso: ~3.1)
+== puzzle 60 (endereco do alvo 1Kn5h2qpgw9mWE5jKpk8PP4qvvJ1QVy8su) ==
+1) acertos de prefixo (>= 8 bits iguais) por bloco: media 15.8, min 4, max 28; no bloco do alvo: 18
+   posicao do bloco do alvo no ranking de acertos: 32 de 100
+2) prefixo medio (bits iguais) por distancia ate o alvo:
+   distancia                      0 a 4.000                   : 0.999 bits (3.999 chaves)
+   distancia                  4.000 a 5.764.607.523.034.234   : 0.996 bits (8.000 chaves)
+   distancia  5.764.607.523.034.234 a 57.646.075.230.342.348  : 0.996 bits (36.000 chaves)
+   distancia 57.646.075.230.342.348 a 576.460.752.303.423.488 : 1.004 bits (352.000 chaves)
+4) 285 chaves com 2+ caracteres iguais no endereco Base58; no bloco do alvo: 3 (acaso: ~2.9)
+== puzzle 70 (endereco do alvo 19YZECXj3SxEZMoUeJ1yiPsw8xANe7M7QR) ==
+1) acertos de prefixo (>= 8 bits iguais) por bloco: media 15.6, min 8, max 27; no bloco do alvo: 19
+   posicao do bloco do alvo no ranking de acertos: 14 de 100
+2) prefixo medio (bits iguais) por distancia ate o alvo:
+   distancia                      0 a 4.000                   : 0.993 bits (3.999 chaves)
+   distancia                  4.000 a 5.902.958.103.587.056.517: 0.986 bits (8.000 chaves)
+   distancia 5.902.958.103.587.056.517 a 59.029.581.035.870.565.171: 1.008 bits (60.000 chaves)
+   distancia 59.029.581.035.870.565.171 a 590.295.810.358.705.651.712: 1.002 bits (328.000 chaves)
+4) 271 chaves com 2+ caracteres iguais no endereco Base58; no bloco do alvo: 2 (acaso: ~2.7)
+
+3) previsao 'o bloco com mais prefixos iguais e o do alvo':
+   acertou em 0 de 4 puzzles (acaso: 1 em 100); posicao media do bloco do alvo no ranking: 39 de 100 (acaso: ~50)
+   esperado sem padrao: prefixo medio ~1,0 bit em qualquer distancia
