@@ -1,0 +1,15 @@
+puzzle 40: 160.000 chaves em 40 blocos pela faixa inteira (549.755.813.888 chaves)
+   as 50 com endereco mais parecido com o do alvo (11+ bits iniciais iguais):
+   distancia media ate a chave do alvo = 166.580.332.869   (faixa inteira ao acaso: ~183.251.937.963)
+   quantas cairam no bloco do alvo: 2 de 50   (ao acaso: ~1.2)
+
+puzzle 50: 160.000 chaves em 40 blocos pela faixa inteira (562.949.953.421.312 chaves)
+   as 50 com endereco mais parecido com o do alvo (11+ bits iniciais iguais):
+   distancia media ate a chave do alvo = 236.562.391.217.833   (faixa inteira ao acaso: ~187.649.984.473.771)
+   quantas cairam no bloco do alvo: 0 de 50   (ao acaso: ~1.2)
+
+puzzle 60: 160.000 chaves em 40 blocos pela faixa inteira (576.460.752.303.423.488 chaves)
+   as 50 com endereco mais parecido com o do alvo (11+ bits iniciais iguais):
+   distancia media ate a chave do alvo = 277.005.834.443.898.496   (faixa inteira ao acaso: ~192.153.584.101.141.152)
+   quantas cairam no bloco do alvo: 2 de 50   (ao acaso: ~1.2)
+
