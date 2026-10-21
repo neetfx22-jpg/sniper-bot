@@ -1,0 +1,19 @@
+puzzle 20, 524288 chaves (faixa inteira)
+
+1) prever o proximo salto pelo anterior (erro medio em fracao da faixa; menor = melhor)
+   real         regra: proximo = -0.500 x anterior   erro 0.2917   (chutar 0: 0.3334)
+   embaralhado  regra: proximo = -0.499 x anterior   erro 0.2913   (chutar 0: 0.3334)
+
+2) prever a CHAVE de um ponto da cadeia pelas 10 vizinhas (erro medio em fracao da faixa)
+   real:
+      media das 10 vizinhas    0.2586
+      mediana das vizinhas     0.2689
+      chute: meio da faixa     0.2496
+      chute aleatorio          0.3324
+   embaralhado:
+      media das 10 vizinhas    0.2592
+      mediana das vizinhas     0.2711
+      chute: meio da faixa     0.2499
+      chute aleatorio          0.3336
+
+referencia: chutar o meio da faixa erra em media 0,25; chute aleatorio, 0,333
