@@ -1,0 +1,9 @@
+A/B) N fendas (N=2..6, F=1..300), 74 chaves
+   melhor: N=6 fendas, F=205: +0.615   | no acaso o melhor fica em +0.632   | p-valor = 0.53
+   treino pares -> impares: N=6 F=205 (+0.950) -> teste +0.280
+   treino impares -> pares: N=6 F=6 (+0.962) -> teste -0.161
+
+C) puzzle anterior como fonte da onda (F=1..300)
+   melhor: F=74: +0.242   | no acaso o melhor fica em +0.262   | p-valor = 0.67  (60 pares)
+   treino pares -> impares: F=3 (+0.374) -> teste -0.065
+   treino impares -> pares: F=275 (+0.350) -> teste +0.082
