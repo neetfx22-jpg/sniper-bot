@@ -1,0 +1,7 @@
+puzzle 20, 524288 chaves (faixa inteira)
+
+               troca de sinal   soma minima/N   soma maxima/N   cruzou o zero
+real              66.6%         -0.823          +0.177           152154
+embaralhado       66.7%         -0.696          +0.304           221843
+
+porque: a soma dos espacamentos ate o passo i e chave_i - chave_0, que fica sempre entre -N e +N; e numa lista em ordem aleatoria o sinal troca em ~2/3 dos passos.
