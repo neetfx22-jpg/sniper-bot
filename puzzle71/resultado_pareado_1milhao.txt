@@ -1,0 +1,11 @@
+salto       media=0.4998 +-0.0006
+onda10      media=0.5000 +-0.0006
+onda20      media=0.5004 +-0.0006
+sequencial  media=0.4995 +-0.0006
+onda10 - onda20: diferenca media=-0.0004 (+-0.0008), onda10 ganha em 66.3% das chaves
+onda10 - salto: diferenca media=+0.0002 (+-0.0008), onda10 ganha em 50.0% das chaves
+salto - sequencial: diferenca media=+0.0002 (+-0.0008), salto ganha em 50.0% das chaves
+quando onda20 > 0.8: onda10 media=0.499; quando onda20 < 0.2: onda10 media=0.468
+correlacao onda10 x onda20: 0.078
+onda10 x onda20 (300000 chaves): quando onda10 ganha, ganha por 0.230 da faixa em media (66.3% das vezes);
+   quando perde, perde por 0.457 (33.3% das vezes). Saldo: +0.0001
