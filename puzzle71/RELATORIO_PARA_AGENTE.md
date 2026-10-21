@@ -193,6 +193,18 @@ Todos os testes usam chaves conhecidas (puzzles resolvidos) como alvo:
 Observação: uma primeira versão do gatilho, numa janela de 60 mil chaves em volta do alvo, deu distância média de ~15 mil.
 Isso era efeito da janela, não um sinal: refeito na faixa inteira, desapareceu.
 
+### 5.10 Aceleração v3, medida no celular
+
+RIPEMD-160 em 4 vias (NEON) e SHA-256 intercalado. 8 threads, média de 3 rodadas de 60 s:
+
+| Binário | chaves/s | ganho |
+|---|---|---|
+| v2 (antes) | 6.396.614 | — |
+| v3 normal | 12.602.809 | +97% |
+| v3 x2 (SHA intercalado) | 12.714.958 | +98,8% |
+
+Em produção: 12,74 M chaves/s; retomou do checkpoint 1578937 sem perda. Rodada do modo partículas: ~2,8 h.
+
 ## 6. Por que o resultado é esse (a matemática)
 
 Se a chave pode estar em qualquer posição da faixa com a mesma probabilidade, então para **qualquer** ordem que visita

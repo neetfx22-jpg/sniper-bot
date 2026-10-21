@@ -107,7 +107,10 @@ Perfil por chave no x86: o RIPEMD-160 era 36 a 45% do tempo. Agora ele calcula 4
 compilador (NEON no celular), totalmente desenrolado: de 306 a 351 ns para 50 ns por chave. O engine junta as chaves
 em grupos de 4 antes dos hashes, sem pular nenhuma.
 
-- x86: de 5,0 para 8,1 M chaves/s (+60%). ARM emulado (qemu): +60%. O ganho no celular só o benchmark real vai dizer.
+- x86: de 5,0 para 8,1 M chaves/s (+60%). ARM emulado (qemu): +60%.
+- **No celular (8 threads, média de 3 rodadas de 60 s):** v2 = 6.396.614 chaves/s · v3 normal = 12.602.809 (+97%) ·
+  v3 x2 = 12.714.958 (**+98,8%**). Em produção, a x2 roda a 12,74 M chaves/s e retomou do checkpoint (1578937) sem perder nada.
+  Com isso, uma rodada do modo partículas cai de ~5 h para ~2,8 h.
 - Opção `-DSHA_INTERCALADO` (binário `engine_salto_onda_x2`): SHA-256 por hardware em 2 mensagens intercaladas, para
   testar no celular.
 - Verificado no ARM64 emulado, com gcc e clang: selftest 55/55, RIPEMD 4 vias = 1 via (4000/4000),
