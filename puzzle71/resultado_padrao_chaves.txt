@@ -1,0 +1,25 @@
+74 chaves resolvidas (puzzles >= 10)
+
+1) os 8 F em que as chaves mais caem nas franjas CLARAS:
+   F=255  media cos = +0.235   (z = +2.86)
+   F=410  media cos = +0.235   (z = +2.86)
+   F=137  media cos = +0.224   (z = +2.73)
+   F=316  media cos = +0.209   (z = +2.55)
+   F=286  media cos = +0.209   (z = +2.54)
+   F=179  media cos = +0.209   (z = +2.54)
+   F=184  media cos = +0.185   (z = +2.25)
+   F=49   media cos = +0.174   (z = +2.12)
+   F=10: -0.022   F=20: -0.117
+
+2) isso e mais do que o acaso daria? (2000 conjuntos de posicoes sorteadas, mesma varredura de 500 F)
+   melhor F real = 255 com +0.235; no acaso, o melhor F fica em media +0.248
+   p-valor = 0.63  (abaixo de 0,05 seria sinal de padrao)
+
+3) treino/teste (escolhe o F numa metade, mede na outra):
+   pares -> impares: melhor F no treino = 123 (+0.316); no teste = -0.128  (z = -1.10)
+   impares -> pares: melhor F no treino = 6 (+0.302); no teste = -0.027  (z = -0.23)
+
+4) outros padroes:
+   correlacao posicao(n) x posicao(n+1): r = +0.112 (60 pares; |r| > 0.26 seria notavel)
+   2o bit mais alto = 1 em 37/74 chaves; 3o bit = 1 em 38/74  (acaso: ~37 +- 9)
+   chaves na metade de cima da faixa: 37/74
