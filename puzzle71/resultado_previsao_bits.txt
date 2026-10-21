@@ -1,0 +1,29 @@
+15000 chaves vizinhas por grupo; acaso tipico: |r| ~ 0.0082
+
+os 20 'padroes' mais fortes no TREINO e o que viram no TESTE:
+   bit  21 do hash160 x bit  9 da chave: treino r=-0.0322  ->  teste r=+0.0027
+   bit 159 do hash160 x bit 14 da chave: treino r=-0.0292  ->  teste r=+0.0065
+   bit 159 do hash160 x bit 15 da chave: treino r=+0.0292  ->  teste r=+0.0000
+   bit  81 do hash160 x bit 12 da chave: treino r=+0.0281  ->  teste r=+0.0016
+   bit  65 do hash160 x bit 12 da chave: treino r=+0.0272  ->  teste r=-0.0068
+   bit  50 do hash160 x bit 15 da chave: treino r=+0.0268  ->  teste r=+0.0000
+   bit  50 do hash160 x bit 14 da chave: treino r=-0.0268  ->  teste r=-0.0102
+   bit 159 do hash160 x bit 13 da chave: treino r=-0.0261  ->  teste r=-0.0077
+   bit 128 do hash160 x bit  1 da chave: treino r=+0.0248  ->  teste r=+0.0087
+   bit 114 do hash160 x bit  2 da chave: treino r=-0.0244  ->  teste r=+0.0024
+   bit  96 do hash160 x bit  2 da chave: treino r=+0.0237  ->  teste r=-0.0032
+   bit  49 do hash160 x bit  8 da chave: treino r=+0.0233  ->  teste r=-0.0133
+   bit 103 do hash160 x bit  4 da chave: treino r=+0.0232  ->  teste r=-0.0015
+   bit  50 do hash160 x bit 13 da chave: treino r=-0.0232  ->  teste r=+0.0072
+   bit  80 do hash160 x bit 15 da chave: treino r=+0.0229  ->  teste r=+0.0000
+   bit  80 do hash160 x bit 14 da chave: treino r=-0.0229  ->  teste r=+0.0223
+   bit 155 do hash160 x bit 11 da chave: treino r=-0.0227  ->  teste r=+0.0046
+   bit   8 do hash160 x bit  6 da chave: treino r=+0.0225  ->  teste r=+0.0060
+   bit 148 do hash160 x bit 12 da chave: treino r=+0.0224  ->  teste r=+0.0098
+   bit   3 do hash160 x bit  3 da chave: treino r=+0.0219  ->  teste r=+0.0057
+
+mantiveram o sinal no teste: 7/20 (acaso: ~10)
+media de |r| no teste dos 20 escolhidos: 0.0060 (acaso ~0.0065)
+maior |r| entre os 2560 pares no treino: 0.0322 (esperado so por acaso com tantos pares: ~0.0337)
+
+hash160(k) x hash160(k+1): bits iguais em media 79.91 de 160 (acaso: 80)
