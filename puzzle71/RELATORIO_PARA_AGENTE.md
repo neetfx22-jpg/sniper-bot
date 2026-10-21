@@ -141,11 +141,41 @@ Nestes puzzles o sequencial ficou pior (média 0,64), porque por acaso as chaves
 dá 0,52 e em 1 milhão de chaves dá 0,4995. Atenção: estes 9–10 puzzles foram o ponto de partida da hipótese.
 Por isso a confirmação precisa de chaves novas (seções 5.1, 5.2 e 5.6).
 
-### 5.6 Engine real, chaves novas sorteadas (em andamento)
+### 5.6 Engine real, 300 chaves novas sorteadas — concluído
 
-`corrida_aleatoria.py`, 300 chaves, faixa de 2^24 chaves, 6 estratégias, semente 2026.
-Resultado parcial em `resultado_corrida_aleatoria.csv`/`.txt`. Com poucas chaves a margem ainda é de ±0,2, então
-não dá para concluir nada dele ainda; a seção 5.1 já tem o poder estatístico.
+`corrida_aleatoria.py`, faixa de 2^24 chaves, semente 2026, 300/300 chaves certas.
+
+| Estratégia | Média | IC 95% | Vitórias |
+|---|---|---|---|
+| escuras primeiro F=10 | 0,487 | ±0,033 | 67 |
+| salto áureo | 0,487 | ±0,032 | 53 |
+| onda F=20 | 0,504 | ±0,032 | 34 |
+| sequencial | 0,514 | ±0,034 | 64 |
+| onda F=10 | 0,515 | ±0,032 | 37 |
+| onda pura F=10 | 0,515 | ±0,032 | 45 |
+
+Onda F=10 × F=20: a F=10 vence em 63% das chaves, diferença média +0,012 (±0,043).
+
+### 5.7 Modo partículas, 200 mil chaves sorteadas, faixa real do Puzzle 71 (pareado)
+
+`teste_grande_particulas.py`:
+
+| Estratégia | Média (±0,0013) |
+|---|---|
+| sequencial | 0,5001 |
+| salto áureo | 0,5012 |
+| onda F=10 | 0,4998 |
+| partículas F=10 | 0,4995 |
+| partículas F=20 | 0,4989 |
+
+Partículas F=10 contra as outras, nas mesmas chaves: −0,0006 contra sequencial, −0,0017 contra salto, −0,0003 contra onda F=10
+e +0,0006 contra partículas F=20, todas dentro da margem (±0,0007 a ±0,0018).
+
+### 5.8 Busca de padrão nas chaves resolvidas
+
+`estudo_padrao_chaves.py` e `estudo_padrao_ondas2.py`: 2 fendas com F=1..500, 2 a 6 fendas com F=1..300, puzzle anterior como fonte,
+correlação entre vizinhos e bits altos. Melhor achado contra o acaso: p = 0,53 a 0,67. No treino e teste, o melhor F de uma
+metade não se sustenta na outra. **Nenhum padrão.**
 
 ## 6. Por que o resultado é esse (a matemática)
 

@@ -1,0 +1,17 @@
+... 50000 chaves
+... 100000 chaves
+... 150000 chaves
+... 200000 chaves
+
+200000 chaves sorteadas, faixa real do puzzle 71
+  sequencial  media=0.5001 (+-0.0013)
+  salto       media=0.5012 (+-0.0013)
+  onda10      media=0.4998 (+-0.0013)
+  part10      media=0.4995 (+-0.0013)
+  part20      media=0.4989 (+-0.0013)
+
+confronto direto contra part10 (mesmas chaves):
+  part10 - sequencial  = -0.0006 (+-0.0018);  part10 ganha em 55.7%
+  part10 - salto       = -0.0017 (+-0.0018);  part10 ganha em 50.1%
+  part10 - onda10      = -0.0003 (+-0.0007);  part10 ganha em 40.3%
+  part10 - part20      = +0.0006 (+-0.0015);  part10 ganha em 66.3%
