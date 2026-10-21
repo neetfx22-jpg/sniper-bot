@@ -40,7 +40,7 @@ def main():
                     v = rnd.randrange(1 << (p - 1), 1 << p)
                 else:
                     v = k + d * rnd.choice((-1, 1)) + (rnd.randrange(-d // 10, d // 10 + 1) if d >= 10 else 0)
-                if v == k:
+                if v == k or v < 1:   # vizinha invalida (a distancia 10^9 pode passar do inicio no puzzle 30)
                     continue
                 h = int(hash160(v), 16)
                 linhas[d][0].append(bits_iguais(h, h0, 160))
