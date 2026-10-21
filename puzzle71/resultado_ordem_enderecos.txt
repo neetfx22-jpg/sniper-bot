@@ -1,0 +1,16 @@
+== puzzle 40: 60000 chaves em volta da chave do alvo ==
+1) vizinhos na ordem dos enderecos: distancia media entre as chaves = 20,023 (sem padrao: ~20,000)
+   pares de vizinhos de endereco que sao chaves a ate 10 de distancia: 18 (sem padrao: ~20)
+   distancia mais repetida entre vizinhos de endereco aparece 7x (embaralhamento aleatorio: 6 a 8x)
+2) as 50 chaves com endereco mais parecido com o do alvo (10+ bits iniciais iguais):
+   distancia media ate a chave do alvo = 15,363 (sem padrao: ~15,000); a mais perto esta a 362
+3) correlacao entre a ordem das chaves e a ordem dos enderecos: -0.0054 (sem padrao: 0 +- 0.0082)
+
+== puzzle 50: 60000 chaves em volta da chave do alvo ==
+1) vizinhos na ordem dos enderecos: distancia media entre as chaves = 20,021 (sem padrao: ~20,000)
+   pares de vizinhos de endereco que sao chaves a ate 10 de distancia: 21 (sem padrao: ~20)
+   distancia mais repetida entre vizinhos de endereco aparece 6x (embaralhamento aleatorio: 6 a 8x)
+2) as 50 chaves com endereco mais parecido com o do alvo (9+ bits iniciais iguais):
+   distancia media ate a chave do alvo = 18,439 (sem padrao: ~15,000); a mais perto esta a 715
+3) correlacao entre a ordem das chaves e a ordem dos enderecos: -0.0028 (sem padrao: 0 +- 0.0082)
+
