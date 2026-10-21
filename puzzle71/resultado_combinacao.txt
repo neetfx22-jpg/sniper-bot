@@ -1,0 +1,8 @@
+fracao do TRABALHO TOTAL ate achar a chave (200 mil chaves sorteadas):
+  salto                              media=0.4992
+  onda10                             media=0.5001
+  onda20                             media=0.4998
+  intercalada salto+onda10           media=0.5000
+  intercalada salto+onda10+onda20    media=0.4998
+  paralela salto+onda10              media=0.6665
+  melhor_de_2 (impossivel)           media=0.3333
