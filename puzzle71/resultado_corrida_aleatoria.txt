@@ -1,0 +1,4 @@
+chave 1/300 (24% da faixa): sequencial=0.2403  salto=0.3966  onda10=0.8160  onda20=0.2179  pura10=0.8151  escura10=0.1570
+chave 2/300 (64% da faixa): sequencial=0.6427  salto=0.3915  onda10=0.5047  onda20=0.5293  pura10=0.4990  escura10=0.5260
+chave 3/300 (21% da faixa): sequencial=0.1975  salto=0.6691  onda10=0.2826  onda20=0.4096  pura10=0.2776  escura10=0.6834
+chave 4/300 (45% da faixa): sequencial=0.4465  salto=0.0797  onda10=0.8520  onda20=0.0484  pura10=0.8523  escura10=0.1420
