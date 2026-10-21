@@ -1,5 +1,27 @@
 # Instruções: construir o projeto `engine_onda10` (Puzzle 71, modo partículas F=10)
 
+> **Atualização (versão 3): aceleração. Faça isto primeiro se o projeto já estiver rodando.**
+> Medido: o RIPEMD-160 era a parte mais pesada (36 a 45% do tempo por chave) e agora calcula 4 chaves de uma vez com
+> NEON (6 a 7× mais rápido nessa parte). No x86: de 5,0 para 8,1 M chaves/s (+60%); no ARM emulado (qemu): +60%.
+> **No celular o ganho real só o benchmark da seção 4 vai dizer.** Há também uma opção de SHA-256 por hardware com
+> 2 mensagens intercaladas (`engine_salto_onda_x2`), que no ARM pode render mais e que só dá para medir no aparelho.
+> - A **ordem de busca não mudou**: o `ckpt_onda10.txt` atual continua válido. Pare o engine, troque o binário e retome.
+> - Verificado no ARM64 (qemu, `-cpu max`), compilado com gcc e com clang, nas duas variantes: selftest 55/55,
+>   RIPEMD 4 vias = 1 via em 4000/4000 casos, SHA intercalado = normal em 1000/1000, e corrida com chaves sorteadas
+>   com a chave certa em todas as rodadas (32 no ARM, 240 no x86).
+>
+> Passos da v3:
+> 1. `pkill -f engine_salto_onda` (o checkpoint é gravado a cada 10 s; perde-se no máximo esse intervalo).
+> 2. Aplique o patch novo (seção 1) ou copie o `engine_salto_onda.c` novo; o hash está na seção 0.
+> 3. `./build_onda.sh`: gera `engine_salto_onda` e `engine_salto_onda_x2`. Os dois precisam mostrar `selftest: 55/55`,
+>    `ripemd160 4 vias x 1 via: 4000/4000` e, no x2, `sha256 intercalado x 1 via: 1000/1000`.
+> 4. Benchmark, 3 rodadas alternadas de 60 s com 8 threads, comparando: o binário antigo (guarde-o como
+>    `engine_salto_onda_v2` antes de compilar), `engine_salto_onda` e `engine_salto_onda_x2`, todos com
+>    `--modo particulas --franjas 10` e `--ckpt /tmp/bX.txt`. Fique com o mais rápido.
+> 5. Se o vencedor for o x2, troque `./engine_salto_onda` por `./engine_salto_onda_x2` no `start_onda10.sh`.
+>    Depois `./start_onda10.sh`: ele retoma do `ckpt_onda10.txt`.
+> 6. Se algum selftest falhar no celular, **não use** a v3: volte ao binário antigo e me mande a saída.
+
 > **Atualização (versão 2): o projeto passa a usar `--modo particulas`, não `--modo onda`.** Motivo: no modo onda,
 > cada uma das 4096 faixas do Puzzle 71 tem ~2,9×10¹⁷ chaves. A 6,7 M chaves/s, o engine ficaria **~1.370 anos** na
 > primeira faixa, sem nunca sair do centro. O modo partículas, inspirado nos elétrons disparados um a um do vídeo,
@@ -37,7 +59,7 @@ SHA-256 dos fontes, para conferir:
 
 ```
 6665b221737f50b1fd7b45e123a250fe680b946c66f75755cd90283f6e5f3f56  engine_salto_final.c  (o original, em ~/engine_salto/)
-e45d564fb3b1436350206898bcef8d8887881dc925e35dc1d66b663a561ea212  engine_salto_onda.c
+9819d5e27b950bdef7eaaf9013ca461b9952231b3574603bea1bc9b6f0a93962  engine_salto_onda.c
 ```
 
 ## 1. Criar o projeto a partir do engine atual
@@ -47,7 +69,7 @@ mkdir -p ~/engine_onda10 && cd ~/engine_onda10
 sha256sum ~/engine_salto/engine_salto_final.c     # tem que dar 6665b221...
 cp ~/engine_salto/engine_salto_final.c .
 patch -o engine_salto_onda.c engine_salto_final.c < engine_salto_onda.patch   # (patch: pkg install patch)
-sha256sum engine_salto_onda.c                     # tem que dar e45d564f...
+sha256sum engine_salto_onda.c                     # tem que dar 9819d5e2...
 cp <pacote>/build_onda.sh <pacote>/start_onda10.sh <pacote>/status_onda10.sh <pacote>/corrida_aleatoria.py <pacote>/hash160.py .
 chmod +x *.sh
 ```
@@ -233,7 +255,7 @@ Depois da mudança: selftest 55/55, teste do item 5 e um ciclo de parar e retoma
 
 ## 9. Checklist final (marcar tudo antes de iniciar o Puzzle 71)
 
-- [ ] hash do `engine_salto_onda.c` = `e45d564f…` (ou diff revisado, se o original local for diferente)
+- [ ] hash do `engine_salto_onda.c` = `9819d5e2…` (ou diff revisado, se o original local for diferente)
 - [ ] 3.1 macros crypto ativas
 - [ ] 3.2 `sha256: NEON (hardware)`
 - [ ] 3.3 instruções sha256h no binário, mesma contagem do original

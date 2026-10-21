@@ -27,10 +27,44 @@
  #include <arm_neon.h>
  static void sha256_33(const uint8_t *m, uint32_t out[8]) {
      uint32_t w[16];
-@@ -212,6 +219,32 @@
+@@ -212,6 +219,72 @@
      vst1q_u32(&out[4], STATE1);
  }
  
++#ifdef SHA_INTERCALADO
++/* 2 mensagens intercaladas: as instrucoes SHA de uma preenchem a espera (latencia) da outra */
++static void sha256_33_x2(const uint8_t *m0, const uint8_t *m1, uint32_t out0[8], uint32_t out1[8]) {
++    const uint8_t *m[2] = {m0, m1};
++    uint32x4_t MSG[2][4], S0[2], S1[2], SV0[2], SV1[2], TC[2], TN[2], T2[2];
++    for (int l = 0; l < 2; l++) {
++        uint32_t w[16];
++        for (int i = 0; i < 8; i++)
++            w[i] = ((uint32_t)m[l][4*i] << 24) | ((uint32_t)m[l][4*i+1] << 16) | ((uint32_t)m[l][4*i+2] << 8) | m[l][4*i+3];
++        w[8] = ((uint32_t)m[l][32] << 24) | 0x00800000u;
++        for (int i = 9; i < 15; i++) w[i] = 0;
++        w[15] = 264;
++        for (int q = 0; q < 4; q++) MSG[l][q] = vld1q_u32(&w[4*q]);
++        S0[l] = SV0[l] = vld1q_u32(&H256[0]);
++        S1[l] = SV1[l] = vld1q_u32(&H256[4]);
++        TC[l] = vaddq_u32(MSG[l][0], vld1q_u32(&K256[0]));
++    }
++#pragma GCC unroll 16
++    for (int g = 0; g < 16; g++) {
++#pragma GCC unroll 2
++        for (int l = 0; l < 2; l++) {
++            if (g < 12) MSG[l][g & 3] = vsha256su0q_u32(MSG[l][g & 3], MSG[l][(g + 1) & 3]);
++            T2[l] = S0[l];
++            if (g < 15) TN[l] = vaddq_u32(MSG[l][(g + 1) & 3], vld1q_u32(&K256[4 * (g + 1)]));
++            S0[l] = vsha256hq_u32(S0[l], S1[l], TC[l]);
++            S1[l] = vsha256h2q_u32(S1[l], T2[l], TC[l]);
++            if (g < 12) MSG[l][g & 3] = vsha256su1q_u32(MSG[l][g & 3], MSG[l][(g + 2) & 3], MSG[l][(g + 3) & 3]);
++            TC[l] = TN[l];
++        }
++    }
++    vst1q_u32(&out0[0], vaddq_u32(S0[0], SV0[0])); vst1q_u32(&out0[4], vaddq_u32(S1[0], SV1[0]));
++    vst1q_u32(&out1[0], vaddq_u32(S0[1], SV0[1])); vst1q_u32(&out1[4], vaddq_u32(S1[1], SV1[1]));
++}
++#endif
 +#else
 +#define SHA_IMPL "portatil (lento, so para teste fora do ARM)"
 +/* fallback portavel (x86 etc.) -- mesmo resultado, so mais lento; no celular usa o caminho NEON acima */
@@ -57,10 +91,58 @@
 +}
 +#endif
 +
++#if defined(SHA_INTERCALADO) && defined(__aarch64__)
++#define SHA_MODO " | 2 intercaladas"
++#else
++#define SHA_MODO ""
++#endif
++
  /* ---------------- RIPEMD-160 (1 bloco, msg de 32 bytes) ---------------- */
  static const uint8_t R1[80] = { 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,7,4,13,1,10,6,15,3,12,0,9,5,2,14,11,8,3,10,14,4,9,15,8,1,2,7,0,6,13,11,5,12,1,9,11,10,0,8,12,4,13,3,7,15,14,5,6,2,4,0,5,9,7,12,2,10,14,1,3,8,11,6,15,13 };
  static const uint8_t R2[80] = { 5,14,7,0,9,2,11,4,13,6,15,8,1,10,3,12,6,11,3,7,0,13,5,10,14,15,8,12,4,9,1,2,15,5,1,3,7,14,6,9,11,8,12,2,10,0,4,13,8,6,4,1,3,11,15,0,5,12,2,13,9,7,10,14,12,15,10,4,1,5,8,7,6,2,13,14,0,3,9,11 };
-@@ -263,6 +296,34 @@
+@@ -243,6 +316,41 @@
+     for (int i = 0; i < 5; i++) { out[4*i]=r[i]; out[4*i+1]=r[i]>>8; out[4*i+2]=r[i]>>16; out[4*i+3]=r[i]>>24; }
+ }
+ 
++/* RIPEMD-160 de 4 mensagens por vez. As extensoes de vetor do compilador viram NEON no ARM.
++ * Laco totalmente desenrolado: a funcao de cada rodada, o indice da palavra e a rotacao viram constantes. */
++typedef uint32_t v4u __attribute__((vector_size(16)));
++#define VROL(x, n) (((x) << (n)) | ((x) >> (32 - (n))))
++static inline v4u rf4(int j, v4u x, v4u y, v4u z) {
++    if (j < 16) return x ^ y ^ z;
++    if (j < 32) return (x & y) | (~x & z);
++    if (j < 48) return (x | ~y) ^ z;
++    if (j < 64) return (x & z) | (y & ~z);
++    return x ^ (y | ~z);
++}
++static void ripemd160_32_x4(const uint32_t sha[4][8], uint8_t out[4][20]) {
++    v4u X[16];
++    for (int i = 0; i < 8; i++)
++        for (int l = 0; l < 4; l++) X[i][l] = __builtin_bswap32(sha[l][i]);
++    for (int l = 0; l < 4; l++) { X[8][l] = 0x80; X[14][l] = 256; X[15][l] = 0; }
++    for (int i = 9; i < 14; i++) for (int l = 0; l < 4; l++) X[i][l] = 0;
++    const v4u H0 = {0x67452301u,0x67452301u,0x67452301u,0x67452301u}, H1 = {0xEFCDAB89u,0xEFCDAB89u,0xEFCDAB89u,0xEFCDAB89u},
++              H2 = {0x98BADCFEu,0x98BADCFEu,0x98BADCFEu,0x98BADCFEu}, H3 = {0x10325476u,0x10325476u,0x10325476u,0x10325476u},
++              H4 = {0xC3D2E1F0u,0xC3D2E1F0u,0xC3D2E1F0u,0xC3D2E1F0u};
++    v4u a = H0, b = H1, c = H2, d = H3, e = H4, a2 = H0, b2 = H1, c2 = H2, d2 = H3, e2 = H4, t;
++#pragma GCC unroll 80
++    for (int j = 0; j < 80; j++) {
++        t = a + rf4(j, b, c, d) + X[R1[j]] + KA[j / 16]; t = VROL(t, S1T[j]) + e;
++        a = e; e = d; d = VROL(c, 10); c = b; b = t;
++        t = a2 + rf4(79 - j, b2, c2, d2) + X[R2[j]] + KB[j / 16]; t = VROL(t, S2T[j]) + e2;
++        a2 = e2; e2 = d2; d2 = VROL(c2, 10); c2 = b2; b2 = t;
++    }
++    v4u r0 = H1 + c + d2, r1 = H2 + d + e2, r2 = H3 + e + a2, r3 = H4 + a + b2, r4 = H0 + b + c2;
++    for (int l = 0; l < 4; l++) {
++        uint32_t r[5] = {r0[l], r1[l], r2[l], r3[l], r4[l]};
++        memcpy(out[l], r, 20);                      /* little-endian, igual ao ripemd160_32 */
++    }
++}
++
+ /* ---------------- estado global ---------------- */
+ #define HALF 512
+ #define BATCH (2*HALF+1)
+@@ -263,6 +371,34 @@
  static u128 STRIDE = 1;
  static int force_stride = 0;
  
@@ -95,7 +177,7 @@
  static u128 gcd_u128(u128 a, u128 b) {
      while (b) { u128 t = a % b; a = b; b = t; }
      return a;
-@@ -272,21 +333,101 @@
+@@ -272,21 +408,101 @@
   * fisico espalhado por toda a faixa, via permutacao (idx*STRIDE) mod N.
   * Cobre 100% dos chunks sem sobreposicao, so que em ordem embaralhada —
   * assim o espaco inteiro e amostrado desde o inicio, nao so um pedaco. */
@@ -202,7 +284,78 @@
  }
  
  static void init_tables(void) {
-@@ -347,10 +488,14 @@
+@@ -298,26 +514,43 @@
+     pt_mul(&QSTEP, (u128)BATCH);
+ }
+ 
+-static inline int check_pt(const fe *x, const fe *y) {
++
++/* fila de 4 pontos: chave publica comprimida + chave privada; hash dos 4 de uma vez */
++typedef struct { uint8_t pub[4][33]; u128 key[4]; int n; } fila4;
++static inline void pub_de(const fe *x, const fe *y, uint8_t pub[33]) {
+     fe xn = *x, yn = *y; fe_norm(&xn); fe_norm(&yn);
+-    uint8_t pub[33]; pub[0] = 2 + (yn.d[0] & 1);
++    pub[0] = 2 + (yn.d[0] & 1);
+     for (int i = 0; i < 4; i++) {
+         uint64_t v = xn.d[3 - i];
+         for (int k = 0; k < 8; k++) pub[1 + 8*i + k] = (uint8_t)(v >> (56 - 8*k));
+     }
+-    uint32_t sh[8]; uint8_t h160[20];
+-    sha256_33(pub, sh);
+-    ripemd160_32(sh, h160);
+-    return memcmp(h160, target, 20) == 0;
+ }
++static int fila_hash(fila4 *f, u128 *key_out) {     /* 1 se achou; f->n pode ser 1..4 */
++    if (f->n == 0) return 0;
++    uint32_t sh[4][8]; uint8_t h[4][20];
++#if defined(SHA_INTERCALADO) && defined(__aarch64__)
++    for (int l = 0; l < 4; l += 2)
++        sha256_33_x2(f->pub[l < f->n ? l : 0], f->pub[l + 1 < f->n ? l + 1 : 0], sh[l], sh[l + 1]);
++#else
++    for (int l = 0; l < 4; l++) sha256_33(f->pub[l < f->n ? l : 0], sh[l]);
++#endif
++    ripemd160_32_x4((const uint32_t (*)[8])sh, h);
++    for (int l = 0; l < f->n; l++)
++        if (memcmp(h[l], target, 20) == 0) { *key_out = f->key[l]; return 1; }
++    f->n = 0;
++    return 0;
++}
++#define FILA_PONTO(F, X, Y, K) do { pub_de((X), (Y), (F).pub[(F).n]); (F).key[(F).n] = (K); \
++        if (++(F).n == 4 && fila_hash(&(F), key_out)) return 1; } while (0)
+ 
+ static int scan_range(u128 start, uint64_t nbatches, u128 *key_out, int count) {
+     pt C; u128 c = start + HALF;
+     pt_mul(&C, c);
+     fe dx[HALF], pre[HALF], inv_all;
++    fila4 F; F.n = 0;
+     for (uint64_t b = 0; b < nbatches; b++) {
+         if (found_flag || stop_flag) return 0;
+-        if (check_pt(&C.x, &C.y)) { *key_out = c; return 1; }
++        FILA_PONTO(F, &C.x, &C.y, c);
+         for (int j = 1; j <= HALF; j++) fe_sub(&dx[j-1], &GXt[j], &C.x);
+         pre[0] = dx[0];
+         for (int i = 1; i < HALF; i++) fe_mul(&pre[i], &pre[i-1], &dx[i]);
+@@ -330,16 +563,16 @@
+             fe_sub(&t, &GYt[j], &C.y); fe_mul(&l, &t, &inv_i);
+             fe_sqr(&x3, &l); fe_sub(&x3, &x3, &C.x); fe_sub(&x3, &x3, &GXt[j]);
+             fe_sub(&t, &C.x, &x3); fe_mul(&y3, &l, &t); fe_sub(&y3, &y3, &C.y);
+-            if (check_pt(&x3, &y3)) { *key_out = c + j; return 1; }
++            FILA_PONTO(F, &x3, &y3, c + j);
+             fe_sub(&t, &NGYt[j], &C.y); fe_mul(&l, &t, &inv_i);
+             fe_sqr(&x3, &l); fe_sub(&x3, &x3, &C.x); fe_sub(&x3, &x3, &GXt[j]);
+             fe_sub(&t, &C.x, &x3); fe_mul(&y3, &l, &t); fe_sub(&y3, &y3, &C.y);
+-            if (check_pt(&x3, &y3)) { *key_out = c - j; return 1; }
++            FILA_PONTO(F, &x3, &y3, c - j);
+         }
+         pt_add(&C, &C, &QSTEP); c += BATCH;
+         if (count) __sync_fetch_and_add(&total_keys, BATCH);
+     }
+-    return 0;
++    return fila_hash(&F, key_out);                  /* sobra da fila (menos de 4 pontos) */
+ }
+ 
+ static void *worker(void *arg) {
+@@ -347,10 +580,14 @@
      while (!found_flag && !stop_flag) {
          pthread_mutex_lock(&mtx);
          uint64_t idx = next_chunk;
@@ -219,7 +372,35 @@
          u128 start = range_start + phys * CHUNK_KEYS;
          if (start > range_end) continue;
          u128 k;
-@@ -445,18 +590,35 @@
+@@ -426,6 +663,27 @@
+         }
+         printf("puzzle %d: ok\n", cases[c].puz);
+     }
++    /* RIPEMD-160 de 4 vias contra o de 1 via, em entradas pseudoaleatorias */
++    uint64_t z = 0x9E3779B97F4A7C15ULL; int rfail = 0;
++    for (int it = 0; it < 1000; it++) {
++        uint32_t sh[4][8]; uint8_t h4[4][20], h1[20];
++        for (int l = 0; l < 4; l++) for (int i = 0; i < 8; i++) { z ^= z << 13; z ^= z >> 7; z ^= z << 17; sh[l][i] = (uint32_t)z; }
++        ripemd160_32_x4((const uint32_t (*)[8])sh, h4);
++        for (int l = 0; l < 4; l++) { ripemd160_32(sh[l], h1); if (memcmp(h1, h4[l], 20)) rfail++; }
++    }
++    printf("ripemd160 4 vias x 1 via: %d/4000 iguais\n", 4000 - rfail);
++#if defined(SHA_INTERCALADO) && defined(__aarch64__)
++    int sfail = 0;
++    for (int it = 0; it < 1000; it++) {
++        uint8_t a[33], b[33]; uint32_t oa[8], ob[8], ra[8], rb[8];
++        for (int i = 0; i < 33; i++) { z ^= z << 13; z ^= z >> 7; z ^= z << 17; a[i] = (uint8_t)z; b[i] = (uint8_t)(z >> 8); }
++        sha256_33_x2(a, b, oa, ob); sha256_33(a, ra); sha256_33(b, rb);
++        if (memcmp(oa, ra, 32) || memcmp(ob, rb, 32)) sfail++;
++    }
++    printf("sha256 intercalado x 1 via: %d/1000 iguais\n", 1000 - sfail);
++    fails += sfail;
++#endif
++    fails += rfail;
+     printf("selftest: %d/%d casos ok\n", total - fails, total);
+     return fails ? 1 : 0;
+ }
+@@ -445,18 +703,35 @@
          else if (!strcmp(argv[i], "--end") && i+1 < argc) end_s = argv[++i];
          else if (!strcmp(argv[i], "--target") && i+1 < argc) tgt_s = argv[++i];
          else if (!strcmp(argv[i], "--seconds") && i+1 < argc) seconds = atof(argv[++i]);
@@ -239,7 +420,7 @@
 +    if (KMAX < 1) KMAX = 1;
      init_tables();
 -    if (do_self) return selftest();
-+    if (do_self) { printf("sha256: %s\n", SHA_IMPL); return selftest(); }
++    if (do_self) { printf("sha256: %s%s\n", SHA_IMPL, SHA_MODO); return selftest(); }
      if (!parse_h160(tgt_s, target)) { fprintf(stderr, "hash160 invalido\n"); return 2; }
      range_start = parse_hex(start_s); range_end = parse_hex(end_s);
      init_salto();
@@ -250,14 +431,14 @@
 +                                (unsigned long long)PART_T, (unsigned long long)LOGICAL_TOTAL);
 +    if (modo_onda) printf("modo ONDA | franjas=%.2f envelope=%.2f faixas=%d | dentro=%s | ordem=%s\n", ONDA_F, ONDA_L, NBINS,
 +                          onda_dentro_seq ? "sequencial" : "aureo", onda_escuras ? "escuras" : "claras");
-+    printf("sha256: %s\n", SHA_IMPL);
++    printf("sha256: %s%s\n", SHA_IMPL, SHA_MODO);
      printf("p71b engine SALTO | threads=%d | resume_chunk=%llu/%llu | chunk=%llu chaves | passo=%llu\n", threads,
 -           (unsigned long long)next_chunk, (unsigned long long)TOTAL_CHUNKS,
 +           (unsigned long long)next_chunk, (unsigned long long)LOGICAL_TOTAL,
             (unsigned long long)CHUNK_KEYS, (unsigned long long)STRIDE);
      fflush(stdout);
      pthread_t th[64];
-@@ -470,7 +632,7 @@
+@@ -470,7 +745,7 @@
          pthread_mutex_lock(&mtx); for (int i = 0; i < threads; i++) if (active[i] != ~0ULL) alive = 1; uint64_t nc = next_chunk; pthread_mutex_unlock(&mtx);
          if (done) break;
          if (seconds > 0 && t - t0 >= seconds) { stop_flag = 1; break; }

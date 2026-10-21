@@ -101,6 +101,19 @@ O `--modo particulas` faz **rodadas**. Em cada rodada, dispara janelas de 4 chun
 
 Validação: cobertura exata (cada chunk uma vez) e ordem do engine igual à do simulador.
 
+## Aceleração (versão 3)
+
+Perfil por chave no x86: o RIPEMD-160 era 36 a 45% do tempo. Agora ele calcula 4 chaves de uma vez com vetores do
+compilador (NEON no celular), totalmente desenrolado: de 306 a 351 ns para 50 ns por chave. O engine junta as chaves
+em grupos de 4 antes dos hashes, sem pular nenhuma.
+
+- x86: de 5,0 para 8,1 M chaves/s (+60%). ARM emulado (qemu): +60%. O ganho no celular só o benchmark real vai dizer.
+- Opção `-DSHA_INTERCALADO` (binário `engine_salto_onda_x2`): SHA-256 por hardware em 2 mensagens intercaladas, para
+  testar no celular.
+- Verificado no ARM64 emulado, com gcc e clang: selftest 55/55, RIPEMD 4 vias = 1 via (4000/4000),
+  SHA intercalado = normal (1000/1000), e chave certa em todas as rodadas da corrida.
+- A ordem de busca não mudou: os checkpoints continuam valendo.
+
 ## Conclusão
 
 - **A ordem "onda" não acha a chave mais rápido.** A conta é a seguinte: se a chave pode estar em qualquer lugar com a mesma
