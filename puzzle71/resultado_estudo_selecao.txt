@@ -1,0 +1,27 @@
+puzzle 71, 3000 chaves sorteadas por configuracao (IC 95% ~ +-0,010)
+em 50 anos o celular varre 8.91e-06 da faixa; a chance esperada de achar e essa mesma fracao
+
+F (franjas)
+   F=2      media=0.4948 (+-0.0105)   achou em 50 anos: 0/3000
+   F=5      media=0.4915 (+-0.0102)   achou em 50 anos: 0/3000
+   F=10     media=0.4928 (+-0.0103)   achou em 50 anos: 0/3000
+   F=20     media=0.4908 (+-0.0104)   achou em 50 anos: 0/3000
+   F=50     media=0.4948 (+-0.0104)   achou em 50 anos: 0/3000
+   F=200    media=0.4890 (+-0.0104)   achou em 50 anos: 0/3000
+L (envelope)
+   L=0.0    media=0.4969 (+-0.0103)   achou em 50 anos: 0/3000
+   L=0.5    media=0.4964 (+-0.0103)   achou em 50 anos: 0/3000
+   L=1.5    media=0.4928 (+-0.0103)   achou em 50 anos: 0/3000
+   L=3.0    media=0.4900 (+-0.0102)   achou em 50 anos: 0/3000
+janela (chunks)
+   janela=1      media=0.4928 (+-0.0104)   achou em 50 anos: 0/3000
+   janela=4      media=0.4928 (+-0.0103)   achou em 50 anos: 0/3000
+   janela=16     media=0.4953 (+-0.0104)   achou em 50 anos: 0/3000
+   janela=256    media=0.4948 (+-0.0104)   achou em 50 anos: 0/3000
+kmax (janelas na faixa mais clara)
+   kmax=1      media=0.4919 (+-0.0104)   achou em 50 anos: 0/3000
+   kmax=10     media=0.4897 (+-0.0103)   achou em 50 anos: 0/3000
+   kmax=100    media=0.4928 (+-0.0103)   achou em 50 anos: 0/3000
+   kmax=1000   media=0.4932 (+-0.0104)   achou em 50 anos: 0/3000
+
+maior distancia de 0,5: 0.0110
