@@ -1,0 +1,197 @@
+--- engine_salto_final.c
++++ engine_salto_onda.c
+@@ -1,4 +1,5 @@
+-// engine.c -- varredura sequencial secp256k1 -> hash160 (projeto p71b, independente)
++// engine_salto_onda.c -- engine_salto_final + modo "onda" (franjas de interferencia da dupla fenda)
++// Base: engine.c -- varredura sequencial secp256k1 -> hash160 (projeto p71b, independente)
+ // Soma de pontos com INVERSAO EM LOTE (truque de Montgomery), SHA-256/RIPEMD-160 proprios.
+ // Sem dependencias externas. Compilar: clang -O3 -pthread engine.c -o engine
+ #include <stdio.h>
+@@ -8,6 +9,7 @@
+ #include <pthread.h>
+ #include <time.h>
+ #include <unistd.h>
++#include <math.h>
+ 
+ typedef unsigned __int128 u128;
+ typedef struct { uint64_t d[4]; } fe;           // inteiro mod p, little-endian
+@@ -114,6 +116,11 @@
+ static const uint32_t H256[8] = { 0x6a09e667u,0xbb67ae85u,0x3c6ef372u,0xa54ff53au,0x510e527fu,0x9b05688cu,0x1f83d9abu,0x5be0cd19u };
+ static inline uint32_t ror(uint32_t x, int n) { return (x >> n) | (x << (32 - n)); }
+ static inline uint32_t rol(uint32_t x, int n) { return (x << n) | (x >> (32 - n)); }
++#if defined(__aarch64__) && !defined(__ARM_FEATURE_CRYPTO)
++#error "ARM sem extensao crypto: compile com -march=armv8-a+crypto (senao o SHA-256 fica lento)"
++#endif
++#if defined(__aarch64__) && defined(__ARM_FEATURE_CRYPTO)
++#define SHA_IMPL "NEON (hardware)"
+ #include <arm_neon.h>
+ static void sha256_33(const uint8_t *m, uint32_t out[8]) {
+     uint32_t w[16];
+@@ -212,6 +219,32 @@
+     vst1q_u32(&out[4], STATE1);
+ }
+ 
++#else
++#define SHA_IMPL "portatil (lento, so para teste fora do ARM)"
++/* fallback portavel (x86 etc.) -- mesmo resultado, so mais lento; no celular usa o caminho NEON acima */
++static void sha256_33(const uint8_t *m, uint32_t out[8]) {
++    uint32_t w[64];
++    for (int i = 0; i < 8; i++)
++        w[i] = ((uint32_t)m[4*i] << 24) | ((uint32_t)m[4*i+1] << 16) | ((uint32_t)m[4*i+2] << 8) | m[4*i+3];
++    w[8] = ((uint32_t)m[32] << 24) | 0x00800000u;
++    for (int i = 9; i < 15; i++) w[i] = 0;
++    w[15] = 264;
++    for (int i = 16; i < 64; i++) {
++        uint32_t s0 = ror(w[i-15], 7) ^ ror(w[i-15], 18) ^ (w[i-15] >> 3);
++        uint32_t s1 = ror(w[i-2], 17) ^ ror(w[i-2], 19) ^ (w[i-2] >> 10);
++        w[i] = w[i-16] + s0 + w[i-7] + s1;
++    }
++    uint32_t a=H256[0],b=H256[1],c=H256[2],d=H256[3],e=H256[4],f=H256[5],g=H256[6],h=H256[7];
++    for (int i = 0; i < 64; i++) {
++        uint32_t t1 = h + (ror(e,6) ^ ror(e,11) ^ ror(e,25)) + ((e & f) ^ (~e & g)) + K256[i] + w[i];
++        uint32_t t2 = (ror(a,2) ^ ror(a,13) ^ ror(a,22)) + ((a & b) ^ (a & c) ^ (b & c));
++        h = g; g = f; f = e; e = d + t1; d = c; c = b; b = a; a = t1 + t2;
++    }
++    out[0]=a+H256[0]; out[1]=b+H256[1]; out[2]=c+H256[2]; out[3]=d+H256[3];
++    out[4]=e+H256[4]; out[5]=f+H256[5]; out[6]=g+H256[6]; out[7]=h+H256[7];
++}
++#endif
++
+ /* ---------------- RIPEMD-160 (1 bloco, msg de 32 bytes) ---------------- */
+ static const uint8_t R1[80] = { 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,7,4,13,1,10,6,15,3,12,0,9,5,2,14,11,8,3,10,14,4,9,15,8,1,2,7,0,6,13,11,5,12,1,9,11,10,0,8,12,4,13,3,7,15,14,5,6,2,4,0,5,9,7,12,2,10,14,1,3,8,11,6,15,13 };
+ static const uint8_t R2[80] = { 5,14,7,0,9,2,11,4,13,6,15,8,1,10,3,12,6,11,3,7,0,13,5,10,14,15,8,12,4,9,1,2,15,5,1,3,7,14,6,9,11,8,12,2,10,0,4,13,8,6,4,1,3,11,15,0,5,12,2,13,9,7,10,14,12,15,10,4,1,5,8,7,6,2,13,14,0,3,9,11 };
+@@ -263,6 +296,24 @@
+ static u128 STRIDE = 1;
+ static int force_stride = 0;
+ 
++/* modo onda: a faixa e dividida em NBINS faixas; cada faixa recebe a intensidade
++ * do padrao de dupla fenda I(u) = cos^2(pi*F*u) * sinc^2(pi*L*u), u = posicao - 0.5.
++ * As faixas sao visitadas da mais clara (encontro construtivo das ondas) para a
++ * mais escura; dentro de cada faixa, salto aureo. Continua cobrindo 100% dos chunks.
++ * --dentro sequencial: dentro da faixa vai em ordem (sem nenhum salto aureo, "onda pura").
++ * --ordem escuras: comeca pelas faixas escuras (onde as ondas se anulam). */
++#define NBINS_MAX 4096
++static int modo_onda = 0;
++static double ONDA_F = 10.0, ONDA_L = 1.5;
++static int onda_dentro_seq = 0, onda_escuras = 0;
++static int NBINS = 0;
++static int bin_order[NBINS_MAX];            /* rank -> bin */
++static int bin_rank[NBINS_MAX];             /* bin -> rank */
++static u128 bin_lo[NBINS_MAX + 1];          /* bin b cobre chunks [bin_lo[b], bin_lo[b+1]) */
++static u128 rank_cum[NBINS_MAX + 1];        /* chunks antes do rank r */
++static u128 bin_stride[NBINS_MAX];
++static double bin_int[NBINS_MAX];
++
+ static u128 gcd_u128(u128 a, u128 b) {
+     while (b) { u128 t = a % b; a = b; b = t; }
+     return a;
+@@ -272,21 +323,69 @@
+  * fisico espalhado por toda a faixa, via permutacao (idx*STRIDE) mod N.
+  * Cobre 100% dos chunks sem sobreposicao, so que em ordem embaralhada —
+  * assim o espaco inteiro e amostrado desde o inicio, nao so um pedaco. */
++static u128 golden_stride(u128 n);
++static void init_onda(void);
+ static void init_salto(void) {
+     u128 total_range_keys = range_end - range_start + 1;
+     TOTAL_CHUNKS = (total_range_keys + CHUNK_KEYS - 1) / CHUNK_KEYS;
+     if (force_stride) {
++        if (modo_onda) init_onda();
+         /* usado so pra backtest/comparacao (ex: --stride 1 = ordem sequencial pura) */
+         if (STRIDE != 1 && gcd_u128(STRIDE, TOTAL_CHUNKS) != 1) {
+             fprintf(stderr, "aviso: passo forcado nao e coprimo com N, pode repetir/pular chunks\n");
+         }
+         return;
+     }
+-    long double phi = (long double)TOTAL_CHUNKS * 0.6180339887498949L;
+-    STRIDE = (u128)phi;
+-    if (STRIDE == 0) STRIDE = 1;
+-    STRIDE |= 1;
+-    while (gcd_u128(STRIDE, TOTAL_CHUNKS) != 1) STRIDE += 2;
++    STRIDE = golden_stride(TOTAL_CHUNKS);
++    if (modo_onda) init_onda();
++}
++
++static u128 golden_stride(u128 n) {
++    long double phi = (long double)n * 0.6180339887498949L;
++    u128 st = (u128)phi;
++    if (st == 0) st = 1;
++    st |= 1;
++    while (gcd_u128(st, n) != 1) st += 2;
++    return st;
++}
++static double onda_intensidade(double u) {
++    double a = M_PI * ONDA_F * u, b = M_PI * ONDA_L * u;
++    double c = cos(a), sn = (b == 0) ? 1.0 : sin(b) / b;
++    return c * c * sn * sn;
++}
++static int cmp_bins(const void *pa, const void *pb) {
++    int a = *(const int *)pa, b = *(const int *)pb;
++    int sgn = onda_escuras ? -1 : 1;
++    if (bin_int[a] > bin_int[b]) return -sgn;
++    if (bin_int[a] < bin_int[b]) return sgn;
++    return a - b;
++}
++static void init_onda(void) {
++    NBINS = TOTAL_CHUNKS < NBINS_MAX ? (int)TOTAL_CHUNKS : NBINS_MAX;
++    for (int b = 0; b <= NBINS; b++) bin_lo[b] = TOTAL_CHUNKS * (u128)b / (u128)NBINS;
++    for (int b = 0; b < NBINS; b++) {
++        double u = ((double)b + 0.5) / NBINS - 0.5;
++        bin_int[b] = onda_intensidade(u);
++        bin_order[b] = b;
++        u128 sz = bin_lo[b+1] - bin_lo[b];
++        bin_stride[b] = sz > 1 ? golden_stride(sz) : 1;
++    }
++    qsort(bin_order, NBINS, sizeof(int), cmp_bins);
++    rank_cum[0] = 0;
++    for (int r = 0; r < NBINS; r++) {
++        bin_rank[bin_order[r]] = r;
++        int b = bin_order[r];
++        rank_cum[r+1] = rank_cum[r] + (bin_lo[b+1] - bin_lo[b]);
++    }
++}
++/* indice logico -> chunk fisico */
++static u128 map_chunk(u128 idx) {
++    if (!modo_onda) return (idx * STRIDE) % TOTAL_CHUNKS;
++    int lo = 0, hi = NBINS - 1;                 /* maior r com rank_cum[r] <= idx */
++    while (lo < hi) { int mid = (lo + hi + 1) / 2; if (rank_cum[mid] <= idx) lo = mid; else hi = mid - 1; }
++    int b = bin_order[lo];
++    u128 sz = bin_lo[b+1] - bin_lo[b], o = idx - rank_cum[lo];
++    return bin_lo[b] + (onda_dentro_seq ? o : (o * bin_stride[b]) % sz);
+ }
+ 
+ static void init_tables(void) {
+@@ -350,7 +449,7 @@
+         if ((u128)idx >= TOTAL_CHUNKS) { active[tid] = ~0ULL; pthread_mutex_unlock(&mtx); break; }
+         next_chunk++; active[tid] = idx;
+         pthread_mutex_unlock(&mtx);
+-        u128 phys = ((u128)idx * STRIDE) % TOTAL_CHUNKS;
++        u128 phys = map_chunk((u128)idx);
+         u128 start = range_start + phys * CHUNK_KEYS;
+         if (start > range_end) continue;
+         u128 k;
+@@ -445,16 +544,24 @@
+         else if (!strcmp(argv[i], "--end") && i+1 < argc) end_s = argv[++i];
+         else if (!strcmp(argv[i], "--target") && i+1 < argc) tgt_s = argv[++i];
+         else if (!strcmp(argv[i], "--seconds") && i+1 < argc) seconds = atof(argv[++i]);
++        else if (!strcmp(argv[i], "--modo") && i+1 < argc) { i++; modo_onda = !strcmp(argv[i], "onda"); }
++        else if (!strcmp(argv[i], "--franjas") && i+1 < argc) ONDA_F = atof(argv[++i]);
++        else if (!strcmp(argv[i], "--envelope") && i+1 < argc) ONDA_L = atof(argv[++i]);
++        else if (!strcmp(argv[i], "--dentro") && i+1 < argc) onda_dentro_seq = !strcmp(argv[++i], "sequencial");
++        else if (!strcmp(argv[i], "--ordem") && i+1 < argc) onda_escuras = !strcmp(argv[++i], "escuras");
+         else if (!strcmp(argv[i], "--stride") && i+1 < argc) { STRIDE = (u128)strtoull(argv[++i], NULL, 10); force_stride = 1; }
+     }
+     if (threads < 1) threads = 1; if (threads > 64) threads = 64;
+     init_tables();
+-    if (do_self) return selftest();
++    if (do_self) { printf("sha256: %s\n", SHA_IMPL); return selftest(); }
+     if (!parse_h160(tgt_s, target)) { fprintf(stderr, "hash160 invalido\n"); return 2; }
+     range_start = parse_hex(start_s); range_end = parse_hex(end_s);
+     init_salto();
+     for (int i = 0; i < 256; i++) active[i] = ~0ULL;
+     uint64_t resume = 0; int resumed = load_ckpt(ckpt, &resume); next_chunk = resumed ? resume : 0;
++    if (modo_onda) printf("modo ONDA | franjas=%.2f envelope=%.2f faixas=%d | dentro=%s | ordem=%s\n", ONDA_F, ONDA_L, NBINS,
++                          onda_dentro_seq ? "sequencial" : "aureo", onda_escuras ? "escuras" : "claras");
++    printf("sha256: %s\n", SHA_IMPL);
+     printf("p71b engine SALTO | threads=%d | resume_chunk=%llu/%llu | chunk=%llu chaves | passo=%llu\n", threads,
+            (unsigned long long)next_chunk, (unsigned long long)TOTAL_CHUNKS,
+            (unsigned long long)CHUNK_KEYS, (unsigned long long)STRIDE);

@@ -116,7 +116,11 @@ static const uint32_t K256[64] = { 0x428a2f98u,0x71374491u,0xb5c0fbcfu,0xe9b5dba
 static const uint32_t H256[8] = { 0x6a09e667u,0xbb67ae85u,0x3c6ef372u,0xa54ff53au,0x510e527fu,0x9b05688cu,0x1f83d9abu,0x5be0cd19u };
 static inline uint32_t ror(uint32_t x, int n) { return (x >> n) | (x << (32 - n)); }
 static inline uint32_t rol(uint32_t x, int n) { return (x << n) | (x >> (32 - n)); }
+#if defined(__aarch64__) && !defined(__ARM_FEATURE_CRYPTO)
+#error "ARM sem extensao crypto: compile com -march=armv8-a+crypto (senao o SHA-256 fica lento)"
+#endif
 #if defined(__aarch64__) && defined(__ARM_FEATURE_CRYPTO)
+#define SHA_IMPL "NEON (hardware)"
 #include <arm_neon.h>
 static void sha256_33(const uint8_t *m, uint32_t out[8]) {
     uint32_t w[16];
@@ -216,6 +220,7 @@ static void sha256_33(const uint8_t *m, uint32_t out[8]) {
 }
 
 #else
+#define SHA_IMPL "portatil (lento, so para teste fora do ARM)"
 /* fallback portavel (x86 etc.) -- mesmo resultado, so mais lento; no celular usa o caminho NEON acima */
 static void sha256_33(const uint8_t *m, uint32_t out[8]) {
     uint32_t w[64];
@@ -548,7 +553,7 @@ int main(int argc, char **argv) {
     }
     if (threads < 1) threads = 1; if (threads > 64) threads = 64;
     init_tables();
-    if (do_self) return selftest();
+    if (do_self) { printf("sha256: %s\n", SHA_IMPL); return selftest(); }
     if (!parse_h160(tgt_s, target)) { fprintf(stderr, "hash160 invalido\n"); return 2; }
     range_start = parse_hex(start_s); range_end = parse_hex(end_s);
     init_salto();
@@ -556,6 +561,7 @@ int main(int argc, char **argv) {
     uint64_t resume = 0; int resumed = load_ckpt(ckpt, &resume); next_chunk = resumed ? resume : 0;
     if (modo_onda) printf("modo ONDA | franjas=%.2f envelope=%.2f faixas=%d | dentro=%s | ordem=%s\n", ONDA_F, ONDA_L, NBINS,
                           onda_dentro_seq ? "sequencial" : "aureo", onda_escuras ? "escuras" : "claras");
+    printf("sha256: %s\n", SHA_IMPL);
     printf("p71b engine SALTO | threads=%d | resume_chunk=%llu/%llu | chunk=%llu chaves | passo=%llu\n", threads,
            (unsigned long long)next_chunk, (unsigned long long)TOTAL_CHUNKS,
            (unsigned long long)CHUNK_KEYS, (unsigned long long)STRIDE);
