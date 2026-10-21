@@ -117,7 +117,7 @@ Tudo dentro da margem de erro. Com 10 variantes em 82 chaves, é esperado que al
 74 chaves (puzzles ≥ 10). Kolmogorov-Smirnov contra uniforme: D = 0,079, **p = 0,73**. Sem concentração: elas se
 distribuem como chaves sorteadas uniformemente, então não há "região quente" para priorizar.
 
-### 5.5 Engine real, puzzles resolvidos 22 a 31 (4 threads)
+### 5.5 Engine real, puzzles resolvidos 22 a 32 (4 threads) — concluído
 
 | Puzzle | Sequencial | Salto | Onda F=10 | Onda F=20 |
 |---|---|---|---|---|
@@ -130,9 +130,13 @@ distribuem como chaves sorteadas uniformemente, então não há "região quente"
 | 28 | 0,69 | 0,60 | 0,11 | 0,12 |
 | 29 | 0,49 | 0,93 | 0,01 | 0,08 |
 | 30 | 0,92 | 0,40 | 0,63 | 0,97 |
-| 31 | 0,96 | 0,20 | 0,91 | (rodando) |
+| 31 | 0,96 | 0,20 | 0,91 | 0,63 |
+| 32 | 0,44 | 0,24 | 0,70 | 0,14 |
+| **Média** | **0,64** | **0,43** | **0,54** | **0,45** |
 
-Nestes puzzles o sequencial ficou pior (média ~0,66), porque por acaso as chaves caíram tarde nas suas faixas
+44 rodadas, 44 chaves certas. Mais rápida por puzzle: salto 6, onda F=20 3, onda F=10 2, sequencial 0.
+
+Nestes puzzles o sequencial ficou pior (média 0,64), porque por acaso as chaves caíram tarde nas suas faixas
 (puzzle 25 em 98%, puzzle 31 em 96%). Isso é uma propriedade dessas chaves, não da estratégia: nas 82 chaves o sequencial
 dá 0,52 e em 1 milhão de chaves dá 0,4995. Atenção: estes 9–10 puzzles foram o ponto de partida da hipótese.
 Por isso a confirmação precisa de chaves novas (seções 5.1, 5.2 e 5.6).

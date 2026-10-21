@@ -84,9 +84,10 @@ em 82 chaves, é esperado que uma delas fique uns 0,04 abaixo de 0,5 por sorte.
 74 chaves (puzzles ≥ 10). KS contra uniforme: D = 0,079, **p-valor = 0,73**. Não há concentração detectável:
 as chaves estão espalhadas como se fossem sorteadas uniformemente.
 
-### Engine real, puzzles 22 a 32
+### Engine real, puzzles 22 a 32 (`resultado_teste_real.csv`)
 
-Ver a seção "Rodadas reais" no fim deste arquivo.
+Médias: sequencial 0,64 · salto 0,43 · onda F=10 0,54 · onda F=20 0,45 (11 puzzles; a margem com 11 chaves é de ~±0,17).
+Detalhes e explicação na seção 5.5 do `RELATORIO_PARA_AGENTE.md`.
 
 ## Conclusão
 
