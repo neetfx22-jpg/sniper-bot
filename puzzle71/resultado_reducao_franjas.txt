@@ -1,0 +1,14 @@
+54 chaves resolvidas (puzzles >= 30) e 100 mil sorteadas
+
+F    M  etapas  fracao da faixa no alvo  chaves do 71 no alvo   resolvidas dentro   sorteadas dentro   esperado
+10   1  6       1.000e-06                1.181e+15              0/54             0.000e+00          1.000e-06
+10   1  15      9.992e-16                1.180e+06              0/54             0.000e+00          9.992e-16
+10   2  6       6.400e-05                7.556e+16              0/54             1.100e-04          6.400e-05
+10   3  6       7.290e-04                8.607e+17              0/54             9.000e-04          7.290e-04
+20   1  5       3.125e-07                3.689e+14              0/54             0.000e+00          3.125e-07
+20   4  6       6.400e-05                7.556e+16              0/54             5.000e-05          6.400e-05
+5    2  10      1.049e-04                1.238e+17              0/54             1.300e-04          1.049e-04
+10   5  6       1.563e-02                1.845e+19              1/54             1.626e-02          1.563e-02
+
+com M=1 o zoom cai SEMPRE NO MESMO PONTO, em qualquer puzzle (com F par as 2 faixas do meio empatam): 0.5555555556 a 0.5555555556
+distancia das chaves resolvidas ate o centro: media 0.240 (sorteio uniforme: 0,250); a mais perto esta a 0.0018 da faixa
