@@ -1,4 +1,13 @@
-# Instruções: construir o projeto `engine_onda10` (Puzzle 71, modo onda F=10)
+# Instruções: construir o projeto `engine_onda10` (Puzzle 71, modo partículas F=10)
+
+> **Atualização (versão 2): o projeto passa a usar `--modo particulas`, não `--modo onda`.** Motivo: no modo onda,
+> cada uma das 4096 faixas do Puzzle 71 tem ~2,9×10¹⁷ chaves. A 6,7 M chaves/s, o engine ficaria **~1.370 anos** na
+> primeira faixa, sem nunca sair do centro. O modo partículas, inspirado nos elétrons disparados um a um do vídeo,
+> faz **rodadas**: em cada rodada dispara janelas de 4 chunks (~1,05 milhão de chaves) em **todas** as 4096 faixas,
+> com mais janelas nas franjas claras (k ∝ intensidade, até 100, mínimo 1). Uma rodada leva ~5,3 h no celular, e
+> nenhuma chave é repetida. **Se você já iniciou o Puzzle 71 em `--modo onda` com `ckpt_onda10.txt`, pare,
+> renomeie esse checkpoint (ex.: `ckpt_onda10_modo_onda.txt`) e comece do zero em partículas:** o índice salvo de um
+> modo não vale no outro.
 
 Para: o agente que mantém o projeto Engine no Termux.
 Pedido do dono do projeto: criar um projeto novo que **replica o `engine_salto_final.c`** e acrescenta o modo onda F=10,
@@ -28,7 +37,7 @@ SHA-256 dos fontes, para conferir:
 
 ```
 6665b221737f50b1fd7b45e123a250fe680b946c66f75755cd90283f6e5f3f56  engine_salto_final.c  (o original, em ~/engine_salto/)
-cbc5657a75690a0651d30a5adcb37612d9fb94a51fb6128050b0722c30d2e459  engine_salto_onda.c
+e45d564fb3b1436350206898bcef8d8887881dc925e35dc1d66b663a561ea212  engine_salto_onda.c
 ```
 
 ## 1. Criar o projeto a partir do engine atual
@@ -38,7 +47,7 @@ mkdir -p ~/engine_onda10 && cd ~/engine_onda10
 sha256sum ~/engine_salto/engine_salto_final.c     # tem que dar 6665b221...
 cp ~/engine_salto/engine_salto_final.c .
 patch -o engine_salto_onda.c engine_salto_final.c < engine_salto_onda.patch   # (patch: pkg install patch)
-sha256sum engine_salto_onda.c                     # tem que dar cbc5657a...
+sha256sum engine_salto_onda.c                     # tem que dar e45d564f...
 cp <pacote>/build_onda.sh <pacote>/start_onda10.sh <pacote>/status_onda10.sh <pacote>/corrida_aleatoria.py <pacote>/hash160.py .
 chmod +x *.sh
 ```
@@ -61,6 +70,14 @@ chmod +x *.sh
    celular, sem perceber, um binário com o SHA-256 lento.
 5. O engine imprime `sha256: NEON (hardware)` (ou `portatil`) no início e no selftest.
 6. `#include <math.h>` e `-lm`.
+7. **`--modo particulas`** (`--franjas F`, `--janela J` chunks, padrão 4, `--kmax K`, padrão 100): usa as mesmas 4096
+   faixas e intensidades do modo onda, mas em rodadas. Na rodada R, a faixa b recebe as janelas `R·k_b … R·k_b+k_b−1`
+   da sua fila própria (salto áureo sobre as janelas da faixa). Faixas mais claras vêm primeiro em cada rodada.
+   A fila lógica tem `rodadas_max × Σk × J` posições (`LOGICAL_TOTAL`). Posições de faixas já esgotadas viram
+   `SKIP_CHUNK` e são puladas sem custo (no Puzzle 71 isso só aconteceria depois de bilhões de anos).
+   O `worker` e o laço principal agora usam `LOGICAL_TOTAL`, que é igual a `TOTAL_CHUNKS` nos outros modos.
+   Validação: cada chunk visitado exatamente uma vez (n = 37, 4096, 50003 e 12305), e a ordem do engine é igual à do
+   simulador (puzzles 26 a 30, diferença menor que um chunk).
 
 Nada mudou em: aritmética de campo, inversão em lote, HALF/BATCH/CHUNK, RIPEMD-160, threads, checkpoint, status e FOUND.
 
@@ -123,12 +140,12 @@ cd ~/engine_onda10
 for r in 1 2 3; do
   ~/engine_salto/engine_salto_final --threads 8 --seconds 60 --ckpt /tmp/b_a.txt --status /dev/null | tail -1
   ./engine_salto_onda --threads 8 --seconds 60 --ckpt /tmp/b_b.txt --status /dev/null | tail -1
-  ./engine_salto_onda --threads 8 --seconds 60 --modo onda --franjas 10 --ckpt /tmp/b_c.txt --status /dev/null | tail -1
+  ./engine_salto_onda --threads 8 --seconds 60 --modo particulas --franjas 10 --ckpt /tmp/b_c.txt --status /dev/null | tail -1
   sleep 60
 done
 ```
 
-Critério de aceite: a média do `engine_salto_onda --modo onda` fica **a até 3% do `engine_salto_final`**.
+Critério de aceite: a média do `engine_salto_onda --modo particulas` fica **a até 3% do `engine_salto_final`**.
 No x86 de teste a diferença foi zero (5,09 contra 5,09 M chaves/s).
 
 Se ficar mais de 3% abaixo:
@@ -139,6 +156,21 @@ Se ficar mais de 3% abaixo:
 4. Teste também `--threads 7`. Em alguns celulares, deixar um núcleo livre evita disputa com o sistema.
 
 ## 5. Teste funcional antes do Puzzle 71
+
+Primeiro em modo partículas, que é o que vai rodar:
+
+```
+./engine_salto_onda --threads 8 --modo particulas --franjas 10 \
+  --start 20000000 --end 3fffffff --target d39c4704664e1deb76c9331e637564c257d68a08 \
+  --ckpt /tmp/t30p.txt --found /tmp/t30p_found.txt --status /dev/null
+```
+
+Esperado: `CHAVE ENCONTRADA: 0x...3d94cd64` e, no início, a linha
+`modo PARTICULAS | janela=4 chunks (1049600 chaves) | kmax=100 | janelas por rodada=...`.
+(Em faixas pequenas como a do puzzle 30, cada faixa tem poucos chunks e a ordem fica quase igual à do modo onda.
+A diferença aparece em faixas grandes como a do 71; ela foi verificada no simulador, que é idêntico ao engine.)
+
+Depois, o mesmo teste em modo onda:
 
 O engine tem que achar uma chave conhecida em modo onda, de verdade:
 
@@ -162,6 +194,7 @@ python3 corrida_aleatoria.py ./engine_salto_onda --chaves 100 --bits 26 --thread
 ./status_onda10.sh      # dashboard
 ```
 
+- O `start_onda10.sh` roda `--modo particulas --franjas 10 --janela 4 --kmax 100`.
 - Checkpoint: **`ckpt_onda10.txt`**, só dele. **Nunca** apontar para o `ckpt_salto.txt`: o índice salvo é lógico,
   e o mesmo número aponta para chunks diferentes em cada modo. Reaproveitar pularia faixas sem testar.
 - Para retomar depois de parar, basta rodar o `start_onda10.sh` de novo. Ele lê o `ckpt_onda10.txt` (a faixa e o
@@ -169,6 +202,8 @@ python3 corrida_aleatoria.py ./engine_salto_onda --chaves 100 --bits 26 --thread
 - **Um engine de cada vez.** Salto e onda rodando juntos dividem os núcleos e repetem chunks entre si.
 - **Não trocar de modo nem de F no meio.** O progresso de um modo não vale para outro. Para mudar, comece outro
   checkpoint do zero.
+- No `status_onda10.sh`, o "chunk lógico" em modo partículas é a posição na fila (que é maior que o número de chunks).
+  O progresso real são as chaves testadas, somadas entre as execuções.
 - O FOUND vai para `~/engine_onda10/FOUND.txt`. O `status_onda10.sh` mostra a chave em destaque se ele existir.
 
 ## 7. Melhoria recomendada (opcional): gravar o modo no checkpoint
@@ -188,19 +223,24 @@ Depois da mudança: selftest 55/55, teste do item 5 e um ciclo de parar e retoma
 
 - Velocidade igual à do `engine_salto_final`.
 - Cobertura de 100% da faixa, sem repetir chunks.
-- **O tempo esperado até achar a chave é o mesmo de qualquer outra ordem:** em média, metade da faixa.
+- Em partículas: a busca passa pela faixa inteira a cada ~5,3 h, em vez de ficar presa no centro.
+- **O tempo esperado até achar a chave é o mesmo de qualquer outra ordem:** em média, metade da faixa
+  (partículas F=10 no Puzzle 71: 0,497 ± 0,011; `resultado_particulas.txt`).
+  A versão literal do vídeo, com partículas aleatórias que podem repetir lugar, foi testada e é muito pior
+  (1,8× a faixa inteira, mesmo com piso de 10%), por isso não foi implementada.
   Isso foi verificado com 1 milhão de chaves simuladas, 82 chaves reais e o engine real (seções 5 e 6 do relatório).
   O modo onda é uma escolha do dono, não um atalho.
 
 ## 9. Checklist final (marcar tudo antes de iniciar o Puzzle 71)
 
-- [ ] hash do `engine_salto_onda.c` = `cbc5657a…` (ou diff revisado, se o original local for diferente)
+- [ ] hash do `engine_salto_onda.c` = `e45d564f…` (ou diff revisado, se o original local for diferente)
 - [ ] 3.1 macros crypto ativas
 - [ ] 3.2 `sha256: NEON (hardware)`
 - [ ] 3.3 instruções sha256h no binário, mesma contagem do original
 - [ ] 3.5 selftest 55/55
 - [ ] 3.6 passo = 2780662151054439 no modo salto
-- [ ] 4 velocidade em modo onda a até 3% do `engine_salto_final`
-- [ ] 5 puzzle 30 encontrado em modo onda
+- [ ] 4 velocidade em modo partículas a até 3% do `engine_salto_final`
+- [ ] 5 puzzle 30 encontrado em modo partículas (e em modo onda)
+- [ ] se havia `ckpt_onda10.txt` de modo onda, foi renomeado antes de iniciar
 - [ ] engine antigo parado; `start_onda10.sh` usando `ckpt_onda10.txt`
 - [ ] `ckpt_salto.txt` antigo intacto em `~/engine_salto/`

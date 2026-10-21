@@ -314,6 +314,16 @@ static u128 rank_cum[NBINS_MAX + 1];        /* chunks antes do rank r */
 static u128 bin_stride[NBINS_MAX];
 static double bin_int[NBINS_MAX];
 
+/* modo particulas: em vez de esgotar uma faixa por vez (no puzzle 71 cada faixa leva ~1.370 anos),
+ * cada RODADA dispara k_b janelas de JANELA chunks em CADA faixa, k_b ~ intensidade (minimo 1).
+ * Uma rodada passa pelas 4096 faixas; nenhuma chave e repetida. Faixas claras primeiro em cada rodada. */
+static int modo_particulas = 0;
+static uint64_t JANELA = 4, KMAX = 100;
+static uint64_t part_k[NBINS_MAX], part_W[NBINS_MAX];
+static u128 part_wstride[NBINS_MAX], part_pref[NBINS_MAX + 1], PART_T = 0;
+static u128 LOGICAL_TOTAL = 0;                /* tamanho da fila logica (= TOTAL_CHUNKS fora do modo particulas) */
+#define SKIP_CHUNK (~(u128)0)
+
 static u128 gcd_u128(u128 a, u128 b) {
     while (b) { u128 t = a % b; a = b; b = t; }
     return a;
@@ -328,6 +338,7 @@ static void init_onda(void);
 static void init_salto(void) {
     u128 total_range_keys = range_end - range_start + 1;
     TOTAL_CHUNKS = (total_range_keys + CHUNK_KEYS - 1) / CHUNK_KEYS;
+    LOGICAL_TOTAL = TOTAL_CHUNKS;
     if (force_stride) {
         if (modo_onda) init_onda();
         /* usado so pra backtest/comparacao (ex: --stride 1 = ordem sequencial pura) */
@@ -377,10 +388,41 @@ static void init_onda(void) {
         int b = bin_order[r];
         rank_cum[r+1] = rank_cum[r] + (bin_lo[b+1] - bin_lo[b]);
     }
+    if (!modo_particulas) { LOGICAL_TOTAL = TOTAL_CHUNKS; return; }
+    double imax = 0;
+    for (int b = 0; b < NBINS; b++) if (bin_int[b] > imax) imax = bin_int[b];
+    u128 rmax = 0;
+    part_pref[0] = 0;
+    for (int r = 0; r < NBINS; r++) {
+        int b = bin_order[r];
+        uint64_t k = (uint64_t)llround(imax > 0 ? bin_int[b] / imax * (double)KMAX : 1.0);
+        if (k < 1) k = 1;
+        u128 sz = bin_lo[b+1] - bin_lo[b];
+        part_k[b] = k;
+        part_W[b] = (uint64_t)((sz + JANELA - 1) / JANELA);
+        part_wstride[b] = part_W[b] > 1 ? golden_stride(part_W[b]) : 1;
+        part_pref[r+1] = part_pref[r] + k;
+        u128 rb = (part_W[b] + k - 1) / k;
+        if (rb > rmax) rmax = rb;
+    }
+    PART_T = part_pref[NBINS];
+    LOGICAL_TOTAL = rmax * PART_T * JANELA;
 }
 /* indice logico -> chunk fisico */
 static u128 map_chunk(u128 idx) {
     if (!modo_onda) return (idx * STRIDE) % TOTAL_CHUNKS;
+    if (modo_particulas) {
+        u128 wg = idx / JANELA, dentro = idx % JANELA;
+        u128 R = wg / PART_T, pos = wg % PART_T;
+        int lo = 0, hi = NBINS - 1;             /* maior r com part_pref[r] <= pos */
+        while (lo < hi) { int mid = (lo + hi + 1) / 2; if (part_pref[mid] <= pos) lo = mid; else hi = mid - 1; }
+        int b = bin_order[lo];
+        u128 wi = R * part_k[b] + (pos - part_pref[lo]);
+        if (wi >= part_W[b]) return SKIP_CHUNK;           /* faixa ja esgotada */
+        u128 jw = part_W[b] > 1 ? (wi * part_wstride[b]) % part_W[b] : 0;
+        u128 c = bin_lo[b] + jw * JANELA + dentro;
+        return c < bin_lo[b+1] ? c : SKIP_CHUNK;          /* ultima janela da faixa pode ser parcial */
+    }
     int lo = 0, hi = NBINS - 1;                 /* maior r com rank_cum[r] <= idx */
     while (lo < hi) { int mid = (lo + hi + 1) / 2; if (rank_cum[mid] <= idx) lo = mid; else hi = mid - 1; }
     int b = bin_order[lo];
@@ -446,10 +488,14 @@ static void *worker(void *arg) {
     while (!found_flag && !stop_flag) {
         pthread_mutex_lock(&mtx);
         uint64_t idx = next_chunk;
-        if ((u128)idx >= TOTAL_CHUNKS) { active[tid] = ~0ULL; pthread_mutex_unlock(&mtx); break; }
+        if ((u128)idx >= LOGICAL_TOTAL) { active[tid] = ~0ULL; pthread_mutex_unlock(&mtx); break; }
         next_chunk++; active[tid] = idx;
         pthread_mutex_unlock(&mtx);
         u128 phys = map_chunk((u128)idx);
+        if (phys == SKIP_CHUNK) {
+            pthread_mutex_lock(&mtx); active[tid] = ~0ULL; pthread_mutex_unlock(&mtx);
+            continue;
+        }
         u128 start = range_start + phys * CHUNK_KEYS;
         if (start > range_end) continue;
         u128 k;
@@ -544,7 +590,11 @@ int main(int argc, char **argv) {
         else if (!strcmp(argv[i], "--end") && i+1 < argc) end_s = argv[++i];
         else if (!strcmp(argv[i], "--target") && i+1 < argc) tgt_s = argv[++i];
         else if (!strcmp(argv[i], "--seconds") && i+1 < argc) seconds = atof(argv[++i]);
-        else if (!strcmp(argv[i], "--modo") && i+1 < argc) { i++; modo_onda = !strcmp(argv[i], "onda"); }
+        else if (!strcmp(argv[i], "--modo") && i+1 < argc) {
+            i++; modo_particulas = !strcmp(argv[i], "particulas"); modo_onda = modo_particulas || !strcmp(argv[i], "onda");
+        }
+        else if (!strcmp(argv[i], "--janela") && i+1 < argc) JANELA = strtoull(argv[++i], NULL, 10);
+        else if (!strcmp(argv[i], "--kmax") && i+1 < argc) KMAX = strtoull(argv[++i], NULL, 10);
         else if (!strcmp(argv[i], "--franjas") && i+1 < argc) ONDA_F = atof(argv[++i]);
         else if (!strcmp(argv[i], "--envelope") && i+1 < argc) ONDA_L = atof(argv[++i]);
         else if (!strcmp(argv[i], "--dentro") && i+1 < argc) onda_dentro_seq = !strcmp(argv[++i], "sequencial");
@@ -552,6 +602,8 @@ int main(int argc, char **argv) {
         else if (!strcmp(argv[i], "--stride") && i+1 < argc) { STRIDE = (u128)strtoull(argv[++i], NULL, 10); force_stride = 1; }
     }
     if (threads < 1) threads = 1; if (threads > 64) threads = 64;
+    if (JANELA < 1) JANELA = 1;
+    if (KMAX < 1) KMAX = 1;
     init_tables();
     if (do_self) { printf("sha256: %s\n", SHA_IMPL); return selftest(); }
     if (!parse_h160(tgt_s, target)) { fprintf(stderr, "hash160 invalido\n"); return 2; }
@@ -559,11 +611,14 @@ int main(int argc, char **argv) {
     init_salto();
     for (int i = 0; i < 256; i++) active[i] = ~0ULL;
     uint64_t resume = 0; int resumed = load_ckpt(ckpt, &resume); next_chunk = resumed ? resume : 0;
+    if (modo_particulas) printf("modo PARTICULAS | janela=%llu chunks (%llu chaves) | kmax=%llu | janelas por rodada=%llu | fila logica=%llu\n",
+                                (unsigned long long)JANELA, (unsigned long long)(JANELA * CHUNK_KEYS), (unsigned long long)KMAX,
+                                (unsigned long long)PART_T, (unsigned long long)LOGICAL_TOTAL);
     if (modo_onda) printf("modo ONDA | franjas=%.2f envelope=%.2f faixas=%d | dentro=%s | ordem=%s\n", ONDA_F, ONDA_L, NBINS,
                           onda_dentro_seq ? "sequencial" : "aureo", onda_escuras ? "escuras" : "claras");
     printf("sha256: %s\n", SHA_IMPL);
     printf("p71b engine SALTO | threads=%d | resume_chunk=%llu/%llu | chunk=%llu chaves | passo=%llu\n", threads,
-           (unsigned long long)next_chunk, (unsigned long long)TOTAL_CHUNKS,
+           (unsigned long long)next_chunk, (unsigned long long)LOGICAL_TOTAL,
            (unsigned long long)CHUNK_KEYS, (unsigned long long)STRIDE);
     fflush(stdout);
     pthread_t th[64];
@@ -577,7 +632,7 @@ int main(int argc, char **argv) {
         pthread_mutex_lock(&mtx); for (int i = 0; i < threads; i++) if (active[i] != ~0ULL) alive = 1; uint64_t nc = next_chunk; pthread_mutex_unlock(&mtx);
         if (done) break;
         if (seconds > 0 && t - t0 >= seconds) { stop_flag = 1; break; }
-        if (!alive && (u128)nc >= TOTAL_CHUNKS) break;
+        if (!alive && (u128)nc >= LOGICAL_TOTAL) break;
         if (t - tlast >= 10) {
             tlast = t; write_ckpt(ckpt);
             FILE *f = fopen(statusf, "w");

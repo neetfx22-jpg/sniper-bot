@@ -1,0 +1,12 @@
+A) aleatoria com reposicao (literal do video), faixa grande -- fracao media ate achar:
+   F=10: sem piso = 1302.1   | piso 1% = 5.692   | piso 10% = 1.821
+   F=20: sem piso = 903.5   | piso 1% = 5.709   | piso 10% = 1.815
+   (1,0 = a faixa inteira; uniforme sem repeticao = 0,5)
+
+B) rodadas sem repeticao (janela = 4 chunks ~ 1,05 milhao de chaves, kmax = 100):
+   puzzle 40 F=10: media=0.4962 (+-0.0079)
+   puzzle 40 F=20: media=0.4987 (+-0.0080)
+   puzzle 50 F=10: media=0.5007 (+-0.0080)
+   puzzle 50 F=20: media=0.4998 (+-0.0079)
+   puzzle 71 F=10: media=0.4967 (+-0.0105)  | 1 rodada = 121494 janelas, passa pelas 4096 faixas em ~5.3 h no celular
+   puzzle 71 F=20: media=0.5034 (+-0.0101)  | 1 rodada = 121578 janelas, passa pelas 4096 faixas em ~5.3 h no celular

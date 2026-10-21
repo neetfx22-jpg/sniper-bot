@@ -26,6 +26,8 @@ ESTRATEGIAS = {
     "onda20": ["--modo", "onda", "--franjas", "20"],
     "pura10": ["--modo", "onda", "--franjas", "10", "--dentro", "sequencial"],
     "escura10": ["--modo", "onda", "--franjas", "10", "--dentro", "sequencial", "--ordem", "escuras"],
+    "part10": ["--modo", "particulas", "--franjas", "10"],
+    "part20": ["--modo", "particulas", "--franjas", "20"],
 }
 
 

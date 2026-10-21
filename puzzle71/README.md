@@ -89,6 +89,18 @@ as chaves estão espalhadas como se fossem sorteadas uniformemente.
 Médias: sequencial 0,64 · salto 0,43 · onda F=10 0,54 · onda F=20 0,45 (11 puzzles; a margem com 11 chaves é de ~±0,17).
 Detalhes e explicação na seção 5.5 do `RELATORIO_PARA_AGENTE.md`.
 
+## Modo partículas (versão 2, inspirado nos elétrons do vídeo)
+
+No modo onda, cada faixa do Puzzle 71 tem ~2,9×10¹⁷ chaves: o engine ficaria ~1.370 anos na primeira, sem sair do centro.
+O `--modo particulas` faz **rodadas**. Em cada rodada, dispara janelas de 4 chunks (~1,05 milhão de chaves) em todas as
+4096 faixas, mais nas claras (até 100 por faixa, mínimo 1), sem repetir chave. Uma rodada leva ~5,3 h no celular.
+`simular_particulas.py`, resultado em `resultado_particulas.txt`:
+
+- versão B (rodadas sem repetição, a implementada): puzzle 71 F=10 = 0,497 ± 0,011, F=20 = 0,503 ± 0,010; puzzles 40 e 50 também ~0,50;
+- versão A (partículas aleatórias que podem repetir lugar, literal do vídeo): 1.302× a faixa sem piso, 1,8× com piso de 10%. Muito pior.
+
+Validação: cobertura exata (cada chunk uma vez) e ordem do engine igual à do simulador.
+
 ## Conclusão
 
 - **A ordem "onda" não acha a chave mais rápido.** A conta é a seguinte: se a chave pode estar em qualquer lugar com a mesma

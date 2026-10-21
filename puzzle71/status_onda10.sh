@@ -1,5 +1,7 @@
 #!/data/data/com.termux/files/usr/bin/bash
-# Dashboard do projeto engine_onda10 (puzzle 71, modo onda F=10)
+# Dashboard do projeto engine_onda10 (puzzle 71, modo particulas F=10)
+# Obs.: em modo particulas o "chunk logico" conta posicoes da fila (inclui janelas puladas no fim);
+# o progresso real e "Chaves nesta execucao" somado entre execucoes.
 cd "$(dirname "$0")" || exit 1
 
 STATUS="status.txt"
@@ -48,7 +50,7 @@ except (FileNotFoundError, ValueError, IndexError):
 TOTAL_CHUNKS = -(-(2**70) // CHUNK_KEYS)  # ceil div, le o tamanho real do chunk do checkpoint
 
 print("=" * 60)
-print(" DASHBOARD - PUZZLE 71 (engine_onda10, modo onda F=10)")
+print(" DASHBOARD - PUZZLE 71 (engine_onda10, particulas F=10)")
 print("=" * 60)
 print(f"Processo              : {status_proc}")
 print(f"Chaves nesta execucao  : {int(dados.get('chaves_nesta_execucao', 0)):,}")
