@@ -177,6 +177,22 @@ e +0,0006 contra partículas F=20, todas dentro da margem (±0,0007 a ±0,0018).
 correlação entre vizinhos e bits altos. Melhor achado contra o acaso: p = 0,53 a 0,67. No treino e teste, o melhor F de uma
 metade não se sustenta na outra. **Nenhum padrão.**
 
+### 5.9 Chaves vizinhas, endereços e prefixos
+
+Todos os testes usam chaves conhecidas (puzzles resolvidos) como alvo:
+
+| Estudo | Arquivo | Resultado |
+|---|---|---|
+| Vizinhas a distância 1 a 10⁹ do alvo: semelhança do hash160 e do ponto x | `estudo_vizinhas.py` | ~80/160 e ~128/256 bits iguais em qualquer distância (sem relação) |
+| Padrão aprendido nas vizinhas de um alvo aplicado nas de outro (15 mil + 15 mil chaves) | `estudo_previsao_bits.py` | 7/20 sinais mantidos (acaso ~10); hash(k) × hash(k+1) = 79,9/160 |
+| Ordenar as chaves pelo endereço e "desembaralhar" (60 mil chaves, puzzles 40 e 50) | `estudo_ordem_enderecos.py` | igual a um embaralhamento aleatório; correlação −0,005 |
+| "Gatilho": endereços mais parecidos com o do alvo, na faixa inteira | `estudo_gatilho_faixa_toda.py` | espalhados pela faixa; no bloco do alvo 2, 0 e 2 de 50 (acaso ~1,2) |
+| Prefixos: mapa de calor, prefixo × distância, previsão, Base58 (400 mil chaves × 4 puzzles) | `estudo_prefixos.py` | ~1 bit em qualquer distância; previsão 0 de 4; Base58 igual ao acaso |
+| Redução das franjas por etapas (zoom) até um alvo pequeno | `estudo_reducao_franjas.py` | com 1 franja por etapa, cai sempre no mesmo ponto; com várias, a chave cai no alvo na proporção do tamanho dele |
+
+Observação: uma primeira versão do gatilho, numa janela de 60 mil chaves em volta do alvo, deu distância média de ~15 mil.
+Isso era efeito da janela, não um sinal: refeito na faixa inteira, desapareceu.
+
 ## 6. Por que o resultado é esse (a matemática)
 
 Se a chave pode estar em qualquer posição da faixa com a mesma probabilidade, então para **qualquer** ordem que visita
