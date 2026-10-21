@@ -1,0 +1,540 @@
+chave 1/300 (24% da faixa): sequencial=0.2403  salto=0.3966  onda10=0.8160  onda20=0.2179  pura10=0.8151  escura10=0.1570
+chave 2/300 (64% da faixa): sequencial=0.6427  salto=0.3915  onda10=0.5047  onda20=0.5293  pura10=0.4990  escura10=0.5260
+chave 3/300 (21% da faixa): sequencial=0.1975  salto=0.6691  onda10=0.2826  onda20=0.4096  pura10=0.2776  escura10=0.6834
+chave 4/300 (45% da faixa): sequencial=0.4465  salto=0.0797  onda10=0.8520  onda20=0.0484  pura10=0.8523  escura10=0.1420
+chave 5/300 (84% da faixa): sequencial=0.8441  salto=0.0599  onda10=0.7362  onda20=0.5583  pura10=0.7231  escura10=0.3150
+chave 6/300 (98% da faixa): sequencial=0.9836  salto=0.2962  onda10=0.7892  onda20=0.9949  pura10=0.7843  escura10=0.2475
+chave 7/300 (88% da faixa): sequencial=0.8842  salto=0.1308  onda10=0.5225  onda20=0.8045  pura10=0.5222  escura10=0.4938
+chave 8/300 (48% da faixa): sequencial=0.4896  salto=0.7966  onda10=0.2103  onda20=0.8947  pura10=0.1945  escura10=0.8012
+chave 9/300 (1% da faixa): sequencial=0.0098  salto=0.0100  onda10=0.6332  onda20=0.6880  pura10=0.6328  escura10=0.3411
+chave 10/300 (16% da faixa): sequencial=0.1612  salto=0.5994  onda10=0.6927  onda20=0.5397  pura10=0.6884  escura10=0.2905
+
+--- placar apos 10 chaves ---
+salto       media=0.343 (+-0.172)  vitorias=3
+escura10    media=0.400 (+-0.137)  vitorias=2
+sequencial  media=0.490 (+-0.210)  vitorias=3
+onda20      media=0.569 (+-0.182)  vitorias=1
+pura10      media=0.599 (+-0.139)  vitorias=1
+onda10      media=0.604 (+-0.137)  vitorias=0
+chave 11/300 (22% da faixa): sequencial=0.2211  salto=0.0335  onda10=0.4340  onda20=0.9390  pura10=0.4414  escura10=0.5321
+chave 12/300 (57% da faixa): sequencial=0.5844  salto=0.9503  onda10=0.3457  onda20=0.6924  pura10=0.3418  escura10=0.6893
+chave 13/300 (20% da faixa): sequencial=0.1931  salto=0.3216  onda10=0.2623  onda20=0.2619  pura10=0.2608  escura10=0.7276
+chave 14/300 (90% da faixa): sequencial=0.8994  salto=0.4861  onda10=0.4266  onda20=0.4674  pura10=0.4243  escura10=0.5880
+chave 15/300 (2% da faixa): sequencial=0.0145  salto=0.3723  onda10=0.7664  onda20=0.9704  pura10=0.7603  escura10=0.2259
+chave 16/300 (98% da faixa): sequencial=0.9915  salto=0.2904  onda10=0.7843  onda20=0.9962  pura10=0.7739  escura10=0.2540
+chave 17/300 (63% da faixa): sequencial=0.6162  salto=0.3777  onda10=0.4894  onda20=0.5157  pura10=0.4817  escura10=0.5049
+chave 18/300 (42% da faixa): sequencial=0.4307  salto=0.3618  onda10=0.0849  onda20=0.3275  pura10=0.0886  escura10=0.9271
+chave 19/300 (79% da faixa): sequencial=0.7928  salto=0.9891  onda10=0.3163  onda20=0.4317  pura10=0.3264  escura10=0.7163
+chave 20/300 (50% da faixa): sequencial=0.4983  salto=0.4942  onda10=0.0048  onda20=0.1031  pura10=0.0049  escura10=0.9848
+
+--- placar apos 20 chaves ---
+salto       media=0.405 (+-0.125)  vitorias=5
+pura10      media=0.495 (+-0.111)  vitorias=3
+onda10      media=0.498 (+-0.112)  vitorias=3
+sequencial  media=0.507 (+-0.141)  vitorias=5
+escura10    media=0.507 (+-0.112)  vitorias=3
+onda20      media=0.570 (+-0.130)  vitorias=1
+chave 21/300 (70% da faixa): sequencial=0.6896  salto=0.8237  onda10=0.1108  onda20=0.1460  pura10=0.1208  escura10=0.8955
+chave 22/300 (71% da faixa): sequencial=0.7078  salto=0.1786  onda10=0.1869  onda20=0.3152  pura10=0.1913  escura10=0.8349
+chave 23/300 (75% da faixa): sequencial=0.7542  salto=0.2396  onda10=0.8205  onda20=0.2231  pura10=0.8240  escura10=0.1598
+chave 24/300 (15% da faixa): sequencial=0.1447  salto=0.2539  onda10=0.9744  onda20=0.3613  pura10=0.9761  escura10=0.0262
+chave 25/300 (68% da faixa): sequencial=0.6851  salto=0.4689  onda10=0.2354  onda20=0.7775  pura10=0.2498  escura10=0.7768
+chave 26/300 (18% da faixa): sequencial=0.1727  salto=0.9611  onda10=0.3843  onda20=0.8241  pura10=0.3879  escura10=0.6107
+chave 27/300 (58% da faixa): sequencial=0.5886  salto=0.2988  onda10=0.0773  onda20=0.3245  pura10=0.0842  escura10=0.9278
+chave 28/300 (58% da faixa): sequencial=0.5730  salto=0.9514  onda10=0.3441  onda20=0.6838  pura10=0.3521  escura10=0.6782
+chave 29/300 (91% da faixa): sequencial=0.9109  salto=0.8503  onda10=0.5609  onda20=0.6128  pura10=0.5521  escura10=0.4629
+chave 30/300 (28% da faixa): sequencial=0.2667  salto=0.4634  onda10=0.1540  onda20=0.2812  pura10=0.1477  escura10=0.8133
+
+--- placar apos 30 chaves ---
+salto       media=0.453 (+-0.107)  vitorias=6
+pura10      media=0.459 (+-0.097)  vitorias=4
+onda10      media=0.460 (+-0.098)  vitorias=7
+sequencial  media=0.521 (+-0.107)  vitorias=6
+onda20      media=0.531 (+-0.101)  vitorias=1
+escura10    media=0.544 (+-0.098)  vitorias=6
+chave 31/300 (62% da faixa): sequencial=0.6108  salto=0.0159  onda10=0.1429  onda20=0.5015  pura10=0.1460  escura10=0.8637
+chave 32/300 (5% da faixa): sequencial=0.0397  salto=0.0795  onda10=0.9023  onda20=0.5550  pura10=0.9078  escura10=0.0619
+chave 33/300 (74% da faixa): sequencial=0.7378  salto=0.8947  onda10=0.7882  onda20=0.1966  pura10=0.7916  escura10=0.1971
+chave 34/300 (73% da faixa): sequencial=0.7253  salto=0.5325  onda10=0.3625  onda20=0.9240  pura10=0.3595  escura10=0.6445
+chave 35/300 (92% da faixa): sequencial=0.9319  salto=0.8652  onda10=0.5663  onda20=0.6312  pura10=0.5626  escura10=0.4741
+chave 36/300 (84% da faixa): sequencial=0.8500  salto=0.0712  onda10=0.7253  onda20=0.5746  pura10=0.7272  escura10=0.3140
+chave 37/300 (18% da faixa): sequencial=0.1777  salto=0.9668  onda10=0.3888  onda20=0.8292  pura10=0.3878  escura10=0.6107
+chave 38/300 (80% da faixa): sequencial=0.8052  salto=0.9867  onda10=0.3152  onda20=0.4418  pura10=0.3273  escura10=0.7285
+chave 39/300 (100% da faixa): sequencial=0.9969  salto=0.6636  onda10=0.6626  onda20=0.7133  pura10=0.6596  escura10=0.3723
+chave 40/300 (23% da faixa): sequencial=0.2381  salto=0.0516  onda10=0.4649  onda20=0.9603  pura10=0.4650  escura10=0.5467
+
+--- placar apos 40 chaves ---
+salto       media=0.468 (+-0.101)  vitorias=9
+pura10      media=0.478 (+-0.082)  vitorias=5
+onda10      media=0.478 (+-0.082)  vitorias=8
+escura10    media=0.529 (+-0.083)  vitorias=8
+sequencial  media=0.544 (+-0.095)  vitorias=8
+onda20      media=0.557 (+-0.084)  vitorias=2
+chave 41/300 (85% da faixa): sequencial=0.8571  salto=0.4074  onda10=0.9916  onda20=0.3697  pura10=0.9837  escura10=0.0122
+chave 42/300 (98% da faixa): sequencial=0.9928  salto=0.3046  onda10=0.7865  onda20=0.9977  pura10=0.7760  escura10=0.2411
+chave 43/300 (80% da faixa): sequencial=0.7968  salto=0.9942  onda10=0.3167  onda20=0.4431  pura10=0.3223  escura10=0.7239
+chave 44/300 (52% da faixa): sequencial=0.5042  salto=0.8504  onda10=0.1916  onda20=0.8907  pura10=0.1979  escura10=0.7957
+chave 45/300 (84% da faixa): sequencial=0.8361  salto=0.0552  onda10=0.7226  onda20=0.5573  pura10=0.7241  escura10=0.3069
+chave 46/300 (96% da faixa): sequencial=0.9525  salto=0.9185  onda10=0.8888  onda20=0.6485  pura10=0.8861  escura10=0.1027
+chave 47/300 (5% da faixa): sequencial=0.0387  salto=0.0706  onda10=0.9132  onda20=0.5700  pura10=0.9019  escura10=0.0671
+chave 48/300 (45% da faixa): sequencial=0.4539  salto=0.0790  onda10=0.8576  onda20=0.0514  pura10=0.8579  escura10=0.1370
+chave 49/300 (26% da faixa): sequencial=0.2575  salto=0.7653  onda10=0.7884  onda20=0.2003  pura10=0.7952  escura10=0.1989
+chave 50/300 (10% da faixa): sequencial=0.0962  salto=0.1599  onda10=0.3997  onda20=0.4454  pura10=0.3997  escura10=0.5662
+
+--- placar apos 50 chaves ---
+salto       media=0.467 (+-0.093)  vitorias=10
+escura10    media=0.486 (+-0.078)  vitorias=12
+pura10      media=0.519 (+-0.076)  vitorias=5
+onda10      media=0.520 (+-0.077)  vitorias=10
+onda20      media=0.549 (+-0.075)  vitorias=3
+sequencial  media=0.551 (+-0.087)  vitorias=10
+chave 51/300 (21% da faixa): sequencial=0.1959  salto=0.6659  onda10=0.2832  onda20=0.3993  pura10=0.2842  escura10=0.6826
+chave 52/300 (86% da faixa): sequencial=0.8613  salto=0.4295  onda10=0.9996  onda20=0.3751  pura10=0.9996  escura10=0.0251
+chave 53/300 (94% da faixa): sequencial=0.9409  salto=0.5543  onda10=0.9200  onda20=0.5704  pura10=0.9206  escura10=0.0746
+chave 54/300 (28% da faixa): sequencial=0.2856  salto=0.4744  onda10=0.1643  onda20=0.2752  pura10=0.1617  escura10=0.8096
+chave 55/300 (96% da faixa): sequencial=0.9647  salto=0.9375  onda10=0.8978  onda20=0.6612  pura10=0.8964  escura10=0.1160
+chave 56/300 (46% da faixa): sequencial=0.4590  salto=0.4189  onda10=0.5900  onda20=0.1634  pura10=0.5911  escura10=0.3831
+chave 57/300 (24% da faixa): sequencial=0.2455  salto=0.3979  onda10=0.8206  onda20=0.2354  pura10=0.8322  escura10=0.1692
+chave 58/300 (91% da faixa): sequencial=0.9163  salto=0.8531  onda10=0.5560  onda20=0.6080  pura10=0.5491  escura10=0.4606
+chave 59/300 (94% da faixa): sequencial=0.9250  salto=0.5590  onda10=0.9179  onda20=0.5658  pura10=0.9186  escura10=0.0689
+chave 60/300 (50% da faixa): sequencial=0.4972  salto=0.4926  onda10=0.0034  onda20=0.0993  pura10=0.0029  escura10=0.9868
+
+--- placar apos 60 chaves ---
+escura10    media=0.468 (+-0.074)  vitorias=18
+salto       media=0.485 (+-0.080)  vitorias=10
+onda20      media=0.523 (+-0.067)  vitorias=4
+pura10      media=0.535 (+-0.073)  vitorias=7
+onda10      media=0.536 (+-0.074)  vitorias=10
+sequencial  media=0.564 (+-0.080)  vitorias=11
+chave 61/300 (80% da faixa): sequencial=0.7981  salto=0.3311  onda10=0.2771  onda20=0.2717  pura10=0.2724  escura10=0.7481
+chave 62/300 (62% da faixa): sequencial=0.6139  salto=0.0106  onda10=0.1367  onda20=0.4907  pura10=0.1401  escura10=0.8668
+chave 63/300 (96% da faixa): sequencial=0.9506  salto=0.9174  onda10=0.8847  onda20=0.6428  pura10=0.8881  escura10=0.1022
+chave 64/300 (80% da faixa): sequencial=0.8013  salto=0.3382  onda10=0.2681  onda20=0.2651  pura10=0.2793  escura10=0.7352
+chave 65/300 (87% da faixa): sequencial=0.8708  salto=0.7776  onda10=0.6675  onda20=0.7402  pura10=0.6807  escura10=0.3366
+chave 66/300 (41% da faixa): sequencial=0.4043  salto=0.9994  onda10=0.0569  onda20=0.0304  pura10=0.0580  escura10=0.9500
+chave 67/300 (59% da faixa): sequencial=0.5920  salto=0.3032  onda10=0.0848  onda20=0.3335  pura10=0.0836  escura10=0.9292
+chave 68/300 (54% da faixa): sequencial=0.5422  salto=0.2245  onda10=0.6218  onda20=0.1708  pura10=0.6108  escura10=0.3965
+chave 69/300 (2% da faixa): sequencial=0.0059  salto=0.3540  onda10=0.7562  onda20=0.9687  pura10=0.7534  escura10=0.2230
+chave 70/300 (7% da faixa): sequencial=0.0623  salto=0.4335  onda10=0.7262  onda20=0.8426  pura10=0.7166  escura10=0.2487
+
+--- placar apos 70 chaves ---
+escura10    media=0.480 (+-0.069)  vitorias=20
+salto       media=0.483 (+-0.074)  vitorias=11
+onda20      media=0.516 (+-0.064)  vitorias=8
+pura10      media=0.523 (+-0.068)  vitorias=8
+onda10      media=0.523 (+-0.069)  vitorias=10
+sequencial  media=0.564 (+-0.073)  vitorias=13
+chave 71/300 (30% da faixa): sequencial=0.2887  salto=0.8256  onda10=0.0987  onda20=0.1273  pura10=0.0984  escura10=0.8756
+chave 72/300 (92% da faixa): sequencial=0.9201  salto=0.8614  onda10=0.5545  onda20=0.6181  pura10=0.5529  escura10=0.4591
+chave 73/300 (98% da faixa): sequencial=0.9852  salto=0.2974  onda10=0.7807  onda20=0.9946  pura10=0.7771  escura10=0.2455
+chave 74/300 (72% da faixa): sequencial=0.7147  salto=0.5282  onda10=0.3464  onda20=0.9162  pura10=0.3455  escura10=0.6312
+chave 75/300 (40% da faixa): sequencial=0.3947  salto=0.9940  onda10=0.0458  onda20=0.0175  pura10=0.0465  escura10=0.9486
+chave 76/300 (52% da faixa): sequencial=0.5125  salto=0.8578  onda10=0.1965  onda20=0.8877  pura10=0.1975  escura10=0.8038
+chave 77/300 (97% da faixa): sequencial=0.9681  salto=0.2838  onda10=0.7632  onda20=0.9767  pura10=0.7619  escura10=0.2359
+chave 78/300 (93% da faixa): sequencial=0.9310  salto=0.2095  onda10=0.7463  onda20=0.8763  pura10=0.7484  escura10=0.2766
+chave 79/300 (99% da faixa): sequencial=0.9943  salto=0.6466  onda10=0.6455  onda20=0.7092  pura10=0.6508  escura10=0.3664
+chave 80/300 (87% da faixa): sequencial=0.8653  salto=0.7769  onda10=0.6895  onda20=0.7497  pura10=0.6822  escura10=0.3295
+
+--- placar apos 80 chaves ---
+escura10    media=0.485 (+-0.064)  vitorias=25
+salto       media=0.501 (+-0.069)  vitorias=12
+pura10      media=0.518 (+-0.064)  vitorias=10
+onda10      media=0.518 (+-0.064)  vitorias=11
+onda20      media=0.538 (+-0.062)  vitorias=9
+sequencial  media=0.588 (+-0.069)  vitorias=13
+chave 81/300 (7% da faixa): sequencial=0.0687  salto=0.4450  onda10=0.7215  onda20=0.8542  pura10=0.7250  escura10=0.2485
+chave 82/300 (58% da faixa): sequencial=0.5679  salto=0.2850  onda10=0.0660  onda20=0.3181  pura10=0.0700  escura10=0.9139
+chave 83/300 (63% da faixa): sequencial=0.6380  salto=0.3853  onda10=0.4873  onda20=0.5223  pura10=0.4922  escura10=0.5216
+chave 84/300 (92% da faixa): sequencial=0.9169  salto=0.8479  onda10=0.5496  onda20=0.6146  pura10=0.5550  escura10=0.4556
+chave 85/300 (20% da faixa): sequencial=0.2044  salto=0.3255  onda10=0.2628  onda20=0.2663  pura10=0.2618  escura10=0.7235
+chave 86/300 (88% da faixa): sequencial=0.8740  salto=0.1271  onda10=0.5067  onda20=0.7881  pura10=0.5101  escura10=0.4800
+chave 87/300 (52% da faixa): sequencial=0.5175  salto=0.8547  onda10=0.2012  onda20=0.8858  pura10=0.1928  escura10=0.7896
+chave 88/300 (91% da faixa): sequencial=0.9126  salto=0.5106  onda10=0.4461  onda20=0.4769  pura10=0.4537  escura10=0.5987
+chave 89/300 (37% da faixa): sequencial=0.3606  salto=0.2636  onda10=0.4761  onda20=0.5101  pura10=0.4707  escura10=0.5053
+chave 90/300 (85% da faixa): sequencial=0.8545  salto=0.4198  onda10=0.9923  onda20=0.3615  pura10=0.9923  escura10=0.0139
+
+--- placar apos 90 chaves ---
+escura10    media=0.489 (+-0.059)  vitorias=27
+salto       media=0.495 (+-0.063)  vitorias=15
+pura10      media=0.513 (+-0.059)  vitorias=11
+onda10      media=0.513 (+-0.059)  vitorias=13
+onda20      media=0.540 (+-0.057)  vitorias=9
+sequencial  media=0.588 (+-0.064)  vitorias=15
+chave 91/300 (96% da faixa): sequencial=0.9503  salto=0.9191  onda10=0.8919  onda20=0.6392  pura10=0.8944  escura10=0.1150
+chave 92/300 (13% da faixa): sequencial=0.1321  salto=0.8744  onda10=0.6592  onda20=0.7262  pura10=0.6598  escura10=0.3193
+chave 93/300 (53% da faixa): sequencial=0.5328  salto=0.2166  onda10=0.6026  onda20=0.1660  pura10=0.5974  escura10=0.3797
+chave 94/300 (100% da faixa): sequencial=0.9957  salto=0.6597  onda10=0.6467  onda20=0.7205  pura10=0.6544  escura10=0.3737
+chave 95/300 (74% da faixa): sequencial=0.7435  salto=0.8891  onda10=0.7956  onda20=0.2036  pura10=0.8081  escura10=0.1998
+chave 96/300 (19% da faixa): sequencial=0.1953  salto=0.3235  onda10=0.2564  onda20=0.2542  pura10=0.2562  escura10=0.7292
+chave 97/300 (39% da faixa): sequencial=0.3974  salto=0.6518  onda10=0.1497  onda20=0.4889  pura10=0.1497  escura10=0.8701
+chave 98/300 (82% da faixa): sequencial=0.8308  salto=0.6945  onda10=0.4002  onda20=0.8443  pura10=0.3947  escura10=0.6126
+chave 99/300 (29% da faixa): sequencial=0.3017  salto=0.4870  onda10=0.1756  onda20=0.2980  pura10=0.1746  escura10=0.8319
+chave 100/300 (90% da faixa): sequencial=0.8926  salto=0.4962  onda10=0.4367  onda20=0.4608  pura10=0.4284  escura10=0.5775
+
+--- placar apos 100 chaves ---
+escura10    media=0.490 (+-0.056)  vitorias=30
+salto       media=0.508 (+-0.059)  vitorias=15
+pura10      media=0.512 (+-0.055)  vitorias=15
+onda10      media=0.512 (+-0.056)  vitorias=13
+onda20      media=0.534 (+-0.054)  vitorias=10
+sequencial  media=0.589 (+-0.061)  vitorias=17
+chave 101/300 (3% da faixa): sequencial=0.0273  salto=0.3723  onda10=0.7607  onda20=0.9970  pura10=0.7716  escura10=0.2392
+chave 102/300 (18% da faixa): sequencial=0.1837  salto=0.9627  onda10=0.3990  onda20=0.8247  pura10=0.3974  escura10=0.6093
+chave 103/300 (0% da faixa): sequencial=0.0009  salto=0.0009  onda10=0.6226  onda20=0.6879  pura10=0.6220  escura10=0.3355
+chave 104/300 (90% da faixa): sequencial=0.9047  salto=0.4976  onda10=0.4418  onda20=0.4723  pura10=0.4317  escura10=0.5856
+chave 105/300 (17% da faixa): sequencial=0.1709  salto=0.6080  onda10=0.7030  onda20=0.5448  pura10=0.7008  escura10=0.3005
+chave 106/300 (40% da faixa): sequencial=0.3974  salto=0.9888  onda10=0.0422  onda20=0.0122  pura10=0.0449  escura10=0.9495
+chave 107/300 (50% da faixa): sequencial=0.4945  salto=0.1479  onda10=0.0160  onda20=0.1128  pura10=0.0224  escura10=0.9903
+chave 108/300 (24% da faixa): sequencial=0.2389  salto=0.3969  onda10=0.8196  onda20=0.2304  pura10=0.8162  escura10=0.1694
+chave 109/300 (9% da faixa): sequencial=0.0853  salto=0.8198  onda10=0.5447  onda20=0.6075  pura10=0.5428  escura10=0.4501
+chave 110/300 (54% da faixa): sequencial=0.5313  salto=0.2176  onda10=0.6053  onda20=0.1664  pura10=0.6135  escura10=0.3947
+
+--- placar apos 110 chaves ---
+escura10    media=0.492 (+-0.053)  vitorias=31
+salto       media=0.507 (+-0.057)  vitorias=15
+onda10      media=0.511 (+-0.053)  vitorias=14
+pura10      media=0.511 (+-0.053)  vitorias=16
+onda20      media=0.528 (+-0.052)  vitorias=12
+sequencial  media=0.563 (+-0.059)  vitorias=22
+chave 111/300 (71% da faixa): sequencial=0.7111  salto=0.1931  onda10=0.1775  onda20=0.3039  pura10=0.1913  escura10=0.8333
+chave 112/300 (31% da faixa): sequencial=0.3174  salto=0.8457  onda10=0.1072  onda20=0.1471  pura10=0.1062  escura10=0.8884
+chave 113/300 (1% da faixa): sequencial=0.0197  salto=0.0205  onda10=0.6344  onda20=0.7065  pura10=0.6331  escura10=0.3534
+chave 114/300 (63% da faixa): sequencial=0.6205  salto=0.3768  onda10=0.4773  onda20=0.5090  pura10=0.4789  escura10=0.5170
+chave 115/300 (98% da faixa): sequencial=0.9980  salto=0.3085  onda10=0.7813  onda20=0.9989  pura10=0.7818  escura10=0.2464
+chave 116/300 (27% da faixa): sequencial=0.2620  salto=0.1020  onda10=0.3490  onda20=0.9063  pura10=0.3474  escura10=0.6279
+chave 117/300 (45% da faixa): sequencial=0.4457  salto=0.0780  onda10=0.8477  onda20=0.0470  pura10=0.8462  escura10=0.1363
+chave 118/300 (95% da faixa): sequencial=0.9484  salto=0.5780  onda10=0.9257  onda20=0.5861  pura10=0.9357  escura10=0.0780
+chave 119/300 (26% da faixa): sequencial=0.2697  salto=0.7693  onda10=0.7985  onda20=0.2113  pura10=0.7935  escura10=0.2088
+chave 120/300 (58% da faixa): sequencial=0.5701  salto=0.2904  onda10=0.0684  onda20=0.3187  pura10=0.0685  escura10=0.9176
+
+--- placar apos 120 chaves ---
+escura10    media=0.491 (+-0.051)  vitorias=34
+salto       media=0.494 (+-0.054)  vitorias=17
+onda10      media=0.511 (+-0.051)  vitorias=16
+pura10      media=0.511 (+-0.051)  vitorias=17
+onda20      media=0.523 (+-0.050)  vitorias=13
+sequencial  media=0.559 (+-0.057)  vitorias=23
+chave 121/300 (17% da faixa): sequencial=0.1799  salto=0.6127  onda10=0.7013  onda20=0.5478  pura10=0.7082  escura10=0.3032
+chave 122/300 (84% da faixa): sequencial=0.8344  salto=0.0451  onda10=0.7044  onda20=0.5544  pura10=0.7067  escura10=0.2950
+chave 123/300 (32% da faixa): sequencial=0.3229  salto=0.1968  onda10=0.2296  onda20=0.7535  pura10=0.2330  escura10=0.7652
+chave 124/300 (27% da faixa): sequencial=0.2631  salto=0.1075  onda10=0.3518  onda20=0.9110  pura10=0.3528  escura10=0.6328
+chave 125/300 (61% da faixa): sequencial=0.6022  salto=0.0035  onda10=0.1324  onda20=0.4738  pura10=0.1326  escura10=0.8570
+chave 126/300 (82% da faixa): sequencial=0.8286  salto=0.7102  onda10=0.3997  onda20=0.8501  pura10=0.4041  escura10=0.6167
+chave 127/300 (78% da faixa): sequencial=0.7954  salto=0.6238  onda10=0.4813  onda20=0.9779  pura10=0.4768  escura10=0.5737
+chave 128/300 (30% da faixa): sequencial=0.3038  salto=0.4952  onda10=0.1846  onda20=0.3052  pura10=0.1895  escura10=0.8380
+chave 129/300 (39% da faixa): sequencial=0.3839  salto=0.9877  onda10=0.0356  onda20=0.0048  pura10=0.0357  escura10=0.9351
+chave 130/300 (75% da faixa): sequencial=0.7450  salto=0.2462  onda10=0.8223  onda20=0.2322  pura10=0.8162  escura10=0.1667
+
+--- placar apos 130 chaves ---
+salto       media=0.487 (+-0.052)  vitorias=21
+escura10    media=0.499 (+-0.049)  vitorias=35
+onda10      media=0.503 (+-0.049)  vitorias=18
+pura10      media=0.503 (+-0.049)  vitorias=18
+onda20      media=0.526 (+-0.049)  vitorias=14
+sequencial  media=0.557 (+-0.054)  vitorias=24
+chave 131/300 (3% da faixa): sequencial=0.0246  salto=0.3727  onda10=0.7652  onda20=0.9843  pura10=0.7711  escura10=0.2405
+chave 132/300 (21% da faixa): sequencial=0.2111  salto=0.6805  onda10=0.2953  onda20=0.4190  pura10=0.2938  escura10=0.7006
+chave 133/300 (78% da faixa): sequencial=0.7865  salto=0.6237  onda10=0.4709  onda20=0.9647  pura10=0.4677  escura10=0.5604
+chave 134/300 (15% da faixa): sequencial=0.1362  salto=0.2363  onda10=0.9776  onda20=0.3504  pura10=0.9737  escura10=0.0115
+chave 135/300 (10% da faixa): sequencial=0.1107  salto=0.1711  onda10=0.4202  onda20=0.4544  pura10=0.4139  escura10=0.5804
+chave 136/300 (69% da faixa): sequencial=0.6894  salto=0.8228  onda10=0.1106  onda20=0.1409  pura10=0.1092  escura10=0.8917
+chave 137/300 (71% da faixa): sequencial=0.6956  salto=0.1660  onda10=0.1665  onda20=0.2950  pura10=0.1657  escura10=0.8252
+chave 138/300 (5% da faixa): sequencial=0.0417  salto=0.0750  onda10=0.9095  onda20=0.5653  pura10=0.9015  escura10=0.0700
+chave 139/300 (5% da faixa): sequencial=0.0428  salto=0.0719  onda10=0.9105  onda20=0.5632  pura10=0.9125  escura10=0.0681
+chave 140/300 (95% da faixa): sequencial=0.9630  salto=0.5901  onda10=0.9369  onda20=0.6018  pura10=0.9416  escura10=0.0918
+
+--- placar apos 140 chaves ---
+salto       media=0.480 (+-0.050)  vitorias=21
+escura10    media=0.492 (+-0.048)  vitorias=37
+onda10      media=0.510 (+-0.048)  vitorias=18
+pura10      media=0.510 (+-0.048)  vitorias=21
+onda20      media=0.527 (+-0.047)  vitorias=14
+sequencial  media=0.543 (+-0.053)  vitorias=29
+chave 141/300 (66% da faixa): sequencial=0.6615  salto=0.7614  onda10=0.9779  onda20=0.0925  pura10=0.9714  escura10=0.0615
+chave 142/300 (61% da faixa): sequencial=0.6099  salto=0.6683  onda10=0.0575  onda20=0.0261  pura10=0.0579  escura10=0.9767
+chave 143/300 (90% da faixa): sequencial=0.9060  salto=0.4910  onda10=0.4269  onda20=0.4597  pura10=0.4272  escura10=0.5868
+chave 144/300 (65% da faixa): sequencial=0.6640  salto=0.7425  onda10=0.9640  onda20=0.0863  pura10=0.9669  escura10=0.0539
+chave 145/300 (24% da faixa): sequencial=0.2470  salto=0.3940  onda10=0.8292  onda20=0.2310  pura10=0.8221  escura10=0.1712
+chave 146/300 (100% da faixa): sequencial=0.9951  salto=0.6530  onda10=0.6520  onda20=0.7224  pura10=0.6566  escura10=0.3712
+chave 147/300 (93% da faixa): sequencial=0.9368  salto=0.2159  onda10=0.7445  onda20=0.8752  pura10=0.7548  escura10=0.2748
+chave 148/300 (34% da faixa): sequencial=0.3413  salto=0.5646  onda10=0.5871  onda20=0.3893  pura10=0.5814  escura10=0.4236
+chave 149/300 (31% da faixa): sequencial=0.3133  salto=0.8451  onda10=0.1134  onda20=0.1413  pura10=0.1059  escura10=0.8865
+chave 150/300 (41% da faixa): sequencial=0.4185  salto=0.3514  onda10=0.0714  onda20=0.3256  pura10=0.0769  escura10=0.9084
+
+--- placar apos 150 chaves ---
+salto       media=0.486 (+-0.048)  vitorias=22
+escura10    media=0.491 (+-0.047)  vitorias=41
+onda10      media=0.512 (+-0.047)  vitorias=20
+pura10      media=0.512 (+-0.047)  vitorias=22
+onda20      media=0.514 (+-0.046)  vitorias=15
+sequencial  media=0.548 (+-0.050)  vitorias=30
+chave 151/300 (87% da faixa): sequencial=0.8656  salto=0.7802  onda10=0.6860  onda20=0.7370  pura10=0.6799  escura10=0.3302
+chave 152/300 (67% da faixa): sequencial=0.6731  salto=0.4396  onda10=0.2222  onda20=0.7593  pura10=0.2234  escura10=0.7643
+chave 153/300 (92% da faixa): sequencial=0.9240  salto=0.8582  onda10=0.5572  onda20=0.6282  pura10=0.5558  escura10=0.4708
+chave 154/300 (47% da faixa): sequencial=0.4687  salto=0.4417  onda10=0.6120  onda20=0.1783  pura10=0.6188  escura10=0.3980
+chave 155/300 (14% da faixa): sequencial=0.1510  salto=0.8898  onda10=0.6734  onda20=0.7466  pura10=0.6837  escura10=0.3295
+chave 156/300 (80% da faixa): sequencial=0.7931  salto=0.3180  onda10=0.2612  onda20=0.2558  pura10=0.2640  escura10=0.7234
+chave 157/300 (7% da faixa): sequencial=0.0734  salto=0.4406  onda10=0.7177  onda20=0.8429  pura10=0.7162  escura10=0.2540
+chave 158/300 (39% da faixa): sequencial=0.4029  salto=0.6556  onda10=0.1547  onda20=0.5002  pura10=0.1486  escura10=0.8603
+chave 159/300 (35% da faixa): sequencial=0.3438  salto=0.8985  onda10=0.9300  onda20=0.0679  pura10=0.9298  escura10=0.0362
+chave 160/300 (9% da faixa): sequencial=0.0926  salto=0.8154  onda10=0.5525  onda20=0.6124  pura10=0.5487  escura10=0.4578
+
+--- placar apos 160 chaves ---
+escura10    media=0.489 (+-0.045)  vitorias=44
+salto       media=0.496 (+-0.046)  vitorias=22
+onda10      media=0.513 (+-0.045)  vitorias=21
+pura10      media=0.513 (+-0.045)  vitorias=23
+onda20      media=0.515 (+-0.044)  vitorias=17
+sequencial  media=0.544 (+-0.049)  vitorias=33
+chave 161/300 (10% da faixa): sequencial=0.0940  salto=0.1557  onda10=0.4069  onda20=0.4284  pura10=0.4112  escura10=0.5530
+chave 162/300 (90% da faixa): sequencial=0.9115  salto=0.5061  onda10=0.4297  onda20=0.4720  pura10=0.4460  escura10=0.5908
+chave 163/300 (38% da faixa): sequencial=0.3763  salto=0.6170  onda10=0.1279  onda20=0.4710  pura10=0.1238  escura10=0.8434
+chave 164/300 (97% da faixa): sequencial=0.9712  salto=0.9374  onda10=0.9103  onda20=0.6550  pura10=0.9071  escura10=0.1227
+chave 165/300 (4% da faixa): sequencial=0.0507  salto=0.7334  onda10=0.8806  onda20=0.6305  pura10=0.8897  escura10=0.1032
+chave 166/300 (26% da faixa): sequencial=0.2569  salto=0.7514  onda10=0.7880  onda20=0.1968  pura10=0.7936  escura10=0.2005
+chave 167/300 (44% da faixa): sequencial=0.4525  salto=0.7292  onda10=0.3390  onda20=0.6761  pura10=0.3363  escura10=0.6846
+chave 168/300 (28% da faixa): sequencial=0.2705  salto=0.1192  onda10=0.3605  onda20=0.9168  pura10=0.3566  escura10=0.6318
+chave 169/300 (32% da faixa): sequencial=0.3215  salto=0.2038  onda10=0.2234  onda20=0.7545  pura10=0.2268  escura10=0.7577
+chave 170/300 (37% da faixa): sequencial=0.3732  salto=0.2834  onda10=0.4864  onda20=0.5243  pura10=0.4891  escura10=0.5231
+
+--- placar apos 170 chaves ---
+escura10    media=0.490 (+-0.043)  vitorias=45
+salto       media=0.497 (+-0.044)  vitorias=25
+onda10      media=0.512 (+-0.043)  vitorias=22
+pura10      media=0.512 (+-0.043)  vitorias=25
+onda20      media=0.519 (+-0.042)  vitorias=18
+sequencial  media=0.536 (+-0.047)  vitorias=35
+chave 171/300 (78% da faixa): sequencial=0.7833  salto=0.6339  onda10=0.4679  onda20=0.9737  pura10=0.4663  escura10=0.5700
+chave 172/300 (55% da faixa): sequencial=0.5562  salto=0.2465  onda10=0.6306  onda20=0.1895  pura10=0.6295  escura10=0.4035
+chave 173/300 (85% da faixa): sequencial=0.8567  salto=0.4124  onda10=0.9858  onda20=0.3633  pura10=0.9914  escura10=0.0125
+chave 174/300 (83% da faixa): sequencial=0.8432  salto=0.7109  onda10=0.4132  onda20=0.8532  pura10=0.4194  escura10=0.6261
+chave 175/300 (16% da faixa): sequencial=0.1546  salto=0.5888  onda10=0.6797  onda20=0.5285  pura10=0.6808  escura10=0.2768
+chave 176/300 (77% da faixa): sequencial=0.7712  salto=0.2765  onda10=0.8558  onda20=0.2526  pura10=0.8580  escura10=0.1894
+chave 177/300 (61% da faixa): sequencial=0.6114  salto=0.6742  onda10=0.0622  onda20=0.0308  pura10=0.0624  escura10=0.9788
+chave 178/300 (37% da faixa): sequencial=0.3762  salto=0.2856  onda10=0.4932  onda20=0.5241  pura10=0.4858  escura10=0.5158
+chave 179/300 (69% da faixa): sequencial=0.7036  salto=0.4869  onda10=0.2512  onda20=0.7848  pura10=0.2573  escura10=0.7903
+chave 180/300 (35% da faixa): sequencial=0.3473  salto=0.9091  onda10=0.9446  onda20=0.0725  pura10=0.9475  escura10=0.0417
+
+--- placar apos 180 chaves ---
+escura10    media=0.487 (+-0.042)  vitorias=48
+salto       media=0.498 (+-0.043)  vitorias=26
+onda20      media=0.515 (+-0.041)  vitorias=20
+onda10      media=0.516 (+-0.042)  vitorias=24
+pura10      media=0.516 (+-0.042)  vitorias=26
+sequencial  media=0.539 (+-0.045)  vitorias=36
+chave 181/300 (53% da faixa): sequencial=0.5376  salto=0.8808  onda10=0.2113  onda20=0.9095  pura10=0.2094  escura10=0.8016
+chave 182/300 (93% da faixa): sequencial=0.9179  salto=0.2050  onda10=0.7336  onda20=0.8602  pura10=0.7378  escura10=0.2721
+chave 183/300 (100% da faixa): sequencial=0.9952  salto=0.6475  onda10=0.6560  onda20=0.7224  pura10=0.6583  escura10=0.3688
+chave 184/300 (83% da faixa): sequencial=0.8289  salto=0.0371  onda10=0.6973  onda20=0.5399  pura10=0.7002  escura10=0.2887
+chave 185/300 (58% da faixa): sequencial=0.5813  salto=0.9468  onda10=0.3441  onda20=0.6958  pura10=0.3456  escura10=0.6954
+chave 186/300 (94% da faixa): sequencial=0.9376  salto=0.2262  onda10=0.7551  onda20=0.8819  pura10=0.7468  escura10=0.2829
+chave 187/300 (35% da faixa): sequencial=0.3625  salto=0.9240  onda10=0.9567  onda20=0.0770  pura10=0.9551  escura10=0.0470
+chave 188/300 (65% da faixa): sequencial=0.6570  salto=0.7418  onda10=0.9680  onda20=0.0842  pura10=0.9608  escura10=0.0541
+chave 189/300 (96% da faixa): sequencial=0.9722  salto=0.9376  onda10=0.8968  onda20=0.6552  pura10=0.9002  escura10=0.1179
+chave 190/300 (89% da faixa): sequencial=0.8969  salto=0.1492  onda10=0.5276  onda20=0.8129  pura10=0.5349  escura10=0.4960
+
+--- placar apos 190 chaves ---
+escura10    media=0.479 (+-0.041)  vitorias=52
+salto       media=0.502 (+-0.042)  vitorias=30
+onda20      media=0.521 (+-0.040)  vitorias=20
+onda10      media=0.524 (+-0.041)  vitorias=25
+pura10      media=0.525 (+-0.041)  vitorias=27
+sequencial  media=0.551 (+-0.044)  vitorias=36
+chave 191/300 (24% da faixa): sequencial=0.2348  salto=0.3914  onda10=0.8244  onda20=0.2160  pura10=0.8181  escura10=0.1668
+chave 192/300 (55% da faixa): sequencial=0.5389  salto=0.5775  onda10=0.8529  onda20=0.0320  pura10=0.8575  escura10=0.1287
+chave 193/300 (19% da faixa): sequencial=0.1891  salto=0.3089  onda10=0.2467  onda20=0.2521  pura10=0.2491  escura10=0.7196
+chave 194/300 (43% da faixa): sequencial=0.4283  salto=0.7059  onda10=0.3195  onda20=0.6635  pura10=0.3191  escura10=0.6690
+chave 195/300 (46% da faixa): sequencial=0.4572  salto=0.4349  onda10=0.6065  onda20=0.1736  pura10=0.6061  escura10=0.3848
+chave 196/300 (1% da faixa): sequencial=0.0191  salto=0.0198  onda10=0.6320  onda20=0.6932  pura10=0.6302  escura10=0.3623
+chave 197/300 (19% da faixa): sequencial=0.1858  salto=0.9704  onda10=0.3935  onda20=0.8331  pura10=0.4018  escura10=0.6170
+chave 198/300 (91% da faixa): sequencial=0.8994  salto=0.8447  onda10=0.5454  onda20=0.5973  pura10=0.5398  escura10=0.4540
+chave 199/300 (66% da faixa): sequencial=0.6577  salto=0.0966  onda10=0.5718  onda20=0.3847  pura10=0.5850  escura10=0.4169
+chave 200/300 (82% da faixa): sequencial=0.8065  salto=0.6815  onda10=0.3894  onda20=0.8292  pura10=0.3851  escura10=0.6147
+
+--- placar apos 200 chaves ---
+escura10    media=0.478 (+-0.039)  vitorias=54
+salto       media=0.502 (+-0.041)  vitorias=31
+onda20      media=0.518 (+-0.039)  vitorias=22
+onda10      media=0.525 (+-0.039)  vitorias=25
+pura10      media=0.525 (+-0.039)  vitorias=29
+sequencial  media=0.546 (+-0.043)  vitorias=39
+chave 201/300 (36% da faixa): sequencial=0.3559  salto=0.2720  onda10=0.4784  onda20=0.4984  pura10=0.4739  escura10=0.4979
+chave 202/300 (5% da faixa): sequencial=0.0470  salto=0.0878  onda10=0.9154  onda20=0.5745  pura10=0.9068  escura10=0.0744
+chave 203/300 (70% da faixa): sequencial=0.7014  salto=0.1567  onda10=0.1570  onda20=0.2836  pura10=0.1666  escura10=0.8174
+chave 204/300 (31% da faixa): sequencial=0.2986  salto=0.1852  onda10=0.2085  onda20=0.7458  pura10=0.2164  escura10=0.7468
+chave 205/300 (70% da faixa): sequencial=0.7129  salto=0.8429  onda10=0.1254  onda20=0.1583  pura10=0.1288  escura10=0.9152
+chave 206/300 (43% da faixa): sequencial=0.4353  salto=0.7252  onda10=0.3298  onda20=0.6756  pura10=0.3173  escura10=0.6667
+chave 207/300 (22% da faixa): sequencial=0.2099  salto=0.0266  onda10=0.4237  onda20=0.9261  pura10=0.4233  escura10=0.5225
+chave 208/300 (56% da faixa): sequencial=0.5659  salto=0.5929  onda10=0.8696  onda20=0.0613  pura10=0.8738  escura10=0.1628
+chave 209/300 (43% da faixa): sequencial=0.4305  salto=0.7016  onda10=0.3203  onda20=0.6650  pura10=0.3255  escura10=0.6545
+chave 210/300 (59% da faixa): sequencial=0.5953  salto=0.3073  onda10=0.0908  onda20=0.3407  pura10=0.0867  escura10=0.9286
+
+--- placar apos 210 chaves ---
+escura10    media=0.484 (+-0.038)  vitorias=54
+salto       media=0.497 (+-0.040)  vitorias=35
+onda20      media=0.517 (+-0.038)  vitorias=23
+onda10      media=0.519 (+-0.038)  vitorias=27
+pura10      media=0.519 (+-0.038)  vitorias=31
+sequencial  media=0.541 (+-0.041)  vitorias=40
+chave 211/300 (54% da faixa): sequencial=0.5366  salto=0.2246  onda10=0.6107  onda20=0.1695  pura10=0.6151  escura10=0.3863
+chave 212/300 (27% da faixa): sequencial=0.2807  salto=0.7796  onda10=0.8055  onda20=0.2159  pura10=0.8041  escura10=0.2132
+chave 213/300 (20% da faixa): sequencial=0.2132  salto=0.3346  onda10=0.2812  onda20=0.2825  pura10=0.2697  escura10=0.7499
+chave 214/300 (53% da faixa): sequencial=0.5246  salto=0.8724  onda10=0.2103  onda20=0.9051  pura10=0.2144  escura10=0.8087
+chave 215/300 (19% da faixa): sequencial=0.1914  salto=0.3110  onda10=0.2532  onda20=0.2597  pura10=0.2542  escura10=0.7266
+chave 216/300 (87% da faixa): sequencial=0.8693  salto=0.7823  onda10=0.6940  onda20=0.7486  pura10=0.6833  escura10=0.3498
+chave 217/300 (34% da faixa): sequencial=0.3413  salto=0.5707  onda10=0.5780  onda20=0.3957  pura10=0.5848  escura10=0.4322
+chave 218/300 (21% da faixa): sequencial=0.2055  salto=0.6844  onda10=0.2979  onda20=0.4200  pura10=0.2954  escura10=0.7011
+chave 219/300 (12% da faixa): sequencial=0.1175  salto=0.5283  onda10=0.5144  onda20=0.7976  pura10=0.5161  escura10=0.4867
+chave 220/300 (71% da faixa): sequencial=0.7086  salto=0.1738  onda10=0.1741  onda20=0.3073  pura10=0.1738  escura10=0.8345
+
+--- placar apos 220 chaves ---
+escura10    media=0.488 (+-0.037)  vitorias=56
+salto       media=0.498 (+-0.039)  vitorias=36
+onda20      media=0.514 (+-0.037)  vitorias=24
+onda10      media=0.515 (+-0.037)  vitorias=28
+pura10      media=0.515 (+-0.037)  vitorias=31
+sequencial  media=0.534 (+-0.040)  vitorias=45
+chave 221/300 (37% da faixa): sequencial=0.3794  salto=0.2796  onda10=0.4806  onda20=0.5118  pura10=0.4902  escura10=0.5216
+chave 222/300 (21% da faixa): sequencial=0.2085  salto=0.6826  onda10=0.2872  onda20=0.4175  pura10=0.2969  escura10=0.7004
+chave 223/300 (63% da faixa): sequencial=0.6217  salto=0.3754  onda10=0.4767  onda20=0.5189  pura10=0.4739  escura10=0.5075
+chave 224/300 (55% da faixa): sequencial=0.5461  salto=0.5908  onda10=0.8648  onda20=0.0436  pura10=0.8669  escura10=0.1381
+chave 225/300 (13% da faixa): sequencial=0.1279  salto=0.8762  onda10=0.6575  onda20=0.7122  pura10=0.6579  escura10=0.3146
+chave 226/300 (58% da faixa): sequencial=0.5820  salto=0.2886  onda10=0.0757  onda20=0.3218  pura10=0.0730  escura10=0.9200
+chave 227/300 (63% da faixa): sequencial=0.6202  salto=0.3682  onda10=0.4871  onda20=0.5108  pura10=0.4779  escura10=0.5233
+chave 228/300 (32% da faixa): sequencial=0.3313  salto=0.2034  onda10=0.2352  onda20=0.7631  pura10=0.2346  escura10=0.7584
+chave 229/300 (52% da faixa): sequencial=0.5172  salto=0.8575  onda10=0.2036  onda20=0.8886  pura10=0.2014  escura10=0.8033
+chave 230/300 (51% da faixa): sequencial=0.5116  salto=0.5126  onda10=0.0237  onda20=0.1288  pura10=0.0233  escura10=0.9943
+
+--- placar apos 230 chaves ---
+escura10    media=0.493 (+-0.036)  vitorias=56
+salto       media=0.498 (+-0.038)  vitorias=40
+onda10      media=0.509 (+-0.036)  vitorias=28
+pura10      media=0.510 (+-0.036)  vitorias=34
+onda20      media=0.513 (+-0.036)  vitorias=25
+sequencial  media=0.530 (+-0.039)  vitorias=47
+chave 231/300 (13% da faixa): sequencial=0.1248  salto=0.8651  onda10=0.6517  onda20=0.7087  pura10=0.6513  escura10=0.3107
+chave 232/300 (3% da faixa): sequencial=0.0288  salto=0.3704  onda10=0.7664  onda20=0.9791  pura10=0.7640  escura10=0.2378
+chave 233/300 (82% da faixa): sequencial=0.8294  salto=0.7018  onda10=0.4006  onda20=0.8477  pura10=0.3980  escura10=0.6136
+chave 234/300 (51% da faixa): sequencial=0.5263  salto=0.5191  onda10=0.0292  onda20=0.1227  pura10=0.0290  escura10=0.9989
+chave 235/300 (83% da faixa): sequencial=0.8278  salto=0.0318  onda10=0.6906  onda20=0.5437  pura10=0.6911  escura10=0.2865
+chave 236/300 (3% da faixa): sequencial=0.0309  salto=0.3778  onda10=0.7699  onda20=0.9908  pura10=0.7717  escura10=0.2443
+chave 237/300 (11% da faixa): sequencial=0.1085  salto=0.5137  onda10=0.5018  onda20=0.7809  pura10=0.5035  escura10=0.4765
+chave 238/300 (19% da faixa): sequencial=0.1941  salto=0.3179  onda10=0.2604  onda20=0.2593  pura10=0.2585  escura10=0.7251
+chave 239/300 (47% da faixa): sequencial=0.4684  salto=0.7765  onda10=0.1903  onda20=0.8749  pura10=0.1874  escura10=0.7789
+chave 240/300 (5% da faixa): sequencial=0.0550  salto=0.7380  onda10=0.9027  onda20=0.6461  pura10=0.8994  escura10=0.1213
+
+--- placar apos 240 chaves ---
+escura10    media=0.493 (+-0.036)  vitorias=56
+salto       media=0.499 (+-0.037)  vitorias=41
+onda10      media=0.510 (+-0.036)  vitorias=28
+pura10      media=0.510 (+-0.036)  vitorias=37
+onda20      media=0.519 (+-0.036)  vitorias=25
+sequencial  media=0.521 (+-0.038)  vitorias=53
+chave 241/300 (62% da faixa): sequencial=0.6183  salto=0.0184  onda10=0.1479  onda20=0.4930  pura10=0.1488  escura10=0.8670
+chave 242/300 (25% da faixa): sequencial=0.2446  salto=0.4021  onda10=0.8212  onda20=0.2294  pura10=0.8286  escura10=0.1734
+chave 243/300 (19% da faixa): sequencial=0.1821  salto=0.3126  onda10=0.2450  onda20=0.2378  pura10=0.2485  escura10=0.7044
+chave 244/300 (70% da faixa): sequencial=0.6994  salto=0.8228  onda10=0.1205  onda20=0.1520  pura10=0.1206  escura10=0.9024
+chave 245/300 (63% da faixa): sequencial=0.6211  salto=0.3815  onda10=0.4819  onda20=0.5191  pura10=0.4918  escura10=0.5141
+chave 246/300 (91% da faixa): sequencial=0.9137  salto=0.8434  onda10=0.5422  onda20=0.6051  pura10=0.5495  escura10=0.4580
+chave 247/300 (8% da faixa): sequencial=0.0841  salto=0.4454  onda10=0.7326  onda20=0.8696  pura10=0.7424  escura10=0.2765
+chave 248/300 (81% da faixa): sequencial=0.8154  salto=0.3400  onda10=0.2748  onda20=0.2784  pura10=0.2820  escura10=0.7443
+chave 249/300 (63% da faixa): sequencial=0.6326  salto=0.3820  onda10=0.4917  onda20=0.5152  pura10=0.4897  escura10=0.5274
+chave 250/300 (43% da faixa): sequencial=0.4389  salto=0.7110  onda10=0.3237  onda20=0.6662  pura10=0.3225  escura10=0.6629
+
+--- placar apos 250 chaves ---
+escura10    media=0.496 (+-0.035)  vitorias=58
+salto       media=0.498 (+-0.036)  vitorias=44
+onda10      media=0.506 (+-0.035)  vitorias=30
+pura10      media=0.506 (+-0.035)  vitorias=38
+onda20      media=0.517 (+-0.035)  vitorias=25
+sequencial  media=0.522 (+-0.038)  vitorias=55
+chave 251/300 (93% da faixa): sequencial=0.9272  salto=0.2036  onda10=0.7265  onda20=0.8632  pura10=0.7397  escura10=0.2649
+chave 252/300 (85% da faixa): sequencial=0.8467  salto=0.4065  onda10=0.9930  onda20=0.3693  pura10=0.9913  escura10=0.0164
+chave 253/300 (24% da faixa): sequencial=0.2290  salto=0.3934  onda10=0.8201  onda20=0.2275  pura10=0.8099  escura10=0.1595
+chave 254/300 (75% da faixa): sequencial=0.7532  salto=0.9058  onda10=0.8204  onda20=0.2159  pura10=0.8150  escura10=0.2187
+chave 255/300 (50% da faixa): sequencial=0.5015  salto=0.5052  onda10=0.0053  onda20=0.1006  pura10=0.0053  escura10=0.9880
+chave 256/300 (78% da faixa): sequencial=0.7831  salto=0.6296  onda10=0.4713  onda20=0.9728  pura10=0.4658  escura10=0.5591
+chave 257/300 (58% da faixa): sequencial=0.5787  salto=0.3038  onda10=0.0860  onda20=0.3247  pura10=0.0732  escura10=0.9271
+chave 258/300 (71% da faixa): sequencial=0.7069  salto=0.1763  onda10=0.1763  onda20=0.3070  pura10=0.1744  escura10=0.8498
+chave 259/300 (12% da faixa): sequencial=0.1082  salto=0.5232  onda10=0.5088  onda20=0.7879  pura10=0.5079  escura10=0.4804
+chave 260/300 (87% da faixa): sequencial=0.8824  salto=0.7884  onda10=0.6967  onda20=0.7500  pura10=0.6882  escura10=0.3479
+
+--- placar apos 260 chaves ---
+escura10    media=0.496 (+-0.034)  vitorias=61
+salto       media=0.497 (+-0.035)  vitorias=45
+onda10      media=0.507 (+-0.034)  vitorias=31
+pura10      media=0.507 (+-0.034)  vitorias=41
+onda20      media=0.516 (+-0.034)  vitorias=26
+sequencial  media=0.526 (+-0.037)  vitorias=56
+chave 261/300 (5% da faixa): sequencial=0.0327  salto=0.0653  onda10=0.9000  onda20=0.5583  pura10=0.8931  escura10=0.0629
+chave 262/300 (56% da faixa): sequencial=0.5632  salto=0.6034  onda10=0.8927  onda20=0.0673  pura10=0.8854  escura10=0.1593
+chave 263/300 (66% da faixa): sequencial=0.6606  salto=0.1012  onda10=0.5734  onda20=0.3952  pura10=0.5828  escura10=0.4190
+chave 264/300 (58% da faixa): sequencial=0.5652  salto=0.2857  onda10=0.0641  onda20=0.3146  pura10=0.0638  escura10=0.9140
+chave 265/300 (24% da faixa): sequencial=0.2425  salto=0.3966  onda10=0.8302  onda20=0.2389  pura10=0.8247  escura10=0.1750
+chave 266/300 (59% da faixa): sequencial=0.6049  salto=0.3212  onda10=0.0930  onda20=0.3468  pura10=0.0937  escura10=0.9435
+chave 267/300 (83% da faixa): sequencial=0.8348  salto=0.0412  onda10=0.7006  onda20=0.5425  pura10=0.7088  escura10=0.2932
+chave 268/300 (64% da faixa): sequencial=0.6428  salto=0.3953  onda10=0.5040  onda20=0.5257  pura10=0.5009  escura10=0.5333
+chave 269/300 (4% da faixa): sequencial=0.0466  salto=0.7324  onda10=0.8806  onda20=0.6301  pura10=0.8804  escura10=0.1080
+chave 270/300 (68% da faixa): sequencial=0.6838  salto=0.4732  onda10=0.2480  onda20=0.7824  pura10=0.2556  escura10=0.7903
+
+--- placar apos 270 chaves ---
+salto       media=0.491 (+-0.034)  vitorias=48
+escura10    media=0.494 (+-0.034)  vitorias=62
+onda10      media=0.509 (+-0.034)  vitorias=33
+pura10      media=0.509 (+-0.034)  vitorias=42
+onda20      media=0.513 (+-0.033)  vitorias=27
+sequencial  media=0.524 (+-0.036)  vitorias=58
+chave 271/300 (39% da faixa): sequencial=0.3839  salto=0.9891  onda10=0.0365  onda20=0.0077  pura10=0.0381  escura10=0.9305
+chave 272/300 (11% da faixa): sequencial=0.1048  salto=0.5132  onda10=0.5031  onda20=0.7788  pura10=0.5056  escura10=0.4726
+chave 273/300 (23% da faixa): sequencial=0.2305  salto=0.0430  onda10=0.4451  onda20=0.9385  pura10=0.4447  escura10=0.5401
+chave 274/300 (32% da faixa): sequencial=0.3283  salto=0.2058  onda10=0.2400  onda20=0.7703  pura10=0.2390  escura10=0.7560
+chave 275/300 (25% da faixa): sequencial=0.2449  salto=0.4002  onda10=0.8353  onda20=0.2364  pura10=0.8302  escura10=0.1769
+chave 276/300 (24% da faixa): sequencial=0.2282  salto=0.3935  onda10=0.8024  onda20=0.2214  pura10=0.8165  escura10=0.1594
+chave 277/300 (7% da faixa): sequencial=0.0827  salto=0.4621  onda10=0.7389  onda20=0.8589  pura10=0.7368  escura10=0.2728
+chave 278/300 (25% da faixa): sequencial=0.2393  salto=0.7449  onda10=0.7710  onda20=0.1876  pura10=0.7797  escura10=0.1892
+chave 279/300 (71% da faixa): sequencial=0.6979  salto=0.1722  onda10=0.1673  onda20=0.2959  pura10=0.1653  escura10=0.8333
+chave 280/300 (60% da faixa): sequencial=0.6060  salto=0.6683  onda10=0.0539  onda20=0.0202  pura10=0.0525  escura10=0.9729
+
+--- placar apos 280 chaves ---
+salto       media=0.490 (+-0.033)  vitorias=50
+escura10    media=0.495 (+-0.033)  vitorias=64
+onda10      media=0.507 (+-0.033)  vitorias=33
+pura10      media=0.508 (+-0.033)  vitorias=43
+onda20      media=0.510 (+-0.033)  vitorias=30
+sequencial  media=0.517 (+-0.035)  vitorias=60
+chave 281/300 (6% da faixa): sequencial=0.0561  salto=0.0847  onda10=0.9242  onda20=0.5793  pura10=0.9236  escura10=0.0834
+chave 282/300 (85% da faixa): sequencial=0.8490  salto=0.4099  onda10=0.9811  onda20=0.3567  pura10=0.9903  escura10=0.0102
+chave 283/300 (25% da faixa): sequencial=0.2499  salto=0.7454  onda10=0.7779  onda20=0.1879  pura10=0.7749  escura10=0.1857
+chave 284/300 (71% da faixa): sequencial=0.7136  salto=0.1731  onda10=0.1738  onda20=0.3019  pura10=0.1728  escura10=0.8315
+chave 285/300 (83% da faixa): sequencial=0.8255  salto=0.0349  onda10=0.7017  onda20=0.5360  pura10=0.7012  escura10=0.2865
+chave 286/300 (77% da faixa): sequencial=0.7641  salto=0.5990  onda10=0.4447  onda20=0.9505  pura10=0.4460  escura10=0.5386
+chave 287/300 (75% da faixa): sequencial=0.7457  salto=0.2498  onda10=0.8237  onda20=0.2345  pura10=0.8215  escura10=0.1648
+chave 288/300 (48% da faixa): sequencial=0.4868  salto=0.7875  onda10=0.2041  onda20=0.8821  pura10=0.2065  escura10=0.7892
+chave 289/300 (84% da faixa): sequencial=0.8484  salto=0.0637  onda10=0.7192  onda20=0.5693  pura10=0.7215  escura10=0.3155
+chave 290/300 (44% da faixa): sequencial=0.4320  salto=0.0601  onda10=0.8470  onda20=0.0330  pura10=0.8449  escura10=0.1273
+
+--- placar apos 290 chaves ---
+salto       media=0.484 (+-0.033)  vitorias=52
+escura10    media=0.489 (+-0.033)  vitorias=67
+onda20      media=0.509 (+-0.032)  vitorias=31
+onda10      media=0.513 (+-0.033)  vitorias=35
+pura10      media=0.513 (+-0.033)  vitorias=44
+sequencial  media=0.520 (+-0.034)  vitorias=61
+chave 291/300 (25% da faixa): sequencial=0.2402  salto=0.7423  onda10=0.7672  onda20=0.1731  pura10=0.7771  escura10=0.1851
+chave 292/300 (37% da faixa): sequencial=0.3627  salto=0.2719  onda10=0.4788  onda20=0.4998  pura10=0.4811  escura10=0.5064
+chave 293/300 (6% da faixa): sequencial=0.0534  salto=0.0833  onda10=0.9164  onda20=0.5724  pura10=0.9189  escura10=0.0811
+chave 294/300 (79% da faixa): sequencial=0.8014  salto=0.9777  onda10=0.3049  onda20=0.4457  pura10=0.3067  escura10=0.7212
+chave 295/300 (51% da faixa): sequencial=0.5161  salto=0.5151  onda10=0.0202  onda20=0.1133  pura10=0.0188  escura10=0.9947
+chave 296/300 (30% da faixa): sequencial=0.3071  salto=0.4949  onda10=0.1795  onda20=0.3033  pura10=0.1838  escura10=0.8309
+chave 297/300 (46% da faixa): sequencial=0.4465  salto=0.4167  onda10=0.5992  onda20=0.1602  pura10=0.5856  escura10=0.3789
+chave 298/300 (5% da faixa): sequencial=0.0599  salto=0.7517  onda10=0.9031  onda20=0.6489  pura10=0.9024  escura10=0.1243
+chave 299/300 (3% da faixa): sequencial=0.0301  salto=0.7193  onda10=0.8733  onda20=0.6282  pura10=0.8664  escura10=0.0970
+chave 300/300 (55% da faixa): sequencial=0.5583  salto=0.5804  onda10=0.8619  onda20=0.0486  pura10=0.8611  escura10=0.1414
+
+--- placar apos 300 chaves ---
+escura10    media=0.487 (+-0.033)  vitorias=67
+salto       media=0.487 (+-0.032)  vitorias=53
+onda20      media=0.504 (+-0.032)  vitorias=34
+sequencial  media=0.514 (+-0.034)  vitorias=64
+onda10      media=0.515 (+-0.032)  vitorias=37
+pura10      media=0.515 (+-0.032)  vitorias=45
