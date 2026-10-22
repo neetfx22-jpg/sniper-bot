@@ -1,0 +1,14 @@
+30000 pares (chave, chave com 1 bit baixo invertido)
+
+media de bits iguais no endereco: 80.009 /160   (sem ligacao: 80; margem 95%: +-0.071)
+
+   bit 0 invertido (distancia   1): 80.03
+   bit 1 invertido (distancia   2): 79.96
+   bit 2 invertido (distancia   4): 79.95
+   bit 3 invertido (distancia   8): 79.88
+   bit 4 invertido (distancia  16): 80.05
+   bit 5 invertido (distancia  32): 79.97
+   bit 6 invertido (distancia  64): 79.98
+   bit 7 invertido (distancia 128): 80.06
+   bit 8 invertido (distancia 256): 80.21
+   bit 9 invertido (distancia 512): 80.00
