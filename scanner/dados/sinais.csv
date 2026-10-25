@@ -65,3 +65,10 @@ leitura,liga,jogo_id,inicio,casa_time,fora_time,resultado,casa,odd,prob_justa,va
 2026-10-24T18:43:37+00:00,soccer_epl,0cfbab01e152f81e34f9014e02c7eb79,2026-11-08T14:00:00Z,Crystal Palace,Liverpool,Draw,888,4.0,0.33533,0.3413,betfair_ex_eu,1.1
 2026-10-24T18:43:37+00:00,soccer_epl,b0a4b5448a7e02d9ad1eaa817599fff0,2026-11-08T16:30:00Z,Manchester United,Aston Villa,Draw,Betclic,3.47,0.33333,0.1567,betfair_ex_eu,1.1
 2026-10-24T18:43:37+00:00,soccer_epl,b0a4b5448a7e02d9ad1eaa817599fff0,2026-11-08T16:30:00Z,Manchester United,Aston Villa,Draw,888,3.5,0.33333,0.1667,betfair_ex_eu,1.1
+2026-10-25T13:40:19+00:00,soccer_epl,5c87852253fd11eea5d34ad723356607,2026-11-07T12:30:00Z,Leeds United,Tottenham Hotspur,A,Betclic,2.85,0.40705,0.1601,betfair_ex_eu,1.36
+2026-10-25T13:40:19+00:00,soccer_epl,5c87852253fd11eea5d34ad723356607,2026-11-07T12:30:00Z,Leeds United,Tottenham Hotspur,A,888,2.9,0.40705,0.1804,betfair_ex_eu,1.36
+2026-10-25T13:40:19+00:00,soccer_epl,59c5f635cfe11613c07e9a5520ced5c1,2026-11-07T17:30:00Z,Nottingham Forest,Manchester City,Draw,Betclic,3.9,0.27429,0.0697,betfair_ex_eu,2.54
+2026-10-25T13:40:19+00:00,soccer_epl,59c5f635cfe11613c07e9a5520ced5c1,2026-11-07T17:30:00Z,Nottingham Forest,Manchester City,Draw,888,4.0,0.27429,0.0971,betfair_ex_eu,2.54
+2026-10-25T13:40:19+00:00,soccer_epl,79ed3df594d7b352ef027128b1ba5d0a,2026-11-08T14:00:00Z,Ipswich Town,Bournemouth,H,Betclic,2.92,0.36416,0.0634,betfair_ex_eu,1.1
+2026-10-25T13:40:19+00:00,soccer_epl,79ed3df594d7b352ef027128b1ba5d0a,2026-11-08T14:00:00Z,Ipswich Town,Bournemouth,H,888,3.0,0.36416,0.0925,betfair_ex_eu,1.1
+2026-10-25T13:40:19+00:00,soccer_epl,0cfbab01e152f81e34f9014e02c7eb79,2026-11-08T14:00:00Z,Crystal Palace,Liverpool,Draw,Betclic,4.0,0.33533,0.3413,betfair_ex_eu,1.1
