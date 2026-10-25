@@ -72,3 +72,5 @@ leitura,liga,jogo_id,inicio,casa_time,fora_time,resultado,casa,odd,prob_justa,va
 2026-10-25T13:40:19+00:00,soccer_epl,79ed3df594d7b352ef027128b1ba5d0a,2026-11-08T14:00:00Z,Ipswich Town,Bournemouth,H,Betclic,2.92,0.36416,0.0634,betfair_ex_eu,1.1
 2026-10-25T13:40:19+00:00,soccer_epl,79ed3df594d7b352ef027128b1ba5d0a,2026-11-08T14:00:00Z,Ipswich Town,Bournemouth,H,888,3.0,0.36416,0.0925,betfair_ex_eu,1.1
 2026-10-25T13:40:19+00:00,soccer_epl,0cfbab01e152f81e34f9014e02c7eb79,2026-11-08T14:00:00Z,Crystal Palace,Liverpool,Draw,Betclic,4.0,0.33533,0.3413,betfair_ex_eu,1.1
+2026-10-25T18:52:36+00:00,soccer_epl,b0a4b5448a7e02d9ad1eaa817599fff0,2026-11-08T16:30:00Z,Manchester United,Aston Villa,A,Betclic,2.9,0.37947,0.1005,betfair_ex_eu,1.95
+2026-10-25T18:52:36+00:00,soccer_epl,b0a4b5448a7e02d9ad1eaa817599fff0,2026-11-08T16:30:00Z,Manchester United,Aston Villa,A,888,2.9,0.37947,0.1005,betfair_ex_eu,1.95
