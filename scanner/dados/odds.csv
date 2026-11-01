@@ -16643,3 +16643,210 @@ leitura,liga,jogo_id,inicio,casa_time,fora_time,resultado,ref_casa,ref_odd,prob_
 2026-10-31T19:52:14+00:00,soccer_france_ligue_one,4e917e19b59093a02a0e12bcf9a5ecc4,2026-11-08T19:45:00Z,RC Lens,Marseille,A,pinnacle,3.2,0.29713,3.31,onexbet,16,3.02,3.1
 2026-10-31T19:52:14+00:00,soccer_france_ligue_one,4e917e19b59093a02a0e12bcf9a5ecc4,2026-11-08T19:45:00Z,RC Lens,Marseille,H,pinnacle,2.06,0.46155,2.14,unibet_se,16,1.93,2.0
 2026-10-31T19:52:14+00:00,soccer_france_ligue_one,4e917e19b59093a02a0e12bcf9a5ecc4,2026-11-08T19:45:00Z,RC Lens,Marseille,Draw,pinnacle,3.94,0.24132,4.16,onexbet,16,3.68,3.8
+2026-11-01T15:56:34+00:00,soccer_portugal_primeira_liga,ce5c2cbdf5db2a13f40f528d3e5044b9,2026-11-01T18:00:00Z,Académico de Viseu,Rio Ave FC,H,pinnacle,1.87,0.51806,1.9,matchbook,18,1.77,1.85
+2026-11-01T15:56:34+00:00,soccer_portugal_primeira_liga,ce5c2cbdf5db2a13f40f528d3e5044b9,2026-11-01T18:00:00Z,Académico de Viseu,Rio Ave FC,A,pinnacle,4.52,0.21433,4.9,matchbook,18,4.05,4.0
+2026-11-01T15:56:34+00:00,soccer_portugal_primeira_liga,ce5c2cbdf5db2a13f40f528d3e5044b9,2026-11-01T18:00:00Z,Académico de Viseu,Rio Ave FC,Draw,pinnacle,3.62,0.26761,3.66,gtbets,18,3.5,3.4
+2026-11-01T15:56:34+00:00,soccer_portugal_primeira_liga,6bf5102547eb3f3eb74023133e27d2d3,2026-11-01T18:00:00Z,CS Maritimo,Santa Clara,H,pinnacle,3.7,0.26233,3.75,matchbook,17,3.33,3.4
+2026-11-01T15:56:34+00:00,soccer_portugal_primeira_liga,6bf5102547eb3f3eb74023133e27d2d3,2026-11-01T18:00:00Z,CS Maritimo,Santa Clara,A,pinnacle,2.27,0.42758,2.32,matchbook,17,2.12,2.2
+2026-11-01T15:56:34+00:00,soccer_portugal_primeira_liga,6bf5102547eb3f3eb74023133e27d2d3,2026-11-01T18:00:00Z,CS Maritimo,Santa Clara,Draw,pinnacle,3.13,0.3101,3.25,matchbook,17,3.07,3.0
+2026-11-01T15:56:34+00:00,soccer_portugal_primeira_liga,12fa9f636dbb126cfd4118fa8cdc8fad,2026-11-01T20:30:00Z,Braga,Famalicão,H,pinnacle,1.68,0.57528,1.72,gtbets,18,1.55,1.67
+2026-11-01T15:56:34+00:00,soccer_portugal_primeira_liga,12fa9f636dbb126cfd4118fa8cdc8fad,2026-11-01T20:30:00Z,Braga,Famalicão,A,pinnacle,5.65,0.17106,6.0,matchbook,18,5.0,5.0
+2026-11-01T15:56:34+00:00,soccer_portugal_primeira_liga,12fa9f636dbb126cfd4118fa8cdc8fad,2026-11-01T20:30:00Z,Braga,Famalicão,Draw,pinnacle,3.81,0.25367,4.0,matchbook,18,3.6,3.5
+2026-11-01T15:56:34+00:00,soccer_portugal_primeira_liga,cdf1a22ce6d16f0903216518d909e02a,2026-11-02T20:15:00Z,Benfica,Alverca,A,betfair_ex_eu,15.5,0.06405,16.0,matchbook,17,12.25,13.0
+2026-11-01T15:56:34+00:00,soccer_portugal_primeira_liga,cdf1a22ce6d16f0903216518d909e02a,2026-11-02T20:15:00Z,Benfica,Alverca,H,betfair_ex_eu,1.21,0.8205,1.21,matchbook,17,1.14,1.17
+2026-11-01T15:56:34+00:00,soccer_portugal_primeira_liga,cdf1a22ce6d16f0903216518d909e02a,2026-11-02T20:15:00Z,Benfica,Alverca,Draw,betfair_ex_eu,8.6,0.11544,8.6,matchbook,17,7.0,7.0
+2026-11-01T15:56:34+00:00,soccer_portugal_primeira_liga,97ce048d06fc45fc59e114548540828f,2026-11-02T20:15:00Z,Gil Vicente,Vitória SC,H,pinnacle,2.89,0.33092,2.96,matchbook,18,2.78,2.75
+2026-11-01T15:56:34+00:00,soccer_portugal_primeira_liga,97ce048d06fc45fc59e114548540828f,2026-11-02T20:15:00Z,Gil Vicente,Vitória SC,A,pinnacle,2.69,0.35552,2.7,matchbook,18,2.4,2.5
+2026-11-01T15:56:34+00:00,soccer_portugal_primeira_liga,97ce048d06fc45fc59e114548540828f,2026-11-02T20:15:00Z,Gil Vicente,Vitória SC,Draw,pinnacle,3.05,0.31356,3.25,coolbet,18,3.1,3.0
+2026-11-01T15:56:34+00:00,soccer_portugal_primeira_liga,ba0a2d492dfcc89ab465eddd7a9e98c2,2026-11-07T20:30:00Z,Sporting Lisbon,Moreirense FC,A,pinnacle,13.2,0.07189,15.0,coolbet,16,12.5,13.0
+2026-11-01T15:56:34+00:00,soccer_portugal_primeira_liga,ba0a2d492dfcc89ab465eddd7a9e98c2,2026-11-07T20:30:00Z,Sporting Lisbon,Moreirense FC,H,pinnacle,1.17,0.81109,1.19,coolbet,16,1.12,1.17
+2026-11-01T15:56:34+00:00,soccer_portugal_primeira_liga,ba0a2d492dfcc89ab465eddd7a9e98c2,2026-11-07T20:30:00Z,Sporting Lisbon,Moreirense FC,Draw,pinnacle,8.11,0.11701,8.2,tipico_de,16,6.9,7.5
+2026-11-01T15:56:34+00:00,soccer_epl,6a3819cdbe2ba2fe5a3d8f9b4b459965,2026-11-01T16:30:00Z,Liverpool,Arsenal,A,pinnacle,2.36,0.41301,2.44,matchbook,23,2.18,2.25
+2026-11-01T15:56:34+00:00,soccer_epl,6a3819cdbe2ba2fe5a3d8f9b4b459965,2026-11-01T16:30:00Z,Liverpool,Arsenal,H,pinnacle,3.21,0.30365,3.22,coolbet,23,3.0,3.0
+2026-11-01T15:56:34+00:00,soccer_epl,6a3819cdbe2ba2fe5a3d8f9b4b459965,2026-11-01T16:30:00Z,Liverpool,Arsenal,Draw,pinnacle,3.44,0.28334,3.55,winamax_de,23,3.4,3.3
+2026-11-01T15:56:34+00:00,soccer_epl,0f552d9c6990c69474f50ff2fb54e9a3,2026-11-02T20:00:00Z,Newcastle United,Everton,A,pinnacle,3.08,0.31425,3.25,matchbook,23,2.85,2.9
+2026-11-01T15:56:34+00:00,soccer_epl,0f552d9c6990c69474f50ff2fb54e9a3,2026-11-02T20:00:00Z,Newcastle United,Everton,H,pinnacle,2.33,0.4154,2.4,unibet_se,23,2.18,2.25
+2026-11-01T15:56:34+00:00,soccer_epl,0f552d9c6990c69474f50ff2fb54e9a3,2026-11-02T20:00:00Z,Newcastle United,Everton,Draw,pinnacle,3.58,0.27036,3.74,onexbet,23,3.45,3.4
+2026-11-01T15:56:34+00:00,soccer_epl,586bec023ee8ac2f0645d963bd2c9d25,2026-11-06T20:00:00Z,Everton,Coventry City,A,pinnacle,4.59,0.20672,5.1,matchbook,21,4.25,4.5
+2026-11-01T15:56:34+00:00,soccer_epl,586bec023ee8ac2f0645d963bd2c9d25,2026-11-06T20:00:00Z,Everton,Coventry City,H,pinnacle,1.71,0.55488,1.75,unibet_se,21,1.63,1.7
+2026-11-01T15:56:34+00:00,soccer_epl,586bec023ee8ac2f0645d963bd2c9d25,2026-11-06T20:00:00Z,Everton,Coventry City,Draw,pinnacle,3.98,0.2384,4.16,onexbet,21,3.7,3.8
+2026-11-01T15:56:34+00:00,soccer_epl,5c87852253fd11eea5d34ad723356607,2026-11-07T12:30:00Z,Leeds United,Tottenham Hotspur,H,pinnacle,2.55,0.37426,2.66,matchbook,21,2.33,2.4
+2026-11-01T15:56:34+00:00,soccer_epl,5c87852253fd11eea5d34ad723356607,2026-11-07T12:30:00Z,Leeds United,Tottenham Hotspur,A,pinnacle,2.8,0.34085,2.86,onexbet,21,2.63,2.75
+2026-11-01T15:56:34+00:00,soccer_epl,5c87852253fd11eea5d34ad723356607,2026-11-07T12:30:00Z,Leeds United,Tottenham Hotspur,Draw,pinnacle,3.35,0.28489,3.62,onexbet,21,3.2,3.3
+2026-11-01T15:56:34+00:00,soccer_epl,842fcc5b9feb8c63054a661ad1fc8926,2026-11-07T15:00:00Z,Arsenal,Hull City,H,pinnacle,1.14,0.82872,1.19,onexbet,20,1.12,1.17
+2026-11-01T15:56:34+00:00,soccer_epl,842fcc5b9feb8c63054a661ad1fc8926,2026-11-07T15:00:00Z,Arsenal,Hull City,A,pinnacle,17.11,0.05522,20.0,unibet_se,20,14.0,15.0
+2026-11-01T15:56:34+00:00,soccer_epl,842fcc5b9feb8c63054a661ad1fc8926,2026-11-07T15:00:00Z,Arsenal,Hull City,Draw,pinnacle,8.14,0.11606,8.5,tipico_de,20,6.5,7.0
+2026-11-01T15:56:34+00:00,soccer_epl,3903e98a54db0f2cc23095407fe9dad8,2026-11-07T15:00:00Z,Fulham,Newcastle United,H,pinnacle,2.13,0.44719,2.25,onexbet,20,2.0,2.15
+2026-11-01T15:56:34+00:00,soccer_epl,3903e98a54db0f2cc23095407fe9dad8,2026-11-07T15:00:00Z,Fulham,Newcastle United,A,pinnacle,3.28,0.2904,3.55,matchbook,20,3.03,3.0
+2026-11-01T15:56:34+00:00,soccer_epl,3903e98a54db0f2cc23095407fe9dad8,2026-11-07T15:00:00Z,Fulham,Newcastle United,Draw,pinnacle,3.63,0.2624,3.84,onexbet,20,3.45,3.5
+2026-11-01T15:56:34+00:00,soccer_epl,59c5f635cfe11613c07e9a5520ced5c1,2026-11-07T17:30:00Z,Nottingham Forest,Manchester City,A,pinnacle,1.71,0.5543,1.77,matchbook,20,1.6,1.67
+2026-11-01T15:56:34+00:00,soccer_epl,59c5f635cfe11613c07e9a5520ced5c1,2026-11-07T17:30:00Z,Nottingham Forest,Manchester City,H,pinnacle,4.58,0.20695,4.9,matchbook,20,4.3,4.4
+2026-11-01T15:56:34+00:00,soccer_epl,59c5f635cfe11613c07e9a5520ced5c1,2026-11-07T17:30:00Z,Nottingham Forest,Manchester City,Draw,pinnacle,3.97,0.23875,4.37,onexbet,20,3.8,4.0
+2026-11-01T15:56:34+00:00,soccer_epl,79ed3df594d7b352ef027128b1ba5d0a,2026-11-08T14:00:00Z,Ipswich Town,Bournemouth,A,pinnacle,1.94,0.48977,2.02,onexbet,19,1.82,1.95
+2026-11-01T15:56:34+00:00,soccer_epl,79ed3df594d7b352ef027128b1ba5d0a,2026-11-08T14:00:00Z,Ipswich Town,Bournemouth,H,pinnacle,3.77,0.25203,3.9,matchbook,19,3.53,3.5
+2026-11-01T15:56:34+00:00,soccer_epl,79ed3df594d7b352ef027128b1ba5d0a,2026-11-08T14:00:00Z,Ipswich Town,Bournemouth,Draw,pinnacle,3.68,0.2582,3.96,onexbet,19,3.5,3.6
+2026-11-01T15:56:34+00:00,soccer_epl,8e3ca98e29be84dd4a882ed05f50fa79,2026-11-08T14:00:00Z,Brighton and Hove Albion,Brentford,A,pinnacle,3.62,0.26223,3.85,nordicbet,19,3.48,3.5
+2026-11-01T15:56:34+00:00,soccer_epl,8e3ca98e29be84dd4a882ed05f50fa79,2026-11-08T14:00:00Z,Brighton and Hove Albion,Brentford,H,pinnacle,1.93,0.49185,1.98,onexbet,19,1.8,1.91
+2026-11-01T15:56:34+00:00,soccer_epl,8e3ca98e29be84dd4a882ed05f50fa79,2026-11-08T14:00:00Z,Brighton and Hove Albion,Brentford,Draw,pinnacle,3.86,0.24592,4.05,onexbet,19,3.6,3.7
+2026-11-01T15:56:34+00:00,soccer_epl,3a4608abdf257d2a0024b944757d9dc9,2026-11-08T14:00:00Z,Sunderland,Chelsea,A,pinnacle,2.04,0.46684,2.15,onexbet,19,1.88,2.05
+2026-11-01T15:56:34+00:00,soccer_epl,3a4608abdf257d2a0024b944757d9dc9,2026-11-08T14:00:00Z,Sunderland,Chelsea,H,pinnacle,3.48,0.27366,3.8,matchbook,19,3.4,3.3
+2026-11-01T15:56:34+00:00,soccer_epl,3a4608abdf257d2a0024b944757d9dc9,2026-11-08T14:00:00Z,Sunderland,Chelsea,Draw,pinnacle,3.67,0.2595,3.75,onexbet,19,3.4,3.4
+2026-11-01T15:56:34+00:00,soccer_epl,0cfbab01e152f81e34f9014e02c7eb79,2026-11-08T14:00:00Z,Crystal Palace,Liverpool,H,pinnacle,5.1,0.186,5.3,matchbook,19,4.55,4.8
+2026-11-01T15:56:34+00:00,soccer_epl,0cfbab01e152f81e34f9014e02c7eb79,2026-11-08T14:00:00Z,Crystal Palace,Liverpool,A,pinnacle,1.61,0.5892,1.71,onexbet,19,1.54,1.61
+2026-11-01T15:56:34+00:00,soccer_epl,0cfbab01e152f81e34f9014e02c7eb79,2026-11-08T14:00:00Z,Crystal Palace,Liverpool,Draw,pinnacle,4.22,0.22479,4.46,onexbet,19,4.0,4.0
+2026-11-01T15:56:34+00:00,soccer_epl,b0a4b5448a7e02d9ad1eaa817599fff0,2026-11-08T16:30:00Z,Manchester United,Aston Villa,A,pinnacle,2.89,0.32946,3.02,onexbet,18,2.82,2.88
+2026-11-01T15:56:34+00:00,soccer_epl,b0a4b5448a7e02d9ad1eaa817599fff0,2026-11-08T16:30:00Z,Manchester United,Aston Villa,H,pinnacle,2.26,0.4213,2.32,onexbet,18,2.1,2.2
+2026-11-01T15:56:34+00:00,soccer_epl,b0a4b5448a7e02d9ad1eaa817599fff0,2026-11-08T16:30:00Z,Manchester United,Aston Villa,Draw,pinnacle,3.82,0.24925,3.94,onexbet,18,3.5,3.6
+2026-11-01T15:56:34+00:00,soccer_epl,4c08b213ed416e8f41e038f42a42b962,2026-11-22T16:30:00Z,Liverpool,Manchester United,H,betfair_ex_eu,1.54,0.53465,1.85,onexbet,8,1.69,
+2026-11-01T15:56:34+00:00,soccer_epl,4c08b213ed416e8f41e038f42a42b962,2026-11-22T16:30:00Z,Liverpool,Manchester United,A,betfair_ex_eu,3.35,0.24578,4.32,onexbet,8,3.7,
+2026-11-01T15:56:34+00:00,soccer_epl,4c08b213ed416e8f41e038f42a42b962,2026-11-22T16:30:00Z,Liverpool,Manchester United,Draw,betfair_ex_eu,3.75,0.21956,4.11,onexbet,8,3.58,
+2026-11-01T15:56:34+00:00,soccer_spain_la_liga,5262991e389930615bec34b642428c93,2026-11-01T17:30:00Z,Elche CF,Valencia,H,pinnacle,2.39,0.40836,2.48,onexbet,19,2.22,
+2026-11-01T15:56:34+00:00,soccer_spain_la_liga,5262991e389930615bec34b642428c93,2026-11-01T17:30:00Z,Elche CF,Valencia,A,pinnacle,3.25,0.3003,3.3,matchbook,19,2.97,
+2026-11-01T15:56:34+00:00,soccer_spain_la_liga,5262991e389930615bec34b642428c93,2026-11-01T17:30:00Z,Elche CF,Valencia,Draw,pinnacle,3.35,0.29134,3.5,unibet_se,19,3.32,
+2026-11-01T15:56:34+00:00,soccer_spain_la_liga,3757bcd765c7da1538cdf2785e784038,2026-11-01T20:00:00Z,Athletic Bilbao,Real Sociedad,H,pinnacle,2.01,0.48551,2.07,onexbet,19,1.91,
+2026-11-01T15:56:34+00:00,soccer_spain_la_liga,3757bcd765c7da1538cdf2785e784038,2026-11-01T20:00:00Z,Athletic Bilbao,Real Sociedad,A,pinnacle,3.87,0.25216,3.95,matchbook,19,3.55,
+2026-11-01T15:56:34+00:00,soccer_spain_la_liga,3757bcd765c7da1538cdf2785e784038,2026-11-01T20:00:00Z,Athletic Bilbao,Real Sociedad,Draw,pinnacle,3.72,0.26233,3.8,matchbook,19,3.5,
+2026-11-01T15:56:34+00:00,soccer_spain_la_liga,7a2cd2744fdf15ea675423a6c23df46b,2026-11-02T20:00:00Z,Deportivo La Coruña,CA Osasuna,A,pinnacle,3.67,0.26346,3.85,matchbook,19,3.4,
+2026-11-01T15:56:34+00:00,soccer_spain_la_liga,7a2cd2744fdf15ea675423a6c23df46b,2026-11-02T20:00:00Z,Deportivo La Coruña,CA Osasuna,H,pinnacle,2.18,0.44354,2.27,onexbet,19,2.05,
+2026-11-01T15:56:34+00:00,soccer_spain_la_liga,7a2cd2744fdf15ea675423a6c23df46b,2026-11-02T20:00:00Z,Deportivo La Coruña,CA Osasuna,Draw,pinnacle,3.3,0.293,3.45,onexbet,19,3.15,
+2026-11-01T15:56:34+00:00,soccer_spain_la_liga,9dd0014685fd62d9b2890d7c33a8c9ab,2026-11-06T20:00:00Z,Sevilla,Alavés,A,pinnacle,4.21,0.22565,4.5,matchbook,17,3.8,
+2026-11-01T15:56:34+00:00,soccer_spain_la_liga,9dd0014685fd62d9b2890d7c33a8c9ab,2026-11-06T20:00:00Z,Sevilla,Alavés,H,pinnacle,1.91,0.49738,2.05,onexbet,17,1.83,
+2026-11-01T15:56:34+00:00,soccer_spain_la_liga,9dd0014685fd62d9b2890d7c33a8c9ab,2026-11-06T20:00:00Z,Sevilla,Alavés,Draw,pinnacle,3.43,0.27697,3.65,matchbook,17,3.2,
+2026-11-01T15:56:34+00:00,soccer_spain_la_liga,de935794b7d93f3607ac9ad54d18f4c7,2026-11-07T13:00:00Z,Málaga,Real Racing Club de Santander,H,pinnacle,2.42,0.39422,2.48,onexbet,17,2.2,
+2026-11-01T15:56:34+00:00,soccer_spain_la_liga,de935794b7d93f3607ac9ad54d18f4c7,2026-11-07T13:00:00Z,Málaga,Real Racing Club de Santander,A,pinnacle,2.85,0.33475,2.92,onexbet,17,2.7,
+2026-11-01T15:56:34+00:00,soccer_spain_la_liga,de935794b7d93f3607ac9ad54d18f4c7,2026-11-07T13:00:00Z,Málaga,Real Racing Club de Santander,Draw,pinnacle,3.52,0.27103,3.72,onexbet,17,3.4,
+2026-11-01T15:56:34+00:00,soccer_spain_la_liga,262c2c99c38456b8a70cb9daa32f2f6d,2026-11-07T15:15:00Z,Espanyol,Deportivo La Coruña,A,pinnacle,3.28,0.28997,3.45,unibet_se,17,3.12,
+2026-11-01T15:56:34+00:00,soccer_spain_la_liga,262c2c99c38456b8a70cb9daa32f2f6d,2026-11-07T15:15:00Z,Espanyol,Deportivo La Coruña,H,pinnacle,2.17,0.43829,2.3,onexbet,17,2.05,
+2026-11-01T15:56:34+00:00,soccer_spain_la_liga,262c2c99c38456b8a70cb9daa32f2f6d,2026-11-07T15:15:00Z,Espanyol,Deportivo La Coruña,Draw,pinnacle,3.5,0.27174,3.55,winamax_de,17,3.22,
+2026-11-01T15:56:34+00:00,soccer_spain_la_liga,71ca5141a1c532e390c6fa14e080d8bd,2026-11-07T17:30:00Z,CA Osasuna,Athletic Bilbao,A,pinnacle,2.24,0.42525,2.28,unibet_se,17,2.07,
+2026-11-01T15:56:34+00:00,soccer_spain_la_liga,71ca5141a1c532e390c6fa14e080d8bd,2026-11-07T17:30:00Z,CA Osasuna,Athletic Bilbao,H,pinnacle,3.28,0.29041,3.52,onexbet,17,3.12,
+2026-11-01T15:56:34+00:00,soccer_spain_la_liga,71ca5141a1c532e390c6fa14e080d8bd,2026-11-07T17:30:00Z,CA Osasuna,Athletic Bilbao,Draw,pinnacle,3.35,0.28434,3.52,onexbet,17,3.18,
+2026-11-01T15:56:34+00:00,soccer_spain_la_liga,5b386dfdf6f76705116fbb4120ee8493,2026-11-07T20:00:00Z,Valencia,Real Madrid,A,pinnacle,1.29,0.7332,1.36,onexbet,17,1.29,
+2026-11-01T15:56:34+00:00,soccer_spain_la_liga,5b386dfdf6f76705116fbb4120ee8493,2026-11-07T20:00:00Z,Valencia,Real Madrid,H,pinnacle,8.09,0.11691,9.6,betsson,17,6.75,
+2026-11-01T15:56:34+00:00,soccer_spain_la_liga,5b386dfdf6f76705116fbb4120ee8493,2026-11-07T20:00:00Z,Valencia,Real Madrid,Draw,pinnacle,6.31,0.14989,6.8,matchbook,17,5.1,
+2026-11-01T15:56:34+00:00,soccer_spain_la_liga,c35673eb1e889309d6985c091a43a3f5,2026-11-08T13:00:00Z,Elche CF,Real Betis,H,pinnacle,3.08,0.3092,3.39,onexbet,17,3.0,
+2026-11-01T15:56:34+00:00,soccer_spain_la_liga,c35673eb1e889309d6985c091a43a3f5,2026-11-08T13:00:00Z,Elche CF,Real Betis,A,pinnacle,2.17,0.43886,2.2,unibet_se,17,2.0,
+2026-11-01T15:56:34+00:00,soccer_spain_la_liga,c35673eb1e889309d6985c091a43a3f5,2026-11-08T13:00:00Z,Elche CF,Real Betis,Draw,pinnacle,3.78,0.25194,3.8,unibet_se,17,3.47,
+2026-11-01T15:56:34+00:00,soccer_spain_la_liga,339a6465fa5153fd8f31e487cf557cf0,2026-11-08T15:15:00Z,Real Sociedad,Rayo Vallecano,A,pinnacle,4.29,0.22146,4.57,onexbet,17,4.0,
+2026-11-01T15:56:34+00:00,soccer_spain_la_liga,339a6465fa5153fd8f31e487cf557cf0,2026-11-08T15:15:00Z,Real Sociedad,Rayo Vallecano,H,pinnacle,1.76,0.53982,1.82,onexbet,17,1.67,
+2026-11-01T15:56:34+00:00,soccer_spain_la_liga,339a6465fa5153fd8f31e487cf557cf0,2026-11-08T15:15:00Z,Real Sociedad,Rayo Vallecano,Draw,pinnacle,3.98,0.23871,4.1,tipico_de,17,3.68,
+2026-11-01T15:56:34+00:00,soccer_spain_la_liga,0d2e199bfba0db42871696c10037bad3,2026-11-08T17:30:00Z,Celta Vigo,Levante,H,pinnacle,1.76,0.53934,1.86,onexbet,16,1.72,
+2026-11-01T15:56:34+00:00,soccer_spain_la_liga,0d2e199bfba0db42871696c10037bad3,2026-11-08T17:30:00Z,Celta Vigo,Levante,A,pinnacle,4.25,0.22335,4.55,betsson,16,3.98,
+2026-11-01T15:56:34+00:00,soccer_spain_la_liga,0d2e199bfba0db42871696c10037bad3,2026-11-08T17:30:00Z,Celta Vigo,Levante,Draw,pinnacle,4.0,0.23731,3.95,unibet_se,16,3.5,
+2026-11-01T15:56:34+00:00,soccer_spain_la_liga,81ad04996f63fb60b494d243b13ac586,2026-11-08T17:30:00Z,Villarreal,Getafe,A,pinnacle,6.7,0.14109,7.2,tipico_de,16,6.25,
+2026-11-01T15:56:34+00:00,soccer_spain_la_liga,81ad04996f63fb60b494d243b13ac586,2026-11-08T17:30:00Z,Villarreal,Getafe,H,pinnacle,1.46,0.64745,1.55,onexbet,16,1.39,
+2026-11-01T15:56:34+00:00,soccer_spain_la_liga,81ad04996f63fb60b494d243b13ac586,2026-11-08T17:30:00Z,Villarreal,Getafe,Draw,pinnacle,4.47,0.21147,4.6,tipico_de,16,4.15,
+2026-11-01T15:56:34+00:00,soccer_spain_la_liga,dd247b356d8fc53e4b4f9bfcfe09c924,2026-11-08T20:00:00Z,Atlético Madrid,Barcelona,H,pinnacle,3.8,0.25014,3.9,tipico_de,15,3.45,
+2026-11-01T15:56:34+00:00,soccer_spain_la_liga,dd247b356d8fc53e4b4f9bfcfe09c924,2026-11-08T20:00:00Z,Atlético Madrid,Barcelona,A,pinnacle,1.81,0.52515,1.92,unibet_se,15,1.74,
+2026-11-01T15:56:34+00:00,soccer_spain_la_liga,dd247b356d8fc53e4b4f9bfcfe09c924,2026-11-08T20:00:00Z,Atlético Madrid,Barcelona,Draw,pinnacle,4.23,0.22471,4.36,onexbet,15,3.93,
+2026-11-01T15:56:34+00:00,soccer_italy_serie_a,940b9e69539033539039f9af694e2925,2026-11-01T17:00:00Z,Lecce,Genoa,A,pinnacle,2.52,0.38732,2.58,onexbet,22,2.35,2.25
+2026-11-01T15:56:34+00:00,soccer_italy_serie_a,940b9e69539033539039f9af694e2925,2026-11-01T17:00:00Z,Lecce,Genoa,H,pinnacle,3.41,0.28623,3.45,matchbook,22,3.12,3.25
+2026-11-01T15:56:34+00:00,soccer_italy_serie_a,940b9e69539033539039f9af694e2925,2026-11-01T17:00:00Z,Lecce,Genoa,Draw,pinnacle,2.99,0.32644,3.13,onexbet,22,2.9,3.0
+2026-11-01T15:56:34+00:00,soccer_italy_serie_a,aeadf1388a1075328536501576b3d550,2026-11-01T19:45:00Z,Juventus,Napoli,H,pinnacle,2.29,0.4257,2.32,matchbook,22,2.13,2.15
+2026-11-01T15:56:34+00:00,soccer_italy_serie_a,aeadf1388a1075328536501576b3d550,2026-11-01T19:45:00Z,Juventus,Napoli,A,pinnacle,3.39,0.28757,3.56,onexbet,22,3.27,3.1
+2026-11-01T15:56:34+00:00,soccer_italy_serie_a,aeadf1388a1075328536501576b3d550,2026-11-01T19:45:00Z,Juventus,Napoli,Draw,pinnacle,3.4,0.28672,3.45,unibet_se,22,3.17,3.3
+2026-11-01T15:56:34+00:00,soccer_italy_serie_a,66608b64d462d1d3deabe573c8456d86,2026-11-02T17:30:00Z,Sassuolo,Fiorentina,A,pinnacle,2.36,0.41125,2.44,matchbook,22,2.25,2.3
+2026-11-01T15:56:34+00:00,soccer_italy_serie_a,66608b64d462d1d3deabe573c8456d86,2026-11-02T17:30:00Z,Sassuolo,Fiorentina,H,pinnacle,2.9,0.33467,3.0,matchbook,22,2.68,2.75
+2026-11-01T15:56:34+00:00,soccer_italy_serie_a,66608b64d462d1d3deabe573c8456d86,2026-11-02T17:30:00Z,Sassuolo,Fiorentina,Draw,pinnacle,3.82,0.25407,3.8,winamax_de,22,3.53,3.4
+2026-11-01T15:56:34+00:00,soccer_italy_serie_a,2e488800d615a94e5377c195810303c0,2026-11-02T19:45:00Z,Atalanta BC,Parma,H,pinnacle,1.51,0.63905,1.56,onexbet,22,1.45,1.44
+2026-11-01T15:56:34+00:00,soccer_italy_serie_a,2e488800d615a94e5377c195810303c0,2026-11-02T19:45:00Z,Atalanta BC,Parma,A,pinnacle,6.2,0.15564,6.75,unibet_se,22,5.4,6.0
+2026-11-01T15:56:34+00:00,soccer_italy_serie_a,2e488800d615a94e5377c195810303c0,2026-11-02T19:45:00Z,Atalanta BC,Parma,Draw,pinnacle,4.7,0.20531,4.7,unibet_se,22,4.4,4.2
+2026-11-01T15:56:34+00:00,soccer_italy_serie_a,fa069801a5c9b49143447a1a1d173fd1,2026-11-06T19:45:00Z,Venezia,Udinese,A,pinnacle,3.24,0.29458,3.4,unibet_se,17,2.97,3.1
+2026-11-01T15:56:34+00:00,soccer_italy_serie_a,fa069801a5c9b49143447a1a1d173fd1,2026-11-06T19:45:00Z,Venezia,Udinese,H,pinnacle,2.15,0.44393,2.22,onexbet,17,2.03,2.1
+2026-11-01T15:56:34+00:00,soccer_italy_serie_a,fa069801a5c9b49143447a1a1d173fd1,2026-11-06T19:45:00Z,Venezia,Udinese,Draw,pinnacle,3.65,0.26149,3.79,onexbet,17,3.42,3.4
+2026-11-01T15:56:34+00:00,soccer_italy_serie_a,52b256088d29b4abb82e0c63ea9852fe,2026-11-07T14:00:00Z,Cagliari,Frosinone,H,pinnacle,2.59,0.36877,2.88,unibet_se,17,2.47,2.45
+2026-11-01T15:56:34+00:00,soccer_italy_serie_a,52b256088d29b4abb82e0c63ea9852fe,2026-11-07T14:00:00Z,Cagliari,Frosinone,A,pinnacle,2.56,0.37309,2.62,onexbet,17,2.35,2.45
+2026-11-01T15:56:34+00:00,soccer_italy_serie_a,52b256088d29b4abb82e0c63ea9852fe,2026-11-07T14:00:00Z,Cagliari,Frosinone,Draw,pinnacle,3.7,0.25814,3.83,onexbet,17,3.45,3.75
+2026-11-01T15:56:34+00:00,soccer_italy_serie_a,0d53a5dbd9d4f4716e923b97e92dfb0d,2026-11-07T14:00:00Z,Torino,Lecce,A,pinnacle,4.46,0.21356,4.7,unibet_se,17,4.15,4.0
+2026-11-01T15:56:34+00:00,soccer_italy_serie_a,0d53a5dbd9d4f4716e923b97e92dfb0d,2026-11-07T14:00:00Z,Torino,Lecce,H,pinnacle,1.82,0.52333,1.88,onexbet,17,1.73,1.8
+2026-11-01T15:56:34+00:00,soccer_italy_serie_a,0d53a5dbd9d4f4716e923b97e92dfb0d,2026-11-07T14:00:00Z,Torino,Lecce,Draw,pinnacle,3.62,0.26311,3.79,onexbet,17,3.33,3.5
+2026-11-01T15:56:34+00:00,soccer_italy_serie_a,813cc4970b2dcab8457490a332fb5a6c,2026-11-07T17:00:00Z,Parma,Bologna,A,pinnacle,1.84,0.5177,1.89,onexbet,17,1.74,1.8
+2026-11-01T15:56:34+00:00,soccer_italy_serie_a,813cc4970b2dcab8457490a332fb5a6c,2026-11-07T17:00:00Z,Parma,Bologna,H,pinnacle,4.5,0.21168,4.8,tipico_de,17,4.15,4.2
+2026-11-01T15:56:34+00:00,soccer_italy_serie_a,813cc4970b2dcab8457490a332fb5a6c,2026-11-07T17:00:00Z,Parma,Bologna,Draw,pinnacle,3.52,0.27062,3.69,onexbet,17,3.3,3.4
+2026-11-01T15:56:34+00:00,soccer_italy_serie_a,f110107bca066ac1a598c89661c88fa3,2026-11-07T19:45:00Z,AS Roma,Sassuolo,H,pinnacle,1.34,0.70952,1.37,onexbet,17,1.3,1.33
+2026-11-01T15:56:34+00:00,soccer_italy_serie_a,f110107bca066ac1a598c89661c88fa3,2026-11-07T19:45:00Z,AS Roma,Sassuolo,A,pinnacle,8.02,0.11855,8.7,onexbet,17,6.75,8.0
+2026-11-01T15:56:34+00:00,soccer_italy_serie_a,f110107bca066ac1a598c89661c88fa3,2026-11-07T19:45:00Z,AS Roma,Sassuolo,Draw,pinnacle,5.53,0.17193,5.77,onexbet,17,5.0,5.0
+2026-11-01T15:56:34+00:00,soccer_italy_serie_a,23bf8ea47358ef82f65aa7398a2b3921,2026-11-08T11:30:00Z,Napoli,Lazio,A,pinnacle,3.57,0.26693,4.0,unibet_se,16,3.48,3.5
+2026-11-01T15:56:34+00:00,soccer_italy_serie_a,23bf8ea47358ef82f65aa7398a2b3921,2026-11-08T11:30:00Z,Napoli,Lazio,H,pinnacle,1.96,0.48619,1.98,onexbet,16,1.84,1.91
+2026-11-01T15:56:34+00:00,soccer_italy_serie_a,23bf8ea47358ef82f65aa7398a2b3921,2026-11-08T11:30:00Z,Napoli,Lazio,Draw,pinnacle,3.86,0.24688,3.94,onexbet,16,3.43,3.5
+2026-11-01T15:56:34+00:00,soccer_italy_serie_a,7a68b099b47ed7724062b661cd9af464,2026-11-08T14:00:00Z,Genoa,AC Milan,A,pinnacle,1.78,0.536,1.83,onexbet,16,1.68,1.75
+2026-11-01T15:56:34+00:00,soccer_italy_serie_a,7a68b099b47ed7724062b661cd9af464,2026-11-08T14:00:00Z,Genoa,AC Milan,H,pinnacle,4.66,0.20474,4.8,tipico_de,16,4.25,4.33
+2026-11-01T15:56:34+00:00,soccer_italy_serie_a,7a68b099b47ed7724062b661cd9af464,2026-11-08T14:00:00Z,Genoa,AC Milan,Draw,pinnacle,3.68,0.25926,3.85,onexbet,16,3.43,3.5
+2026-11-01T15:56:34+00:00,soccer_italy_serie_a,5ea6b7050b00fcc1832f7938794dd755,2026-11-08T14:00:00Z,Monza,Atalanta BC,A,pinnacle,2.03,0.46956,2.1,onexbet,16,1.94,2.0
+2026-11-01T15:56:34+00:00,soccer_italy_serie_a,5ea6b7050b00fcc1832f7938794dd755,2026-11-08T14:00:00Z,Monza,Atalanta BC,H,pinnacle,3.37,0.28285,3.55,unibet_se,16,3.13,3.2
+2026-11-01T15:56:34+00:00,soccer_italy_serie_a,5ea6b7050b00fcc1832f7938794dd755,2026-11-08T14:00:00Z,Monza,Atalanta BC,Draw,pinnacle,3.85,0.24759,4.01,onexbet,16,3.5,3.6
+2026-11-01T15:56:34+00:00,soccer_italy_serie_a,657fd1ac35832f65fcc6feba93970e10,2026-11-08T17:00:00Z,Inter Milan,Como,A,pinnacle,4.11,0.23184,4.35,unibet_se,15,3.83,3.8
+2026-11-01T15:56:34+00:00,soccer_italy_serie_a,657fd1ac35832f65fcc6feba93970e10,2026-11-08T17:00:00Z,Inter Milan,Como,H,pinnacle,1.75,0.54449,1.81,onexbet,15,1.65,1.73
+2026-11-01T15:56:34+00:00,soccer_italy_serie_a,657fd1ac35832f65fcc6feba93970e10,2026-11-08T17:00:00Z,Inter Milan,Como,Draw,pinnacle,4.26,0.22367,4.42,onexbet,15,3.93,4.0
+2026-11-01T15:56:34+00:00,soccer_italy_serie_a,7f50eb7deaebfbcd45c3f4e7cd3724e4,2026-11-08T19:45:00Z,Fiorentina,Juventus,H,pinnacle,3.76,0.25317,4.1,unibet_se,15,3.55,3.6
+2026-11-01T15:56:34+00:00,soccer_italy_serie_a,7f50eb7deaebfbcd45c3f4e7cd3724e4,2026-11-08T19:45:00Z,Fiorentina,Juventus,A,pinnacle,1.95,0.48816,1.96,onexbet,15,1.81,1.91
+2026-11-01T15:56:34+00:00,soccer_italy_serie_a,7f50eb7deaebfbcd45c3f4e7cd3724e4,2026-11-08T19:45:00Z,Fiorentina,Juventus,Draw,pinnacle,3.68,0.25867,3.96,onexbet,15,3.48,3.5
+2026-11-01T15:56:34+00:00,soccer_germany_bundesliga,1eb5e1a69ae9dd9edd92fde344308a4e,2026-11-01T16:30:00Z,Eintracht Frankfurt,Hamburger SV,H,pinnacle,1.52,0.64026,1.56,unibet_se,21,1.46,1.5
+2026-11-01T15:56:34+00:00,soccer_germany_bundesliga,1eb5e1a69ae9dd9edd92fde344308a4e,2026-11-01T16:30:00Z,Eintracht Frankfurt,Hamburger SV,A,pinnacle,5.98,0.16274,6.2,matchbook,21,5.25,5.0
+2026-11-01T15:56:34+00:00,soccer_germany_bundesliga,1eb5e1a69ae9dd9edd92fde344308a4e,2026-11-01T16:30:00Z,Eintracht Frankfurt,Hamburger SV,Draw,pinnacle,4.94,0.197,5.08,onexbet,21,4.7,4.4
+2026-11-01T15:56:34+00:00,soccer_germany_bundesliga,295076c39e49863cb54db085ac3cd340,2026-11-06T19:30:00Z,Hamburger SV,Borussia Monchengladbach,A,pinnacle,2.73,0.34887,2.9,unibet_se,19,2.67,2.6
+2026-11-01T15:56:34+00:00,soccer_germany_bundesliga,295076c39e49863cb54db085ac3cd340,2026-11-06T19:30:00Z,Hamburger SV,Borussia Monchengladbach,H,pinnacle,2.39,0.3985,2.53,onexbet,19,2.15,2.4
+2026-11-01T15:56:34+00:00,soccer_germany_bundesliga,295076c39e49863cb54db085ac3cd340,2026-11-06T19:30:00Z,Hamburger SV,Borussia Monchengladbach,Draw,pinnacle,3.77,0.25263,3.95,matchbook,19,3.58,3.6
+2026-11-01T15:56:34+00:00,soccer_germany_bundesliga,cdb5f9dd39e79db69659c76cd96d0bbe,2026-11-07T14:30:00Z,RB Leipzig,Augsburg,A,pinnacle,5.66,0.16681,6.0,onexbet,19,5.0,5.0
+2026-11-01T15:56:34+00:00,soccer_germany_bundesliga,cdb5f9dd39e79db69659c76cd96d0bbe,2026-11-07T14:30:00Z,RB Leipzig,Augsburg,H,pinnacle,1.43,0.66026,1.51,unibet_se,19,1.39,1.44
+2026-11-01T15:56:34+00:00,soccer_germany_bundesliga,cdb5f9dd39e79db69659c76cd96d0bbe,2026-11-07T14:30:00Z,RB Leipzig,Augsburg,Draw,pinnacle,5.46,0.17293,5.7,tipico_de,19,4.95,4.8
+2026-11-01T15:56:34+00:00,soccer_germany_bundesliga,fe97f5adf397dd6b0a8a9e0a5272f307,2026-11-07T14:30:00Z,FSV Mainz 05,Bayern Munich,A,pinnacle,1.47,0.643,1.5,matchbook,19,1.4,1.44
+2026-11-01T15:56:34+00:00,soccer_germany_bundesliga,fe97f5adf397dd6b0a8a9e0a5272f307,2026-11-07T14:30:00Z,FSV Mainz 05,Bayern Munich,H,pinnacle,4.72,0.20025,6.0,onexbet,19,4.8,5.0
+2026-11-01T15:56:34+00:00,soccer_germany_bundesliga,fe97f5adf397dd6b0a8a9e0a5272f307,2026-11-07T14:30:00Z,FSV Mainz 05,Bayern Munich,Draw,pinnacle,6.03,0.15675,6.0,matchbook,19,5.0,5.0
+2026-11-01T15:56:34+00:00,soccer_germany_bundesliga,3ef62ef56758041178c5280225fe5db7,2026-11-07T14:30:00Z,Borussia Dortmund,Elversberg,H,pinnacle,1.26,0.74788,1.33,unibet_se,19,1.21,1.29
+2026-11-01T15:56:34+00:00,soccer_germany_bundesliga,3ef62ef56758041178c5280225fe5db7,2026-11-07T14:30:00Z,Borussia Dortmund,Elversberg,A,pinnacle,8.74,0.10782,9.8,matchbook,19,7.75,8.0
+2026-11-01T15:56:34+00:00,soccer_germany_bundesliga,3ef62ef56758041178c5280225fe5db7,2026-11-07T14:30:00Z,Borussia Dortmund,Elversberg,Draw,pinnacle,6.53,0.14431,7.0,tipico_de,19,5.9,5.75
+2026-11-01T15:56:34+00:00,soccer_germany_bundesliga,4ca4c7a2a1c15e9121f9a7eaa7f42ddb,2026-11-07T14:30:00Z,SC Paderborn,Eintracht Frankfurt,A,pinnacle,2.17,0.43835,2.3,unibet_se,19,1.97,2.15
+2026-11-01T15:56:34+00:00,soccer_germany_bundesliga,4ca4c7a2a1c15e9121f9a7eaa7f42ddb,2026-11-07T14:30:00Z,SC Paderborn,Eintracht Frankfurt,H,pinnacle,3.03,0.31393,3.1,tipico_de,19,2.92,2.8
+2026-11-01T15:56:34+00:00,soccer_germany_bundesliga,4ca4c7a2a1c15e9121f9a7eaa7f42ddb,2026-11-07T14:30:00Z,SC Paderborn,Eintracht Frankfurt,Draw,pinnacle,3.84,0.24771,4.16,onexbet,19,3.7,3.8
+2026-11-01T15:56:34+00:00,soccer_germany_bundesliga,716d6e3f3e91c47a6efaa2e93d570533,2026-11-07T17:30:00Z,VfB Stuttgart,Werder Bremen,H,pinnacle,1.52,0.62259,1.56,matchbook,19,1.45,1.5
+2026-11-01T15:56:34+00:00,soccer_germany_bundesliga,716d6e3f3e91c47a6efaa2e93d570533,2026-11-07T17:30:00Z,VfB Stuttgart,Werder Bremen,A,pinnacle,5.04,0.18776,5.75,unibet_se,19,4.75,5.0
+2026-11-01T15:56:34+00:00,soccer_germany_bundesliga,716d6e3f3e91c47a6efaa2e93d570533,2026-11-07T17:30:00Z,VfB Stuttgart,Werder Bremen,Draw,pinnacle,4.99,0.18965,5.23,onexbet,19,4.6,4.6
+2026-11-01T15:56:34+00:00,soccer_germany_bundesliga,c70f9f21f48464daa93973147502e183,2026-11-08T14:30:00Z,1. FC Köln,Bayer Leverkusen,H,pinnacle,4.51,0.21005,4.6,unibet_se,18,4.1,4.0
+2026-11-01T15:56:34+00:00,soccer_germany_bundesliga,c70f9f21f48464daa93973147502e183,2026-11-08T14:30:00Z,1. FC Köln,Bayer Leverkusen,A,pinnacle,1.65,0.57415,1.75,onexbet,18,1.58,1.67
+2026-11-01T15:56:34+00:00,soccer_germany_bundesliga,c70f9f21f48464daa93973147502e183,2026-11-08T14:30:00Z,1. FC Köln,Bayer Leverkusen,Draw,pinnacle,4.39,0.2158,4.6,unibet_se,18,4.1,4.0
+2026-11-01T15:56:34+00:00,soccer_germany_bundesliga,c1b9696d88719cb8832d794b986cdd68,2026-11-08T16:30:00Z,SC Freiburg,Union Berlin,H,pinnacle,1.51,0.62765,1.56,onexbet,17,1.41,1.5
+2026-11-01T15:56:34+00:00,soccer_germany_bundesliga,c1b9696d88719cb8832d794b986cdd68,2026-11-08T16:30:00Z,SC Freiburg,Union Berlin,A,pinnacle,5.86,0.16173,6.5,unibet_se,17,5.6,5.5
+2026-11-01T15:56:34+00:00,soccer_germany_bundesliga,c1b9696d88719cb8832d794b986cdd68,2026-11-08T16:30:00Z,SC Freiburg,Union Berlin,Draw,pinnacle,4.5,0.21061,4.9,unibet_se,17,4.3,4.33
+2026-11-01T15:56:34+00:00,soccer_germany_bundesliga,8963081c3457212ee238b498bbc33a03,2026-11-08T18:30:00Z,TSG Hoffenheim,FC Schalke 04,A,pinnacle,4.65,0.20354,5.08,onexbet,17,4.4,4.6
+2026-11-01T15:56:34+00:00,soccer_germany_bundesliga,8963081c3457212ee238b498bbc33a03,2026-11-08T18:30:00Z,TSG Hoffenheim,FC Schalke 04,H,pinnacle,1.62,0.58424,1.68,unibet_se,17,1.53,1.6
+2026-11-01T15:56:34+00:00,soccer_germany_bundesliga,8963081c3457212ee238b498bbc33a03,2026-11-08T18:30:00Z,TSG Hoffenheim,FC Schalke 04,Draw,pinnacle,4.46,0.21221,4.67,onexbet,17,4.15,4.2
+2026-11-01T15:56:34+00:00,soccer_france_ligue_one,cf3a2e2b4a4e9815d1d0be8dcef916da,2026-11-01T16:15:00Z,Paris FC,AS Monaco,A,pinnacle,2.87,0.33997,2.89,onexbet,20,2.63,2.7
+2026-11-01T15:56:34+00:00,soccer_france_ligue_one,cf3a2e2b4a4e9815d1d0be8dcef916da,2026-11-01T16:15:00Z,Paris FC,AS Monaco,H,pinnacle,2.57,0.37965,2.56,onexbet,20,2.35,2.4
+2026-11-01T15:56:34+00:00,soccer_france_ligue_one,cf3a2e2b4a4e9815d1d0be8dcef916da,2026-11-01T16:15:00Z,Paris FC,AS Monaco,Draw,pinnacle,3.48,0.28038,3.65,unibet_se,20,3.27,3.3
+2026-11-01T15:56:34+00:00,soccer_france_ligue_one,961df571fad52d969150e9ced52b16f7,2026-11-01T16:15:00Z,Lyon,Angers,A,pinnacle,7.39,0.13136,7.9,onexbet,20,6.25,7.0
+2026-11-01T15:56:34+00:00,soccer_france_ligue_one,961df571fad52d969150e9ced52b16f7,2026-11-01T16:15:00Z,Lyon,Angers,H,pinnacle,1.44,0.67411,1.45,unibet_se,20,1.35,1.4
+2026-11-01T15:56:34+00:00,soccer_france_ligue_one,961df571fad52d969150e9ced52b16f7,2026-11-01T16:15:00Z,Lyon,Angers,Draw,pinnacle,4.99,0.19453,5.0,betonlineag,20,4.6,4.5
+2026-11-01T15:56:34+00:00,soccer_france_ligue_one,df1e1589c51bbcac432125567d1f7c58,2026-11-01T19:45:00Z,Marseille,Toulouse,H,pinnacle,1.95,0.49976,1.97,onexbet,20,1.83,1.85
+2026-11-01T15:56:34+00:00,soccer_france_ligue_one,df1e1589c51bbcac432125567d1f7c58,2026-11-01T19:45:00Z,Marseille,Toulouse,A,pinnacle,3.78,0.25781,3.8,tipico_de,20,3.5,3.5
+2026-11-01T15:56:34+00:00,soccer_france_ligue_one,df1e1589c51bbcac432125567d1f7c58,2026-11-01T19:45:00Z,Marseille,Toulouse,Draw,pinnacle,4.02,0.24242,4.2,unibet_se,20,4.0,3.7
+2026-11-01T15:56:34+00:00,soccer_france_ligue_one,5118966f484adf525196d196a61bc5d6,2026-11-02T19:45:00Z,Lorient,Brest,A,pinnacle,3.02,0.32118,3.15,unibet_se,20,2.83,2.8
+2026-11-01T15:56:34+00:00,soccer_france_ligue_one,5118966f484adf525196d196a61bc5d6,2026-11-02T19:45:00Z,Lorient,Brest,H,pinnacle,2.52,0.3849,2.56,onexbet,20,2.37,2.4
+2026-11-01T15:56:34+00:00,soccer_france_ligue_one,5118966f484adf525196d196a61bc5d6,2026-11-02T19:45:00Z,Lorient,Brest,Draw,pinnacle,3.3,0.29392,3.4,unibet_se,20,3.1,3.1
+2026-11-01T15:56:34+00:00,soccer_france_ligue_one,5e7d141f719835de18877ed95bedcb32,2026-11-06T19:45:00Z,Toulouse,Strasbourg,A,pinnacle,3.34,0.28502,3.51,onexbet,18,3.12,3.2
+2026-11-01T15:56:34+00:00,soccer_france_ligue_one,5e7d141f719835de18877ed95bedcb32,2026-11-06T19:45:00Z,Toulouse,Strasbourg,H,pinnacle,2.08,0.45768,2.1,nordicbet,18,1.94,2.0
+2026-11-01T15:56:34+00:00,soccer_france_ligue_one,5e7d141f719835de18877ed95bedcb32,2026-11-06T19:45:00Z,Toulouse,Strasbourg,Draw,pinnacle,3.7,0.25729,3.98,onexbet,18,3.53,3.7
+2026-11-01T15:56:34+00:00,soccer_france_ligue_one,8553a80cf1ae5cbe3e7a69b76ce8167f,2026-11-07T16:15:00Z,Auxerre,Paris FC,H,pinnacle,3.67,0.25874,3.7,unibet_se,18,3.42,3.4
+2026-11-01T15:56:34+00:00,soccer_france_ligue_one,8553a80cf1ae5cbe3e7a69b76ce8167f,2026-11-07T16:15:00Z,Auxerre,Paris FC,A,pinnacle,1.93,0.49202,2.05,onexbet,18,1.85,1.95
+2026-11-01T15:56:34+00:00,soccer_france_ligue_one,8553a80cf1ae5cbe3e7a69b76ce8167f,2026-11-07T16:15:00Z,Auxerre,Paris FC,Draw,pinnacle,3.81,0.24924,3.9,onexbet,18,3.48,3.5
+2026-11-01T15:56:34+00:00,soccer_france_ligue_one,f7b240389fa5ec055c58a48ab153dcdd,2026-11-07T19:45:00Z,Paris Saint Germain,Troyes,H,pinnacle,1.13,0.83768,1.16,unibet_se,18,1.1,1.14
+2026-11-01T15:56:34+00:00,soccer_france_ligue_one,f7b240389fa5ec055c58a48ab153dcdd,2026-11-07T19:45:00Z,Paris Saint Germain,Troyes,A,pinnacle,14.05,0.06737,20.0,nordicbet,18,13.5,15.0
+2026-11-01T15:56:34+00:00,soccer_france_ligue_one,f7b240389fa5ec055c58a48ab153dcdd,2026-11-07T19:45:00Z,Paris Saint Germain,Troyes,Draw,pinnacle,9.97,0.09494,10.5,tipico_de,18,7.5,8.5
+2026-11-01T15:56:34+00:00,soccer_france_ligue_one,4288fbe018e6e6fb223e389bcf3e57dd,2026-11-08T14:00:00Z,Rennes,Lille,A,pinnacle,3.34,0.28485,3.6,unibet_se,17,3.07,3.2
+2026-11-01T15:56:34+00:00,soccer_france_ligue_one,4288fbe018e6e6fb223e389bcf3e57dd,2026-11-08T14:00:00Z,Rennes,Lille,H,pinnacle,2.1,0.45305,2.12,onexbet,17,1.98,2.0
+2026-11-01T15:56:34+00:00,soccer_france_ligue_one,4288fbe018e6e6fb223e389bcf3e57dd,2026-11-08T14:00:00Z,Rennes,Lille,Draw,pinnacle,3.63,0.2621,3.95,unibet_se,17,3.47,3.6
+2026-11-01T15:56:34+00:00,soccer_france_ligue_one,a529e5762f18d97981194ec3668dc3d3,2026-11-08T16:15:00Z,Le Mans FC,AS Monaco,A,pinnacle,1.77,0.53682,1.8,onexbet,17,1.66,1.73
+2026-11-01T15:56:34+00:00,soccer_france_ligue_one,a529e5762f18d97981194ec3668dc3d3,2026-11-08T16:15:00Z,Le Mans FC,AS Monaco,H,pinnacle,4.01,0.23695,4.41,onexbet,17,3.95,4.0
+2026-11-01T15:56:34+00:00,soccer_france_ligue_one,a529e5762f18d97981194ec3668dc3d3,2026-11-08T16:15:00Z,Le Mans FC,AS Monaco,Draw,pinnacle,4.2,0.22623,4.31,onexbet,17,3.78,3.9
+2026-11-01T15:56:34+00:00,soccer_france_ligue_one,54fae64b1421d836e07a17cad0536c73,2026-11-08T16:15:00Z,Angers,Nice,H,pinnacle,3.56,0.2672,3.6,tipico_de,17,3.27,3.3
+2026-11-01T15:56:34+00:00,soccer_france_ligue_one,54fae64b1421d836e07a17cad0536c73,2026-11-08T16:15:00Z,Angers,Nice,A,pinnacle,2.03,0.46858,2.18,unibet_se,17,1.91,2.0
+2026-11-01T15:56:34+00:00,soccer_france_ligue_one,54fae64b1421d836e07a17cad0536c73,2026-11-08T16:15:00Z,Angers,Nice,Draw,pinnacle,3.6,0.26423,3.84,onexbet,17,3.43,3.5
+2026-11-01T15:56:34+00:00,soccer_france_ligue_one,cc9731ee7796fe0d532f11ca2aa522c9,2026-11-08T16:15:00Z,Brest,Lyon,H,pinnacle,2.9,0.32846,3.04,onexbet,17,2.75,2.8
+2026-11-01T15:56:34+00:00,soccer_france_ligue_one,cc9731ee7796fe0d532f11ca2aa522c9,2026-11-08T16:15:00Z,Brest,Lyon,A,pinnacle,2.32,0.41057,2.5,unibet_se,17,2.15,2.25
+2026-11-01T15:56:34+00:00,soccer_france_ligue_one,cc9731ee7796fe0d532f11ca2aa522c9,2026-11-08T16:15:00Z,Brest,Lyon,Draw,pinnacle,3.65,0.26097,3.8,onexbet,17,3.42,3.5
+2026-11-01T15:56:34+00:00,soccer_france_ligue_one,3e9954446f26494c04c4967db523d375,2026-11-08T16:15:00Z,Le Havre,Lorient,H,pinnacle,2.85,0.33442,2.85,unibet_se,17,2.68,2.62
+2026-11-01T15:56:34+00:00,soccer_france_ligue_one,3e9954446f26494c04c4967db523d375,2026-11-08T16:15:00Z,Le Havre,Lorient,A,pinnacle,2.49,0.38277,2.65,onexbet,17,2.32,2.5
+2026-11-01T15:56:34+00:00,soccer_france_ligue_one,3e9954446f26494c04c4967db523d375,2026-11-08T16:15:00Z,Le Havre,Lorient,Draw,pinnacle,3.37,0.28282,3.52,onexbet,17,3.15,3.25
+2026-11-01T15:56:34+00:00,soccer_france_ligue_one,4e917e19b59093a02a0e12bcf9a5ecc4,2026-11-08T19:45:00Z,RC Lens,Marseille,A,pinnacle,3.2,0.29749,3.31,onexbet,17,3.02,3.1
+2026-11-01T15:56:34+00:00,soccer_france_ligue_one,4e917e19b59093a02a0e12bcf9a5ecc4,2026-11-08T19:45:00Z,RC Lens,Marseille,H,pinnacle,2.06,0.46212,2.14,unibet_se,17,1.93,2.0
+2026-11-01T15:56:34+00:00,soccer_france_ligue_one,4e917e19b59093a02a0e12bcf9a5ecc4,2026-11-08T19:45:00Z,RC Lens,Marseille,Draw,pinnacle,3.96,0.24039,4.16,onexbet,17,3.68,3.8
