@@ -74,3 +74,4 @@ leitura,liga,jogo_id,inicio,casa_time,fora_time,resultado,casa,odd,prob_justa,va
 2026-10-25T13:40:19+00:00,soccer_epl,0cfbab01e152f81e34f9014e02c7eb79,2026-11-08T14:00:00Z,Crystal Palace,Liverpool,Draw,Betclic,4.0,0.33533,0.3413,betfair_ex_eu,1.1
 2026-10-25T18:52:36+00:00,soccer_epl,b0a4b5448a7e02d9ad1eaa817599fff0,2026-11-08T16:30:00Z,Manchester United,Aston Villa,A,Betclic,2.9,0.37947,0.1005,betfair_ex_eu,1.95
 2026-10-25T18:52:36+00:00,soccer_epl,b0a4b5448a7e02d9ad1eaa817599fff0,2026-11-08T16:30:00Z,Manchester United,Aston Villa,A,888,2.9,0.37947,0.1005,betfair_ex_eu,1.95
+2026-11-01T20:25:14+00:00,soccer_epl,4c08b213ed416e8f41e038f42a42b962,2026-11-22T16:30:00Z,Liverpool,Manchester United,A,Betclic,3.7,0.4534,0.6776,betfair_ex_eu,1.31
