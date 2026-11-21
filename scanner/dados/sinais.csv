@@ -77,3 +77,21 @@ leitura,liga,jogo_id,inicio,casa_time,fora_time,resultado,casa,odd,prob_justa,va
 2026-11-01T20:25:14+00:00,soccer_epl,4c08b213ed416e8f41e038f42a42b962,2026-11-22T16:30:00Z,Liverpool,Manchester United,A,Betclic,3.7,0.4534,0.6776,betfair_ex_eu,1.31
 2026-11-02T19:24:58+00:00,soccer_portugal_primeira_liga,3145127655251c9de0251675640e2101,2026-11-08T15:30:00Z,Santa Clara,Gil Vicente,A,Betclic,3.42,0.40182,0.3742,betfair_ex_eu,1.12
 2026-11-02T19:24:58+00:00,soccer_portugal_primeira_liga,3145127655251c9de0251675640e2101,2026-11-08T15:30:00Z,Santa Clara,Gil Vicente,A,888,3.5,0.40182,0.4064,betfair_ex_eu,1.12
+2026-11-21T21:34:26+00:00,soccer_epl,10abd18165c999264777913e42c9f96c,2026-12-02T19:30:00Z,Manchester City,Leeds United,Draw,Betclic,3.93,0.34831,0.3689,betfair_ex_eu,1.01
+2026-11-21T21:34:26+00:00,soccer_epl,10abd18165c999264777913e42c9f96c,2026-12-02T19:30:00Z,Manchester City,Leeds United,Draw,888,4.0,0.34831,0.3932,betfair_ex_eu,1.01
+2026-11-21T21:34:26+00:00,soccer_epl,5f5235df01a384e23ff224101ff175e1,2026-12-02T20:15:00Z,Brentford,Arsenal,Draw,Betclic,3.48,0.34831,0.2121,betfair_ex_eu,1.01
+2026-11-21T21:34:26+00:00,soccer_epl,5f5235df01a384e23ff224101ff175e1,2026-12-02T20:15:00Z,Brentford,Arsenal,Draw,888,3.6,0.34831,0.2539,betfair_ex_eu,1.01
+2026-11-21T21:34:26+00:00,soccer_epl,2198fb9aab762e9e1c8c6af4113a1d31,2026-12-02T20:15:00Z,Aston Villa,Everton,A,Betclic,3.23,0.32903,0.0628,betfair_ex_eu,1.06
+2026-11-21T21:34:26+00:00,soccer_epl,2198fb9aab762e9e1c8c6af4113a1d31,2026-12-02T20:15:00Z,Aston Villa,Everton,A,888,3.3,0.32903,0.0858,betfair_ex_eu,1.06
+2026-11-21T21:34:26+00:00,soccer_epl,2198fb9aab762e9e1c8c6af4113a1d31,2026-12-02T20:15:00Z,Aston Villa,Everton,Draw,Betclic,3.42,0.34194,0.1694,betfair_ex_eu,1.02
+2026-11-21T21:34:26+00:00,soccer_epl,2198fb9aab762e9e1c8c6af4113a1d31,2026-12-02T20:15:00Z,Aston Villa,Everton,Draw,888,3.5,0.34194,0.1968,betfair_ex_eu,1.02
+2026-11-21T21:34:26+00:00,soccer_epl,28546d4aefd5efb320c2d2ceee11b66d,2026-12-02T20:15:00Z,Bournemouth,Brighton and Hove Albion,Draw,Betclic,3.27,0.34194,0.1181,betfair_ex_eu,1.02
+2026-11-21T21:34:26+00:00,soccer_epl,28546d4aefd5efb320c2d2ceee11b66d,2026-12-02T20:15:00Z,Bournemouth,Brighton and Hove Albion,Draw,888,3.3,0.34194,0.1284,betfair_ex_eu,1.02
+2026-11-21T21:34:26+00:00,soccer_epl,0c405290d0f977236962e55ba90c2c04,2026-12-02T20:15:00Z,Newcastle United,Manchester United,H,Betclic,2.68,0.41113,0.1018,betfair_ex_eu,1.11
+2026-11-21T21:34:26+00:00,soccer_epl,0c405290d0f977236962e55ba90c2c04,2026-12-02T20:15:00Z,Newcastle United,Manchester United,H,888,2.8,0.41113,0.1512,betfair_ex_eu,1.11
+2026-11-21T21:34:26+00:00,soccer_epl,0c405290d0f977236962e55ba90c2c04,2026-12-02T20:15:00Z,Newcastle United,Manchester United,Draw,Betclic,3.53,0.29633,0.0461,betfair_ex_eu,1.54
+2026-11-21T21:34:26+00:00,soccer_epl,0c405290d0f977236962e55ba90c2c04,2026-12-02T20:15:00Z,Newcastle United,Manchester United,Draw,888,3.6,0.29633,0.0668,betfair_ex_eu,1.54
+2026-11-21T21:34:26+00:00,soccer_epl,0c1ccc010b185ada698661a21316696c,2026-12-03T20:00:00Z,Tottenham Hotspur,Fulham,A,Betclic,3.8,0.38327,0.4564,betfair_ex_eu,1.06
+2026-11-21T21:34:26+00:00,soccer_epl,0c1ccc010b185ada698661a21316696c,2026-12-03T20:00:00Z,Tottenham Hotspur,Fulham,A,888,3.75,0.38327,0.4373,betfair_ex_eu,1.06
+2026-11-21T21:34:26+00:00,soccer_epl,0c1ccc010b185ada698661a21316696c,2026-12-03T20:00:00Z,Tottenham Hotspur,Fulham,Draw,Betclic,3.42,0.3983,0.3622,betfair_ex_eu,1.02
+2026-11-21T21:34:26+00:00,soccer_epl,0c1ccc010b185ada698661a21316696c,2026-12-03T20:00:00Z,Tottenham Hotspur,Fulham,Draw,888,3.5,0.3983,0.3941,betfair_ex_eu,1.02
