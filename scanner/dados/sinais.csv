@@ -95,3 +95,5 @@ leitura,liga,jogo_id,inicio,casa_time,fora_time,resultado,casa,odd,prob_justa,va
 2026-11-21T21:34:26+00:00,soccer_epl,0c1ccc010b185ada698661a21316696c,2026-12-03T20:00:00Z,Tottenham Hotspur,Fulham,A,888,3.75,0.38327,0.4373,betfair_ex_eu,1.06
 2026-11-21T21:34:26+00:00,soccer_epl,0c1ccc010b185ada698661a21316696c,2026-12-03T20:00:00Z,Tottenham Hotspur,Fulham,Draw,Betclic,3.42,0.3983,0.3622,betfair_ex_eu,1.02
 2026-11-21T21:34:26+00:00,soccer_epl,0c1ccc010b185ada698661a21316696c,2026-12-03T20:00:00Z,Tottenham Hotspur,Fulham,Draw,888,3.5,0.3983,0.3941,betfair_ex_eu,1.02
+2026-11-22T17:02:56+00:00,soccer_epl,4bd9a6fe4abb6774b3e8700b3dbe8d00,2026-12-02T19:30:00Z,Hull City,Nottingham Forest,H,Betclic,3.42,0.42375,0.4492,betfair_ex_eu,1.38
+2026-11-22T17:02:56+00:00,soccer_epl,4bd9a6fe4abb6774b3e8700b3dbe8d00,2026-12-02T19:30:00Z,Hull City,Nottingham Forest,H,888,3.6,0.42375,0.5255,betfair_ex_eu,1.38
